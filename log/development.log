@@ -1,0 +1,813 @@
+  [1m[35m (406.5ms)[0m  [1m[35mCREATE DATABASE "real-m8s-ror-full_development" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
+  [1m[35m (335.8ms)[0m  [1m[35mCREATE DATABASE "real-m8s-ror-full_test" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
+  [1m[35m (15.9ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  ↳ bin/rails:9
+  [1m[35m (6.4ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3587339596244520480)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Create (0.5ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2018-09-05 01:03:45.110420"], ["updated_at", "2018-09-05 01:03:45.110420"]]
+  ↳ bin/rails:9
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(3587339596244520480)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3587339596244520480)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to EnableUuidExtension (20180902102850)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35mSQL (27.4ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "uuid-ossp"[0m
+  ↳ db/migrate/20180902102850_enable_uuid_extension.rb:5
+  [1m[35mSQL (28.1ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "pgcrypto"[0m
+  ↳ db/migrate/20180902102850_enable_uuid_extension.rb:6
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20180902102850"]]
+  ↳ bin/rails:9
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to CreateUsers (20180902112012)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (6.9ms)[0m  [1m[35mCREATE TABLE "users" ("id" uuid DEFAULT gen_random_uuid() NOT NULL PRIMARY KEY, "first_name" character varying, "last_name" character varying, "gender" character varying, "username" character varying, "dob" timestamp, "profile_pic" character varying, "active" boolean, "email" character varying, "password_digest" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20180902112012_create_users.rb:5
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20180902112012"]]
+  ↳ bin/rails:9
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to AddIndexesToUsers (20180902112048)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (2.3ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_username_and_email" ON "users"  ("username", "email")[0m
+  ↳ db/migrate/20180902112048_add_indexes_to_users.rb:5
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20180902112048"]]
+  ↳ bin/rails:9
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to CreateMateProfiles (20180902234930)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (11.6ms)[0m  [1m[35mCREATE TABLE "mate_profiles" ("id" uuid DEFAULT gen_random_uuid() NOT NULL PRIMARY KEY, "marital_status" character varying, "job" character varying, "user_id" bigint, "is_smoker" boolean, "faith" character varying, "personality" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_2b9e81f1eb"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+)[0m
+  ↳ db/migrate/20180902234930_create_mate_profiles.rb:5
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(3587339596244520480)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3587339596244520480)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateMateProfiles (20180902234930)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (8.3ms)[0m  [1m[35mCREATE TABLE "mate_profiles" ("id" uuid DEFAULT gen_random_uuid() NOT NULL PRIMARY KEY, "marital_status" character varying, "job" character varying, "user_id" uuid, "is_smoker" boolean, "faith" character varying, "personality" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_2b9e81f1eb"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+)[0m
+  ↳ db/migrate/20180902234930_create_mate_profiles.rb:5
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE  INDEX  "index_mate_profiles_on_user_id" ON "mate_profiles"  ("user_id")[0m
+  ↳ db/migrate/20180902234930_create_mate_profiles.rb:5
+  [1m[36mActiveRecord::SchemaMigration Create (0.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20180902234930"]]
+  ↳ bin/rails:9
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to CreateUserPets (20180903043536)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (4.8ms)[0m  [1m[35mCREATE TABLE "user_pets" ("id" uuid DEFAULT gen_random_uuid() NOT NULL PRIMARY KEY, "name" character varying, "species" character varying, "size" character varying, "people_friendly" boolean, "child_friendly" boolean, "pet_friendly" boolean, "profile_pic" character varying, "active" boolean, "bio" text, "user_id" uuid, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_79a75851e6"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+)[0m
+  ↳ db/migrate/20180903043536_create_user_pets.rb:5
+  [1m[35m (2.2ms)[0m  [1m[35mCREATE  INDEX  "index_user_pets_on_user_id" ON "user_pets"  ("user_id")[0m
+  ↳ db/migrate/20180903043536_create_user_pets.rb:5
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20180903043536"]]
+  ↳ bin/rails:9
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to CreateMateReviews (20180903064117)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (11.3ms)[0m  [1m[35mCREATE TABLE "mate_reviews" ("id" bigserial primary key, "rating" decimal, "comment" text, "active" boolean, "author_id" uuid, "user_id" uuid, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20180903064117_create_mate_reviews.rb:5
+  [1m[36mActiveRecord::SchemaMigration Create (0.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20180903064117"]]
+  ↳ bin/rails:9
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to CreateHouses (20180903100535)
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (6.6ms)[0m  [1m[35mCREATE TABLE "houses" ("id" uuid DEFAULT gen_random_uuid() NOT NULL PRIMARY KEY, "type" character varying, "profile_pic" character varying, "address" character varying, "state" character varying, "country" character varying, "rent_cycle" character varying, "rent_start_date" timestamp, "join_code" character varying, "code_expiry_date" timestamp, "bio" text, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20180903100535_create_houses.rb:5
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20180903100535"]]
+  ↳ bin/rails:9
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to AddRentToHouses (20180903102216)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (2.1ms)[0m  [1m[35mALTER TABLE "houses" ADD "rent" decimal[0m
+  ↳ db/migrate/20180903102216_add_rent_to_houses.rb:5
+  [1m[36mActiveRecord::SchemaMigration Create (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20180903102216"]]
+  ↳ bin/rails:9
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to ChangeTypeToHouseType (20180903104029)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (1.0ms)[0m  [1m[35mALTER TABLE "houses" RENAME COLUMN "type" TO "house_type"[0m
+  ↳ db/migrate/20180903104029_change_type_to_house_type.rb:5
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20180903104029"]]
+  ↳ bin/rails:9
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to CreateHouseUsers (20180903124700)
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (4.2ms)[0m  [1m[35mCREATE TABLE "house_users" ("id" uuid DEFAULT gen_random_uuid() NOT NULL PRIMARY KEY, "user_id" uuid, "is_admin" boolean, "active" boolean, "house_id" uuid, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_9023272bee"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+, CONSTRAINT "fk_rails_840af39827"
+FOREIGN KEY ("house_id")
+  REFERENCES "houses" ("id")
+)[0m
+  ↳ db/migrate/20180903124700_create_house_users.rb:5
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE  INDEX  "index_house_users_on_user_id" ON "house_users"  ("user_id")[0m
+  ↳ db/migrate/20180903124700_create_house_users.rb:5
+  [1m[35m (1.4ms)[0m  [1m[35mCREATE  INDEX  "index_house_users_on_house_id" ON "house_users"  ("house_id")[0m
+  ↳ db/migrate/20180903124700_create_house_users.rb:5
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20180903124700"]]
+  ↳ bin/rails:9
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to CreateHouseBills (20180903233756)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (5.7ms)[0m  [1m[35mCREATE TABLE "house_bills" ("id" uuid DEFAULT gen_random_uuid() NOT NULL PRIMARY KEY, "desc" character varying, "due_date" timestamp, "amount" decimal, "active" boolean, "user_id" uuid, "category" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_d16d186e94"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+)[0m
+  ↳ db/migrate/20180903233756_create_house_bills.rb:3
+  [1m[35m (1.5ms)[0m  [1m[35mCREATE  INDEX  "index_house_bills_on_user_id" ON "house_bills"  ("user_id")[0m
+  ↳ db/migrate/20180903233756_create_house_bills.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20180903233756"]]
+  ↳ bin/rails:9
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to AddHouseToHouseBills (20180903234713)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.6ms)[0m  [1m[35mALTER TABLE "house_bills" ADD "house_id" uuid[0m
+  ↳ db/migrate/20180903234713_add_house_to_house_bills.rb:3
+  [1m[35m (1.4ms)[0m  [1m[35mCREATE  INDEX  "index_house_bills_on_house_id" ON "house_bills"  ("house_id")[0m
+  ↳ db/migrate/20180903234713_add_house_to_house_bills.rb:3
+  [1m[35m (3.1ms)[0m  [1m[35mALTER TABLE "house_bills" ADD CONSTRAINT "fk_rails_35df57c224"
+FOREIGN KEY ("house_id")
+  REFERENCES "houses" ("id")
+[0m
+  ↳ db/migrate/20180903234713_add_house_to_house_bills.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20180903234713"]]
+  ↳ bin/rails:9
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to CreateBillPayments (20180904000102)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (5.4ms)[0m  [1m[35mCREATE TABLE "bill_payments" ("id" uuid DEFAULT gen_random_uuid() NOT NULL PRIMARY KEY, "user_id" uuid, "amount_due" decimal, "paid" boolean, "due_date" timestamp, "active" boolean, "house_bill_id" uuid, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_d344f1d768"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+, CONSTRAINT "fk_rails_e13a50a615"
+FOREIGN KEY ("house_bill_id")
+  REFERENCES "house_bills" ("id")
+)[0m
+  ↳ db/migrate/20180904000102_create_bill_payments.rb:3
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE  INDEX  "index_bill_payments_on_user_id" ON "bill_payments"  ("user_id")[0m
+  ↳ db/migrate/20180904000102_create_bill_payments.rb:3
+  [1m[35m (1.7ms)[0m  [1m[35mCREATE  INDEX  "index_bill_payments_on_house_bill_id" ON "bill_payments"  ("house_bill_id")[0m
+  ↳ db/migrate/20180904000102_create_bill_payments.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20180904000102"]]
+  ↳ bin/rails:9
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to CreateBillImages (20180904004102)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (6.1ms)[0m  [1m[35mCREATE TABLE "bill_images" ("id" uuid DEFAULT gen_random_uuid() NOT NULL PRIMARY KEY, "image" character varying, "active" boolean, "house_bill_id" uuid, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_b73d423e49"
+FOREIGN KEY ("house_bill_id")
+  REFERENCES "house_bills" ("id")
+)[0m
+  ↳ db/migrate/20180904004102_create_bill_images.rb:3
+  [1m[35m (1.9ms)[0m  [1m[35mCREATE  INDEX  "index_bill_images_on_house_bill_id" ON "bill_images"  ("house_bill_id")[0m
+  ↳ db/migrate/20180904004102_create_bill_images.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20180904004102"]]
+  ↳ bin/rails:9
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to CreateChores (20180904020017)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (10.4ms)[0m  [1m[35mCREATE TABLE "chores" ("id" uuid DEFAULT gen_random_uuid() NOT NULL PRIMARY KEY, "name" character varying, "outdoor" boolean, "active" boolean, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20180904020017_create_chores.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20180904020017"]]
+  ↳ bin/rails:9
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to CreateUserHouseChores (20180904021704)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (8.1ms)[0m  [1m[35mCREATE TABLE "user_house_chores" ("id" uuid DEFAULT gen_random_uuid() NOT NULL PRIMARY KEY, "house_id" uuid, "user_id" uuid, "chore_id" uuid, "day_of_week" character varying, "frequency" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_bddc06a876"
+FOREIGN KEY ("house_id")
+  REFERENCES "houses" ("id")
+, CONSTRAINT "fk_rails_bba0d03996"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+, CONSTRAINT "fk_rails_900f97328e"
+FOREIGN KEY ("chore_id")
+  REFERENCES "chores" ("id")
+)[0m
+  ↳ db/migrate/20180904021704_create_user_house_chores.rb:3
+  [1m[35m (1.4ms)[0m  [1m[35mCREATE  INDEX  "index_user_house_chores_on_house_id" ON "user_house_chores"  ("house_id")[0m
+  ↳ db/migrate/20180904021704_create_user_house_chores.rb:3
+  [1m[35m (1.4ms)[0m  [1m[35mCREATE  INDEX  "index_user_house_chores_on_user_id" ON "user_house_chores"  ("user_id")[0m
+  ↳ db/migrate/20180904021704_create_user_house_chores.rb:3
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE  INDEX  "index_user_house_chores_on_chore_id" ON "user_house_chores"  ("chore_id")[0m
+  ↳ db/migrate/20180904021704_create_user_house_chores.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20180904021704"]]
+  ↳ bin/rails:9
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to AddActiveToUserHouseChores (20180904022730)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.6ms)[0m  [1m[35mALTER TABLE "user_house_chores" ADD "active" boolean[0m
+  ↳ db/migrate/20180904022730_add_active_to_user_house_chores.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20180904022730"]]
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(3587339596244520480)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (5051.8ms)[0m  [1m[35mDROP DATABASE IF EXISTS "real-m8s-ror-full_development"[0m
+  ↳ bin/rails:9
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (138.9ms)[0m  [1m[35mDROP DATABASE IF EXISTS "real-m8s-ror-full_development"[0m
+  ↳ bin/rails:9
+  [1m[35m (129.9ms)[0m  [1m[35mDROP DATABASE IF EXISTS "real-m8s-ror-full_test"[0m
+  ↳ bin/rails:9
+  [1m[35m (319.8ms)[0m  [1m[35mCREATE DATABASE "real-m8s-ror-full_development" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
+  [1m[35m (324.6ms)[0m  [1m[35mCREATE DATABASE "real-m8s-ror-full_test" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
+  [1m[35mSQL (17.5ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "pgcrypto"[0m
+  ↳ db/schema.rb:16
+  [1m[35mSQL (0.3ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  ↳ db/schema.rb:17
+  [1m[35mSQL (3.8ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "uuid-ossp"[0m
+  ↳ db/schema.rb:18
+  [1m[35m (0.5ms)[0m  [1m[35mDROP TABLE IF EXISTS "bill_images" CASCADE[0m
+  ↳ db/schema.rb:20
+  [1m[35m (8.3ms)[0m  [1m[35mCREATE TABLE "bill_images" ("id" uuid DEFAULT gen_random_uuid() NOT NULL PRIMARY KEY, "image" character varying, "active" boolean, "house_bill_id" uuid, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:20
+  [1m[35m (1.8ms)[0m  [1m[35mCREATE  INDEX  "index_bill_images_on_house_bill_id" ON "bill_images"  ("house_bill_id")[0m
+  ↳ db/schema.rb:20
+  [1m[35m (0.6ms)[0m  [1m[35mDROP TABLE IF EXISTS "bill_payments" CASCADE[0m
+  ↳ db/schema.rb:29
+  [1m[35m (6.3ms)[0m  [1m[35mCREATE TABLE "bill_payments" ("id" uuid DEFAULT gen_random_uuid() NOT NULL PRIMARY KEY, "user_id" uuid, "amount_due" decimal, "paid" boolean, "due_date" timestamp, "active" boolean, "house_bill_id" uuid, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:29
+  [1m[35m (1.6ms)[0m  [1m[35mCREATE  INDEX  "index_bill_payments_on_house_bill_id" ON "bill_payments"  ("house_bill_id")[0m
+  ↳ db/schema.rb:29
+  [1m[35m (2.0ms)[0m  [1m[35mCREATE  INDEX  "index_bill_payments_on_user_id" ON "bill_payments"  ("user_id")[0m
+  ↳ db/schema.rb:29
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "chores" CASCADE[0m
+  ↳ db/schema.rb:42
+  [1m[35m (6.7ms)[0m  [1m[35mCREATE TABLE "chores" ("id" uuid DEFAULT gen_random_uuid() NOT NULL PRIMARY KEY, "name" character varying, "outdoor" boolean, "active" boolean, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:42
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "house_bills" CASCADE[0m
+  ↳ db/schema.rb:50
+  [1m[35m (4.3ms)[0m  [1m[35mCREATE TABLE "house_bills" ("id" uuid DEFAULT gen_random_uuid() NOT NULL PRIMARY KEY, "desc" character varying, "due_date" timestamp, "amount" decimal, "active" boolean, "user_id" uuid, "category" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "house_id" uuid)[0m
+  ↳ db/schema.rb:50
+  [1m[35m (1.8ms)[0m  [1m[35mCREATE  INDEX  "index_house_bills_on_house_id" ON "house_bills"  ("house_id")[0m
+  ↳ db/schema.rb:50
+  [1m[35m (2.4ms)[0m  [1m[35mCREATE  INDEX  "index_house_bills_on_user_id" ON "house_bills"  ("user_id")[0m
+  ↳ db/schema.rb:50
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "house_users" CASCADE[0m
+  ↳ db/schema.rb:64
+  [1m[35m (2.9ms)[0m  [1m[35mCREATE TABLE "house_users" ("id" uuid DEFAULT gen_random_uuid() NOT NULL PRIMARY KEY, "user_id" uuid, "is_admin" boolean, "active" boolean, "house_id" uuid, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:64
+  [1m[35m (1.9ms)[0m  [1m[35mCREATE  INDEX  "index_house_users_on_house_id" ON "house_users"  ("house_id")[0m
+  ↳ db/schema.rb:64
+  [1m[35m (2.4ms)[0m  [1m[35mCREATE  INDEX  "index_house_users_on_user_id" ON "house_users"  ("user_id")[0m
+  ↳ db/schema.rb:64
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "houses" CASCADE[0m
+  ↳ db/schema.rb:75
+  [1m[35m (6.5ms)[0m  [1m[35mCREATE TABLE "houses" ("id" uuid DEFAULT gen_random_uuid() NOT NULL PRIMARY KEY, "house_type" character varying, "profile_pic" character varying, "address" character varying, "state" character varying, "country" character varying, "rent_cycle" character varying, "rent_start_date" timestamp, "join_code" character varying, "code_expiry_date" timestamp, "bio" text, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "rent" decimal)[0m
+  ↳ db/schema.rb:75
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "mate_profiles" CASCADE[0m
+  ↳ db/schema.rb:91
+  [1m[35m (4.3ms)[0m  [1m[35mCREATE TABLE "mate_profiles" ("id" uuid DEFAULT gen_random_uuid() NOT NULL PRIMARY KEY, "marital_status" character varying, "job" character varying, "user_id" uuid, "is_smoker" boolean, "faith" character varying, "personality" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:91
+  [1m[35m (3.4ms)[0m  [1m[35mCREATE  INDEX  "index_mate_profiles_on_user_id" ON "mate_profiles"  ("user_id")[0m
+  ↳ db/schema.rb:91
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "mate_reviews" CASCADE[0m
+  ↳ db/schema.rb:103
+  [1m[35m (5.6ms)[0m  [1m[35mCREATE TABLE "mate_reviews" ("id" bigserial primary key, "rating" decimal, "comment" text, "active" boolean, "author_id" uuid, "user_id" uuid, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:103
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "user_house_chores" CASCADE[0m
+  ↳ db/schema.rb:113
+  [1m[35m (6.1ms)[0m  [1m[35mCREATE TABLE "user_house_chores" ("id" uuid DEFAULT gen_random_uuid() NOT NULL PRIMARY KEY, "house_id" uuid, "user_id" uuid, "chore_id" uuid, "day_of_week" character varying, "frequency" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "active" boolean)[0m
+  ↳ db/schema.rb:113
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE  INDEX  "index_user_house_chores_on_chore_id" ON "user_house_chores"  ("chore_id")[0m
+  ↳ db/schema.rb:113
+  [1m[35m (1.6ms)[0m  [1m[35mCREATE  INDEX  "index_user_house_chores_on_house_id" ON "user_house_chores"  ("house_id")[0m
+  ↳ db/schema.rb:113
+  [1m[35m (2.1ms)[0m  [1m[35mCREATE  INDEX  "index_user_house_chores_on_user_id" ON "user_house_chores"  ("user_id")[0m
+  ↳ db/schema.rb:113
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "user_pets" CASCADE[0m
+  ↳ db/schema.rb:127
+  [1m[35m (4.7ms)[0m  [1m[35mCREATE TABLE "user_pets" ("id" uuid DEFAULT gen_random_uuid() NOT NULL PRIMARY KEY, "name" character varying, "species" character varying, "size" character varying, "people_friendly" boolean, "child_friendly" boolean, "pet_friendly" boolean, "profile_pic" character varying, "active" boolean, "bio" text, "user_id" uuid, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:127
+  [1m[35m (1.5ms)[0m  [1m[35mCREATE  INDEX  "index_user_pets_on_user_id" ON "user_pets"  ("user_id")[0m
+  ↳ db/schema.rb:127
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "users" CASCADE[0m
+  ↳ db/schema.rb:143
+  [1m[35m (4.3ms)[0m  [1m[35mCREATE TABLE "users" ("id" uuid DEFAULT gen_random_uuid() NOT NULL PRIMARY KEY, "first_name" character varying, "last_name" character varying, "gender" character varying, "username" character varying, "dob" timestamp, "profile_pic" character varying, "active" boolean, "email" character varying, "password_digest" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:143
+  [1m[35m (3.4ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_username_and_email" ON "users"  ("username", "email")[0m
+  ↳ db/schema.rb:143
+  [1m[35m (4.0ms)[0m  [1m[35mALTER TABLE "bill_images" ADD CONSTRAINT "fk_rails_b73d423e49"
+FOREIGN KEY ("house_bill_id")
+  REFERENCES "house_bills" ("id")
+[0m
+  ↳ db/schema.rb:158
+  [1m[35m (3.2ms)[0m  [1m[35mALTER TABLE "bill_payments" ADD CONSTRAINT "fk_rails_e13a50a615"
+FOREIGN KEY ("house_bill_id")
+  REFERENCES "house_bills" ("id")
+[0m
+  ↳ db/schema.rb:159
+  [1m[35m (3.4ms)[0m  [1m[35mALTER TABLE "bill_payments" ADD CONSTRAINT "fk_rails_d344f1d768"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+[0m
+  ↳ db/schema.rb:160
+  [1m[35m (2.1ms)[0m  [1m[35mALTER TABLE "house_bills" ADD CONSTRAINT "fk_rails_35df57c224"
+FOREIGN KEY ("house_id")
+  REFERENCES "houses" ("id")
+[0m
+  ↳ db/schema.rb:161
+  [1m[35m (1.9ms)[0m  [1m[35mALTER TABLE "house_bills" ADD CONSTRAINT "fk_rails_d16d186e94"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+[0m
+  ↳ db/schema.rb:162
+  [1m[35m (2.2ms)[0m  [1m[35mALTER TABLE "house_users" ADD CONSTRAINT "fk_rails_840af39827"
+FOREIGN KEY ("house_id")
+  REFERENCES "houses" ("id")
+[0m
+  ↳ db/schema.rb:163
+  [1m[35m (2.1ms)[0m  [1m[35mALTER TABLE "house_users" ADD CONSTRAINT "fk_rails_9023272bee"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+[0m
+  ↳ db/schema.rb:164
+  [1m[35m (2.3ms)[0m  [1m[35mALTER TABLE "mate_profiles" ADD CONSTRAINT "fk_rails_2b9e81f1eb"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+[0m
+  ↳ db/schema.rb:165
+  [1m[35m (2.5ms)[0m  [1m[35mALTER TABLE "user_house_chores" ADD CONSTRAINT "fk_rails_900f97328e"
+FOREIGN KEY ("chore_id")
+  REFERENCES "chores" ("id")
+[0m
+  ↳ db/schema.rb:166
+  [1m[35m (2.6ms)[0m  [1m[35mALTER TABLE "user_house_chores" ADD CONSTRAINT "fk_rails_bddc06a876"
+FOREIGN KEY ("house_id")
+  REFERENCES "houses" ("id")
+[0m
+  ↳ db/schema.rb:167
+  [1m[35m (2.1ms)[0m  [1m[35mALTER TABLE "user_house_chores" ADD CONSTRAINT "fk_rails_bba0d03996"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+[0m
+  ↳ db/schema.rb:168
+  [1m[35m (2.5ms)[0m  [1m[35mALTER TABLE "user_pets" ADD CONSTRAINT "fk_rails_79a75851e6"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+[0m
+  ↳ db/schema.rb:169
+  [1m[35m (5.6ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ db/schema.rb:13
+  [1m[35m (0.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20180904022730)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (0.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20180902102850),
+(20180902112012),
+(20180902112048),
+(20180902234930),
+(20180903043536),
+(20180903064117),
+(20180903100535),
+(20180903102216),
+(20180903104029),
+(20180903124700),
+(20180903233756),
+(20180903234713),
+(20180904000102),
+(20180904004102),
+(20180904020017),
+(20180904021704);
+
+[0m
+  ↳ db/schema.rb:13
+  [1m[35m (4.1ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ db/schema.rb:13
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Create (0.7ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2018-09-05 01:16:31.261838"], ["updated_at", "2018-09-05 01:16:31.261838"]]
+  ↳ db/schema.rb:13
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35mSQL (16.1ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "pgcrypto"[0m
+  ↳ db/schema.rb:16
+  [1m[35mSQL (0.2ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  ↳ db/schema.rb:17
+  [1m[35mSQL (3.8ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "uuid-ossp"[0m
+  ↳ db/schema.rb:18
+  [1m[35m (0.5ms)[0m  [1m[35mDROP TABLE IF EXISTS "bill_images" CASCADE[0m
+  ↳ db/schema.rb:20
+  [1m[35m (9.7ms)[0m  [1m[35mCREATE TABLE "bill_images" ("id" uuid DEFAULT gen_random_uuid() NOT NULL PRIMARY KEY, "image" character varying, "active" boolean, "house_bill_id" uuid, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:20
+  [1m[35m (2.5ms)[0m  [1m[35mCREATE  INDEX  "index_bill_images_on_house_bill_id" ON "bill_images"  ("house_bill_id")[0m
+  ↳ db/schema.rb:20
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "bill_payments" CASCADE[0m
+  ↳ db/schema.rb:29
+  [1m[35m (5.1ms)[0m  [1m[35mCREATE TABLE "bill_payments" ("id" uuid DEFAULT gen_random_uuid() NOT NULL PRIMARY KEY, "user_id" uuid, "amount_due" decimal, "paid" boolean, "due_date" timestamp, "active" boolean, "house_bill_id" uuid, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:29
+  [1m[35m (1.5ms)[0m  [1m[35mCREATE  INDEX  "index_bill_payments_on_house_bill_id" ON "bill_payments"  ("house_bill_id")[0m
+  ↳ db/schema.rb:29
+  [1m[35m (1.5ms)[0m  [1m[35mCREATE  INDEX  "index_bill_payments_on_user_id" ON "bill_payments"  ("user_id")[0m
+  ↳ db/schema.rb:29
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "chores" CASCADE[0m
+  ↳ db/schema.rb:42
+  [1m[35m (4.1ms)[0m  [1m[35mCREATE TABLE "chores" ("id" uuid DEFAULT gen_random_uuid() NOT NULL PRIMARY KEY, "name" character varying, "outdoor" boolean, "active" boolean, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:42
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "house_bills" CASCADE[0m
+  ↳ db/schema.rb:50
+  [1m[35m (5.6ms)[0m  [1m[35mCREATE TABLE "house_bills" ("id" uuid DEFAULT gen_random_uuid() NOT NULL PRIMARY KEY, "desc" character varying, "due_date" timestamp, "amount" decimal, "active" boolean, "user_id" uuid, "category" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "house_id" uuid)[0m
+  ↳ db/schema.rb:50
+  [1m[35m (2.1ms)[0m  [1m[35mCREATE  INDEX  "index_house_bills_on_house_id" ON "house_bills"  ("house_id")[0m
+  ↳ db/schema.rb:50
+  [1m[35m (1.8ms)[0m  [1m[35mCREATE  INDEX  "index_house_bills_on_user_id" ON "house_bills"  ("user_id")[0m
+  ↳ db/schema.rb:50
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "house_users" CASCADE[0m
+  ↳ db/schema.rb:64
+  [1m[35m (2.7ms)[0m  [1m[35mCREATE TABLE "house_users" ("id" uuid DEFAULT gen_random_uuid() NOT NULL PRIMARY KEY, "user_id" uuid, "is_admin" boolean, "active" boolean, "house_id" uuid, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:64
+  [1m[35m (1.5ms)[0m  [1m[35mCREATE  INDEX  "index_house_users_on_house_id" ON "house_users"  ("house_id")[0m
+  ↳ db/schema.rb:64
+  [1m[35m (1.5ms)[0m  [1m[35mCREATE  INDEX  "index_house_users_on_user_id" ON "house_users"  ("user_id")[0m
+  ↳ db/schema.rb:64
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "houses" CASCADE[0m
+  ↳ db/schema.rb:75
+  [1m[35m (4.5ms)[0m  [1m[35mCREATE TABLE "houses" ("id" uuid DEFAULT gen_random_uuid() NOT NULL PRIMARY KEY, "house_type" character varying, "profile_pic" character varying, "address" character varying, "state" character varying, "country" character varying, "rent_cycle" character varying, "rent_start_date" timestamp, "join_code" character varying, "code_expiry_date" timestamp, "bio" text, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "rent" decimal)[0m
+  ↳ db/schema.rb:75
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "mate_profiles" CASCADE[0m
+  ↳ db/schema.rb:91
+  [1m[35m (5.2ms)[0m  [1m[35mCREATE TABLE "mate_profiles" ("id" uuid DEFAULT gen_random_uuid() NOT NULL PRIMARY KEY, "marital_status" character varying, "job" character varying, "user_id" uuid, "is_smoker" boolean, "faith" character varying, "personality" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:91
+  [1m[35m (2.8ms)[0m  [1m[35mCREATE  INDEX  "index_mate_profiles_on_user_id" ON "mate_profiles"  ("user_id")[0m
+  ↳ db/schema.rb:91
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "mate_reviews" CASCADE[0m
+  ↳ db/schema.rb:103
+  [1m[35m (6.7ms)[0m  [1m[35mCREATE TABLE "mate_reviews" ("id" bigserial primary key, "rating" decimal, "comment" text, "active" boolean, "author_id" uuid, "user_id" uuid, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:103
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "user_house_chores" CASCADE[0m
+  ↳ db/schema.rb:113
+  [1m[35m (5.0ms)[0m  [1m[35mCREATE TABLE "user_house_chores" ("id" uuid DEFAULT gen_random_uuid() NOT NULL PRIMARY KEY, "house_id" uuid, "user_id" uuid, "chore_id" uuid, "day_of_week" character varying, "frequency" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "active" boolean)[0m
+  ↳ db/schema.rb:113
+  [1m[35m (1.5ms)[0m  [1m[35mCREATE  INDEX  "index_user_house_chores_on_chore_id" ON "user_house_chores"  ("chore_id")[0m
+  ↳ db/schema.rb:113
+  [1m[35m (1.5ms)[0m  [1m[35mCREATE  INDEX  "index_user_house_chores_on_house_id" ON "user_house_chores"  ("house_id")[0m
+  ↳ db/schema.rb:113
+  [1m[35m (1.6ms)[0m  [1m[35mCREATE  INDEX  "index_user_house_chores_on_user_id" ON "user_house_chores"  ("user_id")[0m
+  ↳ db/schema.rb:113
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "user_pets" CASCADE[0m
+  ↳ db/schema.rb:127
+  [1m[35m (6.2ms)[0m  [1m[35mCREATE TABLE "user_pets" ("id" uuid DEFAULT gen_random_uuid() NOT NULL PRIMARY KEY, "name" character varying, "species" character varying, "size" character varying, "people_friendly" boolean, "child_friendly" boolean, "pet_friendly" boolean, "profile_pic" character varying, "active" boolean, "bio" text, "user_id" uuid, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:127
+  [1m[35m (1.5ms)[0m  [1m[35mCREATE  INDEX  "index_user_pets_on_user_id" ON "user_pets"  ("user_id")[0m
+  ↳ db/schema.rb:127
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "users" CASCADE[0m
+  ↳ db/schema.rb:143
+  [1m[35m (4.5ms)[0m  [1m[35mCREATE TABLE "users" ("id" uuid DEFAULT gen_random_uuid() NOT NULL PRIMARY KEY, "first_name" character varying, "last_name" character varying, "gender" character varying, "username" character varying, "dob" timestamp, "profile_pic" character varying, "active" boolean, "email" character varying, "password_digest" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:143
+  [1m[35m (2.4ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_username_and_email" ON "users"  ("username", "email")[0m
+  ↳ db/schema.rb:143
+  [1m[35m (3.2ms)[0m  [1m[35mALTER TABLE "bill_images" ADD CONSTRAINT "fk_rails_b73d423e49"
+FOREIGN KEY ("house_bill_id")
+  REFERENCES "house_bills" ("id")
+[0m
+  ↳ db/schema.rb:158
+  [1m[35m (2.2ms)[0m  [1m[35mALTER TABLE "bill_payments" ADD CONSTRAINT "fk_rails_e13a50a615"
+FOREIGN KEY ("house_bill_id")
+  REFERENCES "house_bills" ("id")
+[0m
+  ↳ db/schema.rb:159
+  [1m[35m (2.4ms)[0m  [1m[35mALTER TABLE "bill_payments" ADD CONSTRAINT "fk_rails_d344f1d768"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+[0m
+  ↳ db/schema.rb:160
+  [1m[35m (3.1ms)[0m  [1m[35mALTER TABLE "house_bills" ADD CONSTRAINT "fk_rails_35df57c224"
+FOREIGN KEY ("house_id")
+  REFERENCES "houses" ("id")
+[0m
+  ↳ db/schema.rb:161
+  [1m[35m (2.8ms)[0m  [1m[35mALTER TABLE "house_bills" ADD CONSTRAINT "fk_rails_d16d186e94"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+[0m
+  ↳ db/schema.rb:162
+  [1m[35m (2.1ms)[0m  [1m[35mALTER TABLE "house_users" ADD CONSTRAINT "fk_rails_840af39827"
+FOREIGN KEY ("house_id")
+  REFERENCES "houses" ("id")
+[0m
+  ↳ db/schema.rb:163
+  [1m[35m (1.9ms)[0m  [1m[35mALTER TABLE "house_users" ADD CONSTRAINT "fk_rails_9023272bee"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+[0m
+  ↳ db/schema.rb:164
+  [1m[35m (2.2ms)[0m  [1m[35mALTER TABLE "mate_profiles" ADD CONSTRAINT "fk_rails_2b9e81f1eb"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+[0m
+  ↳ db/schema.rb:165
+  [1m[35m (3.7ms)[0m  [1m[35mALTER TABLE "user_house_chores" ADD CONSTRAINT "fk_rails_900f97328e"
+FOREIGN KEY ("chore_id")
+  REFERENCES "chores" ("id")
+[0m
+  ↳ db/schema.rb:166
+  [1m[35m (2.9ms)[0m  [1m[35mALTER TABLE "user_house_chores" ADD CONSTRAINT "fk_rails_bddc06a876"
+FOREIGN KEY ("house_id")
+  REFERENCES "houses" ("id")
+[0m
+  ↳ db/schema.rb:167
+  [1m[35m (2.0ms)[0m  [1m[35mALTER TABLE "user_house_chores" ADD CONSTRAINT "fk_rails_bba0d03996"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+[0m
+  ↳ db/schema.rb:168
+  [1m[35m (2.2ms)[0m  [1m[35mALTER TABLE "user_pets" ADD CONSTRAINT "fk_rails_79a75851e6"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+[0m
+  ↳ db/schema.rb:169
+  [1m[35m (3.9ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ db/schema.rb:13
+  [1m[35m (1.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20180904022730)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (1.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20180902102850),
+(20180902112012),
+(20180902112048),
+(20180902234930),
+(20180903043536),
+(20180903064117),
+(20180903100535),
+(20180903102216),
+(20180903104029),
+(20180903124700),
+(20180903233756),
+(20180903234713),
+(20180904000102),
+(20180904004102),
+(20180904020017),
+(20180904021704);
+
+[0m
+  ↳ db/schema.rb:13
+  [1m[35m (4.2ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ db/schema.rb:13
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Create (0.5ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2018-09-05 01:16:31.534982"], ["updated_at", "2018-09-05 01:16:31.534982"]]
+  ↳ db/schema.rb:13
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Update (0.7ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = $1, "updated_at" = $2 WHERE "ar_internal_metadata"."key" = $3[0m  [["value", "test"], ["updated_at", "2018-09-05 01:16:31.541034"], ["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[36mHouseUser Load (0.9ms)[0m  [1m[34mSELECT "house_users".* FROM "house_users"[0m
+  ↳ db/seeds.rb:10
+  [1m[36mMateProfile Load (0.7ms)[0m  [1m[34mSELECT "mate_profiles".* FROM "mate_profiles"[0m
+  ↳ db/seeds.rb:11
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:12
+  [1m[36mHouse Load (0.8ms)[0m  [1m[34mSELECT "houses".* FROM "houses"[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds/user.rb:69
+  [1m[36mUser Create (1.9ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "gender", "username", "dob", "active", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["first_name", "Erica"], ["last_name", "Murnane"], ["gender", "female"], ["username", "ricammm"], ["dob", "1990-03-07 00:00:00"], ["active", true], ["email", "facehead@email.com"], ["password_digest", "$2a$10$47.Ca6XHEMHqn9YkfLnscuNf2Ar4qAjBI7V.U4QI9LFlSEr63sQaa"], ["created_at", "2018-09-05 01:16:31.688815"], ["updated_at", "2018-09-05 01:16:31.688815"]]
+  ↳ db/seeds/user.rb:69
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds/user.rb:69
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds/user.rb:70
+  [1m[36mMateProfile Create (1.1ms)[0m  [1m[32mINSERT INTO "mate_profiles" ("user_id", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["user_id", "50ed0754-1b71-4f50-9a25-cf5a1347253e"], ["created_at", "2018-09-05 01:16:31.716949"], ["updated_at", "2018-09-05 01:16:31.716949"]]
+  ↳ db/seeds/user.rb:70
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds/user.rb:70
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds/user.rb:69
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "gender", "username", "dob", "active", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["first_name", "Dave"], ["last_name", "Jackson"], ["gender", "male"], ["username", "genocyyydal"], ["dob", "1950-06-14 00:00:00"], ["active", true], ["email", "son@email.com"], ["password_digest", "$2a$10$79c1i8kvLkkXgfC0wqeApOcRCvaf.3yhiQaC5TRgWD0Z85okdtvn2"], ["created_at", "2018-09-05 01:16:31.790583"], ["updated_at", "2018-09-05 01:16:31.790583"]]
+  ↳ db/seeds/user.rb:69
+  [1m[35m (4.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds/user.rb:69
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds/user.rb:70
+  [1m[36mMateProfile Create (0.5ms)[0m  [1m[32mINSERT INTO "mate_profiles" ("user_id", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["user_id", "f09a35f1-0928-476e-853d-54c15705ee43"], ["created_at", "2018-09-05 01:16:31.797813"], ["updated_at", "2018-09-05 01:16:31.797813"]]
+  ↳ db/seeds/user.rb:70
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds/user.rb:70
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds/user.rb:69
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "gender", "username", "dob", "active", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["first_name", "Amy"], ["last_name", "Bullard"], ["gender", "female"], ["username", "amy"], ["dob", "1989-04-19 00:00:00"], ["active", true], ["email", "amyb@email.com"], ["password_digest", "$2a$10$..GvQeDL8NMo/4RmbsDSgeNq4jPC4ouENwlkzXrRB9fhwOQslEARm"], ["created_at", "2018-09-05 01:16:31.867928"], ["updated_at", "2018-09-05 01:16:31.867928"]]
+  ↳ db/seeds/user.rb:69
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds/user.rb:69
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds/user.rb:70
+  [1m[36mMateProfile Create (0.5ms)[0m  [1m[32mINSERT INTO "mate_profiles" ("user_id", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["user_id", "78f6759c-dba4-4274-abb6-9afe2f560d56"], ["created_at", "2018-09-05 01:16:31.870878"], ["updated_at", "2018-09-05 01:16:31.870878"]]
+  ↳ db/seeds/user.rb:70
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds/user.rb:70
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds/user.rb:69
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "gender", "username", "dob", "active", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["first_name", "Paul"], ["last_name", "Attard"], ["gender", "male"], ["username", "paulipoo"], ["dob", "1990-06-17 00:00:00"], ["active", true], ["email", "dsd@email.com"], ["password_digest", "$2a$10$GDYTUACA86vKNY4.HxYcz.LkHyfqMOGA3TFkjbX4263lPHG9p5oi6"], ["created_at", "2018-09-05 01:16:31.940775"], ["updated_at", "2018-09-05 01:16:31.940775"]]
+  ↳ db/seeds/user.rb:69
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds/user.rb:69
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds/user.rb:70
+  [1m[36mMateProfile Create (0.6ms)[0m  [1m[32mINSERT INTO "mate_profiles" ("user_id", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["user_id", "20d81278-e4ec-4f0e-a285-c74c0c067bb0"], ["created_at", "2018-09-05 01:16:31.943987"], ["updated_at", "2018-09-05 01:16:31.943987"]]
+  ↳ db/seeds/user.rb:70
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds/user.rb:70
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds/user.rb:69
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "gender", "username", "dob", "active", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["first_name", "Sam"], ["last_name", "Ketel"], ["gender", "female"], ["username", "sammy"], ["dob", "1993-04-19 00:00:00"], ["active", true], ["email", "samk@email.com"], ["password_digest", "$2a$10$T9VXlX5k8yi6jq4kIfNTzuwB42LN54cqpCnqnfF1duJKzlbL8sjEO"], ["created_at", "2018-09-05 01:16:32.011684"], ["updated_at", "2018-09-05 01:16:32.011684"]]
+  ↳ db/seeds/user.rb:69
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds/user.rb:69
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds/user.rb:70
+  [1m[36mMateProfile Create (0.5ms)[0m  [1m[32mINSERT INTO "mate_profiles" ("user_id", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["user_id", "77a8b046-9fd1-40af-8d45-08d6c47bf16b"], ["created_at", "2018-09-05 01:16:32.014557"], ["updated_at", "2018-09-05 01:16:32.014557"]]
+  ↳ db/seeds/user.rb:70
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds/user.rb:70
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds/user.rb:69
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "gender", "username", "dob", "active", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["first_name", "Leah"], ["last_name", "Eramo"], ["gender", "female"], ["username", "leelee"], ["dob", "1991-03-13 00:00:00"], ["active", true], ["email", "sonofawesome@email.com"], ["password_digest", "$2a$10$aBuVQkiOrbFFHq6qIIFmHORxJ2NWN85sWdtNNmKgp6kla60tTpY2W"], ["created_at", "2018-09-05 01:16:32.086928"], ["updated_at", "2018-09-05 01:16:32.086928"]]
+  ↳ db/seeds/user.rb:69
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds/user.rb:69
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds/user.rb:70
+  [1m[36mMateProfile Create (0.5ms)[0m  [1m[32mINSERT INTO "mate_profiles" ("user_id", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["user_id", "4b7b3a13-fa00-4643-84cf-4daa62a5cd54"], ["created_at", "2018-09-05 01:16:32.091911"], ["updated_at", "2018-09-05 01:16:32.091911"]]
+  ↳ db/seeds/user.rb:70
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds/user.rb:70
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds/house.rb:29
+  [1m[36mHouse Create (0.6ms)[0m  [1m[32mINSERT INTO "houses" ("house_type", "address", "state", "country", "bio", "created_at", "updated_at", "rent") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["house_type", "House"], ["address", "13 Robb st Reservoir"], ["state", "VIC"], ["country", "AUS"], ["bio", "Our house, is a very fine house..."], ["created_at", "2018-09-05 01:16:32.109079"], ["updated_at", "2018-09-05 01:16:32.109079"], ["rent", "403.4"]]
+  ↳ db/seeds/house.rb:29
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds/house.rb:29
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds/house.rb:29
+  [1m[36mHouse Create (0.3ms)[0m  [1m[32mINSERT INTO "houses" ("house_type", "address", "state", "country", "bio", "created_at", "updated_at", "rent") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["house_type", "House"], ["address", "23 Hall Street Epping"], ["state", "VIC"], ["country", "AUS"], ["bio", "Our house, is a very fine house..."], ["created_at", "2018-09-05 01:16:32.112050"], ["updated_at", "2018-09-05 01:16:32.112050"], ["rent", "403.4"]]
+  ↳ db/seeds/house.rb:29
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds/house.rb:29
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds/house.rb:29
+  [1m[36mHouse Create (0.3ms)[0m  [1m[32mINSERT INTO "houses" ("house_type", "address", "state", "country", "bio", "created_at", "updated_at", "rent") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["house_type", "Apartment"], ["address", "4/1 Lambeth Pace St Kilda"], ["state", "VIC"], ["country", "AUS"], ["bio", "Our house, is a very fine house..."], ["created_at", "2018-09-05 01:16:32.114569"], ["updated_at", "2018-09-05 01:16:32.114569"], ["rent", "403.4"]]
+  ↳ db/seeds/house.rb:29
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds/house.rb:29
+  [1m[36mHouse Load (0.4ms)[0m  [1m[34mSELECT  "houses".* FROM "houses" WHERE "houses"."address" = $1 ORDER BY "houses"."id" ASC LIMIT $2[0m  [["address", "23 Hall Street Epping"], ["LIMIT", 1]]
+  ↳ db/seeds/house_user.rb:3
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."last_name" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["last_name", "Ketel"], ["LIMIT", 1]]
+  ↳ db/seeds/house_user.rb:4
+  [1m[36mHouse Load (0.3ms)[0m  [1m[34mSELECT  "houses".* FROM "houses" WHERE "houses"."address" = $1 ORDER BY "houses"."id" ASC LIMIT $2[0m  [["address", "23 Hall Street Epping"], ["LIMIT", 1]]
+  ↳ db/seeds/house_user.rb:9
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."last_name" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["last_name", "Attard"], ["LIMIT", 1]]
+  ↳ db/seeds/house_user.rb:10
+  [1m[36mHouse Load (0.3ms)[0m  [1m[34mSELECT  "houses".* FROM "houses" WHERE "houses"."address" = $1 ORDER BY "houses"."id" ASC LIMIT $2[0m  [["address", "13 Robb st Reservoir"], ["LIMIT", 1]]
+  ↳ db/seeds/house_user.rb:15
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."last_name" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["last_name", "Bullard"], ["LIMIT", 1]]
+  ↳ db/seeds/house_user.rb:16
+  [1m[36mHouse Load (0.3ms)[0m  [1m[34mSELECT  "houses".* FROM "houses" WHERE "houses"."address" = $1 ORDER BY "houses"."id" ASC LIMIT $2[0m  [["address", "13 Robb st Reservoir"], ["LIMIT", 1]]
+  ↳ db/seeds/house_user.rb:21
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."last_name" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["last_name", "Jackson"], ["LIMIT", 1]]
+  ↳ db/seeds/house_user.rb:22
+  [1m[36mHouse Load (0.3ms)[0m  [1m[34mSELECT  "houses".* FROM "houses" WHERE "houses"."address" = $1 ORDER BY "houses"."id" ASC LIMIT $2[0m  [["address", "13 Robb st Reservoir"], ["LIMIT", 1]]
+  ↳ db/seeds/house_user.rb:27
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."last_name" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["last_name", "Murnane"], ["LIMIT", 1]]
+  ↳ db/seeds/house_user.rb:28
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds/house_user.rb:36
+  [1m[36mHouseUser Create (1.1ms)[0m  [1m[32mINSERT INTO "house_users" ("user_id", "is_admin", "active", "house_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["user_id", "77a8b046-9fd1-40af-8d45-08d6c47bf16b"], ["is_admin", true], ["active", true], ["house_id", "84b63126-dd21-4a3a-8655-e603a24266e2"], ["created_at", "2018-09-05 01:16:32.138130"], ["updated_at", "2018-09-05 01:16:32.138130"]]
+  ↳ db/seeds/house_user.rb:36
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds/house_user.rb:36
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds/house_user.rb:36
+  [1m[36mHouseUser Create (0.7ms)[0m  [1m[32mINSERT INTO "house_users" ("user_id", "is_admin", "active", "house_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["user_id", "20d81278-e4ec-4f0e-a285-c74c0c067bb0"], ["is_admin", false], ["active", true], ["house_id", "84b63126-dd21-4a3a-8655-e603a24266e2"], ["created_at", "2018-09-05 01:16:32.142220"], ["updated_at", "2018-09-05 01:16:32.142220"]]
+  ↳ db/seeds/house_user.rb:36
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds/house_user.rb:36
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds/house_user.rb:36
+  [1m[36mHouseUser Create (0.6ms)[0m  [1m[32mINSERT INTO "house_users" ("user_id", "is_admin", "active", "house_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["user_id", "78f6759c-dba4-4274-abb6-9afe2f560d56"], ["is_admin", false], ["active", true], ["house_id", "2161a741-3b01-4fd9-b5f9-9a3a900568bd"], ["created_at", "2018-09-05 01:16:32.145016"], ["updated_at", "2018-09-05 01:16:32.145016"]]
+  ↳ db/seeds/house_user.rb:36
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds/house_user.rb:36
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds/house_user.rb:36
+  [1m[36mHouseUser Create (0.6ms)[0m  [1m[32mINSERT INTO "house_users" ("user_id", "is_admin", "active", "house_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["user_id", "f09a35f1-0928-476e-853d-54c15705ee43"], ["is_admin", false], ["active", false], ["house_id", "2161a741-3b01-4fd9-b5f9-9a3a900568bd"], ["created_at", "2018-09-05 01:16:32.147553"], ["updated_at", "2018-09-05 01:16:32.147553"]]
+  ↳ db/seeds/house_user.rb:36
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds/house_user.rb:36
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds/house_user.rb:36
+  [1m[36mHouseUser Create (0.6ms)[0m  [1m[32mINSERT INTO "house_users" ("user_id", "is_admin", "active", "house_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["user_id", "50ed0754-1b71-4f50-9a25-cf5a1347253e"], ["is_admin", false], ["active", true], ["house_id", "2161a741-3b01-4fd9-b5f9-9a3a900568bd"], ["created_at", "2018-09-05 01:16:32.150228"], ["updated_at", "2018-09-05 01:16:32.150228"]]
+  ↳ db/seeds/house_user.rb:36
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds/house_user.rb:36
