@@ -1,0 +1,24 @@
+<div>
+    <h2>Bills - history</h2>
+    <% house.house_bills.each do |bill| %>
+        <p>Description: <%= bill.desc %></p>
+        <p>Amount: <%= bill.amount %></p>
+        <p>Category: <%= bill.category %></p>
+        <p><%= link_to "edit", edit_house_bill_path(bill.id) %></p>
+        <p><%= link_to "show", house_bill_path(bill.id) %></p>
+        <div>
+            <ul>
+                <% bill.bill_payments.each do |payment| %>
+                    <li>
+                        <%= payment.user.first_name %>
+                        <% if payment.paid %>
+                            has paid
+                        <% else %>
+                            owes <%= payment.amount_due %>
+                        <% end %>
+                    </li>
+                <% end %>
+            </ul>
+        </div>
+    <% end %>
+</div>

@@ -1,0 +1,18 @@
+ <h2>Create Bill</h2>
+
+ <%= form_tag "/house_bills", method: "post", :authenticity_token => true do %>
+        <label for="house_bill[desc]">Description</label>
+        <input type="text" name="house_bill[desc]">
+        <label for="house_bill[amount]">Amount Due</label>
+        <input type="text" name="house_bill[amount]" >
+        <label for="house_bill[category]">Category</label>
+        <input type="text" name="house_bill[category]">
+        <label for="house_bill[due_date]">Due Date</label>
+        <input type="date" name="house_bill[due_date]">
+        <input type="hidden" name="house_bill[active]" value="true">
+        <input type="hidden" name="house_bill[user_id]" value="<%= current_user.id %>">
+        <input type="hidden" name="house_bill[house_id]" value="<%= current_user.houses.first.id %>">
+        <input type="hidden" name="house_bill[paid]" value="false">
+    <button>save the bill</button>
+        
+<% end %>

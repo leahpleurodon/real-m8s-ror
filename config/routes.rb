@@ -20,5 +20,6 @@ Rails.application.routes.draw do
   post '/join_house', to: 'house_users#join_house'
   post '/leave_house', to: 'house_users#leave_house'
   
+  
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

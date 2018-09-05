@@ -1,0 +1,18 @@
+ <h2>Edit Bill</h2>
+    <% @house_bill.bill_images.each do |img| %>
+        <img src="<%= img.image.url(:thumb) %>" alt="bill image" >
+    <% end %>
+ <%= form_tag "/house_bills/#{@house_bill.id}", method: "patch", :authenticity_token => true, :multipart => true, :remote => true do %>
+        <label for="images">Upload Images</label>
+        <%= file_field_tag "images[]", :multiple => true %>
+        <label for="house_bill[desc]">Description</label>
+        <input type="text" name="house_bill[desc]" value="<%= @house_bill.desc %>">
+        <label for="house_bill[amount]">Amount Due</label>
+        <input type="text" name="house_bill[amount]" value="<%= @house_bill.amount %>">
+        <label for="house_bill[category]">Category</label>
+        <input type="text" name="house_bill[category]" value="<%= @house_bill.category %>">
+        <label for="house_bill[due_date]">Due Date</label>
+        <input type="date" name="house_bill[due_date]" value="<%= @house_bill.due_date.strftime("%Y-%m-%d") %>">
+    <button>save the bill</button>
+        
+<% end %>

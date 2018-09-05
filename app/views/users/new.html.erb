@@ -1,17 +1,37 @@
- 
- <%= form_tag "/users", method: "post", :authenticity_token => true do %>
-        <label for="first_name">First Name</label>
-        <input type="text" name="user[first_name]">
-        <label for="last_name">Last Name</label>
-        <input type="text" name="user[last_name]">
-        <label for="dob">Date of Birth</label>
-        <input type="date" name="user[dob]">
-        <label for="username">username (must be unique)</label>
-        <input type="text" name="user[username]">
-        <label for="email">email</label>
-        <input type="email" name="user[email]">
-        <label for="password">Password</label>
-        <input type="password" name="user[password]">
-        
-        <button>Sign Up</button>
-<% end %>
+
+
+<%= stylesheet_link_tag    'pages/login', media: 'only screen and (min-device-width: 500px)' %>
+<%= stylesheet_link_tag    'pages/login-mobile', media: 'only screen and (max-device-width: 500px)' %>
+<div>
+    <section class="logo">
+        <img src='/logo.svg' alt="real m8s logo" />
+    </section>
+
+    <main>
+
+        <div class="login-form">
+            <section class="ouath">
+                <p>Google</p>
+                <p>Facebook</p>
+            </section>
+            <h5><span>or sign up with email</span></h5>
+            <section class="email">
+                <%= form_tag "/users", method: "post", :authenticity_token => true do %>
+                     <label for="first_name">First Name</label>
+                    <input type="text" name="user[first_name]">
+                    <label for="last_name">Last Name</label>
+                    <input type="text" name="user[last_name]">
+                    <label for="dob">Date of Birth</label>
+                    <input type="date" name="user[dob]">
+                    <label for="username">username (must be unique)</label>
+                    <input type="text" name="user[username]">
+                    <label for="email">email</label>
+                    <input type="email" name="user[email]">
+                    <label for="password">Password</label>
+                    <input type="password" name="user[password]">
+                    <button>Sign Up</button>
+                <% end %>
+            </section>
+        </div>
+    </main>
+</div>

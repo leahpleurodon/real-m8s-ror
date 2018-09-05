@@ -19,9 +19,8 @@ class ApplicationController < ActionController::Base
         mates = HouseUser.where(house: bill.house, active: true)
         split_payment = bill.amount / mates.length
         mates.each do |mate|
-            byebug
             BillPayment.create(
-                user: mate,
+                user_id: mate.user_id,
                 amount_due: split_payment,
                 paid: false,
                 active: true,

@@ -30,7 +30,8 @@ class UsersController < ApplicationController
 
   end
   def update
-    render edit unless @user.update(user_params)
+    @user.update(user_params)
+    redirect_to '/my_profile'
   end
 
   def my_profile

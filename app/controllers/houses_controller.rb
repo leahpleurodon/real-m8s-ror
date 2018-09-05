@@ -31,6 +31,9 @@ class HousesController < ApplicationController
 
   def my_house
     @houses = current_user.houses
+    @house_bills = @houses.first.house_bills.where('"house_bills"."id" IN ' + 
+        '(SELECT "bill_payments"."house_bill_id" FROM "bill_payments" ' + 
+        'WHERE "bill_payments"."paid" = false AND "bill_payments"."active" = true)')
     render :show
   end
 

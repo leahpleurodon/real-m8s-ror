@@ -1,26 +1,36 @@
 class HouseBillsController < ApplicationController
     before_action :notloggedin!
-    before_action :set_house_bill, only: %i[show update destroy]
+    before_action :set_house_bill, only: %i[show update destroy edit]
     def show
-      render json: @house_bill
+      @house_bill
     end
-  
+    def new
+        @house_bill = HouseBill.new()
+    end
     def create
       @house_bill = HouseBill.new(house_bill_params)
       
       if @house_bill.save
         generate_payments!(@house_bill)
-        render json: @house_bill, status: :created, location: @house_bill
+        redirect '/my_house'
       else
-        render json: @house_bill.errors, status: :unprocessable_entity
+        render :new
       end
+    end
+
+    def edit
+
     end
   
     def update
+        
       if @house_bill.update(house_bill_params)
-        render json: @house_bill
+        params[:images].each do |img|
+            BillImage.create(active: true, house_bill_id: @house_bill.id, image: img )
+        end
+        redirect_to house_bill_path(@house_bill.id)
       else
-        render json: @house_bill.errors, status: :unprocessable_entity
+            render :edit
       end
     end
   

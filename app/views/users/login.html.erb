@@ -1,19 +1,33 @@
-    <div>
-        <h1>login</h1>
-    </div>
+<%= stylesheet_link_tag    'pages/login', media: 'only screen and (min-device-width: 500px)' %>
+<%= stylesheet_link_tag    'pages/login-mobile', media: 'only screen and (max-device-width: 500px)' %>
+<div>
+    <section class="logo">
+        <img src='/logo.svg' alt="real m8s logo" />
+    </section>
 
-    <div>
-        <%= @error %>
-    </div>
+    <main>
 
-    <div>
-        <form action="/session" method='post'>
-            <label class="form-label"for="">email </label>
-            <input class="input-box" type="text" name="email">
-            <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-            <label class="form-label" for="">password</label>
-            <input class="input-box" type="password" name="password">
-
-            <button class="submit-btn">login</button>
-        </form> 
-    </div>
+        <div class="login-form">
+            <section class="ouath">
+                <p>Google</p>
+                <p>Facebook</p>
+            </section>
+            <h5><span>or sign in with email</span></h5>
+            <section class="email">
+                <form action="/session" method='post'>
+                    <div class="text-input">
+                        <label class="form-label"for="">email </label>
+                        <input class="input-box" type="text" name="email">
+                    </div>
+                    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+                    <label class="form-label" for="">password</label>
+                    <input class="input-box" type="password" name="password">
+                    <div class="errors">
+                        <%= @error %>
+                    </div>
+                    <button class="submit-btn">login</button>
+                </form> 
+            </section>
+        </div>
+    </main>
+</div>

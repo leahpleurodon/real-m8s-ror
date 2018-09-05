@@ -1,0 +1,9 @@
+<div>
+    <h2>My Mates</h2>
+    <% house.users.each do |mate| %>
+        <% unless mate == current_user %>
+            <%= mate.first_name %>
+            <%= link_to "view", user_path(mate.id) %>
+        <% end %>
+    <% end %>
+</div>

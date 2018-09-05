@@ -1,0 +1,75 @@
+* {
+    box-sizing: border-box; 
+}
+html {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+}
+body {
+    margin: 0;
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#4464ad+0,4a90e2+40,4a90e2+60,4a90e2+72,4464ad+100 */
+    background: #4464ad;
+    background-image: linear-gradient(-45deg, #4464ad 0%, #4a90e2 40%, #4a90e2 60%, #4a90e2 72%, #4464ad 100%);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    font-family: "Raleway", sans-serif; 
+}
+main {
+    text-align: center;
+}
+.logo {
+    width: 15vw;
+    margin-bottom: 10vh; 
+}
+.logo > img {
+    width: 100%;
+    margin: 3vh; 
+}
+.login-form{
+    width: 70vw;
+    margin: auto;
+    background-color: #f1f7ed;
+    border-radius: 10px;
+    padding: 5vh 0;
+}
+input{
+    display: block;
+    margin: 0 auto 3vh auto;
+    height: 3.5vw;
+    width: 60%;
+}
+label{
+    display: block;
+    margin: 0 auto;
+    width: 60%;
+    text-align: left;
+}
+button{
+    border: none;
+    background-color: #e56399;
+    width: 20vw;
+    height: 4.5vw;
+    border-radius: 5px;
+    font-size: 3vw;
+    color: #f1f7ed;
+}
+.errors{
+    color:red;
+    margin:2vh auto;
+}
+h5 {
+    width: 100%; 
+    text-align: center; 
+    border-bottom: 1px solid #979797; 
+    line-height: 0.1em;
+    font-weight: 400;
+    color:#979797
+
+ } 
+ 
+ h5 span { 
+     background:#F3F7ED; 
+     padding:0 2vh; 
+ }

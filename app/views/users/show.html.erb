@@ -1,23 +1,42 @@
-
-
 <div>
-    <% if @user.profile_pic.present? %>  
-        <img src="<%= @user.profile_pic.url %>" alt="Good ol' <%= @user.first_name %>" >
-    <% else %>
-        [default pic]
-    <% end %>
+    <div class="change-avatar">
+        <% if @user.profile_pic.present? %>  
+            <img src="<%= @user.profile_pic.url(:thumb) %>" alt="Good ol' <%= @user.first_name %>" >
+        <% else %>
+            [default pic]
+        <% end %>
+        <% if @user == current_user %>
+            <%= form_tag "/users/#{@user.id}", method: "patch", :enctype =>"multipart/form-data" do %>
+                <h3>Change Avatar</h3>
+                <%= file_field_tag "user[profile_pic]", :class => "upload-btn" %>
+                <button class="submit-btn">Save my pic!</button>
+            <% end %>
+        <% end %>
+    </div>
 </div>
-<p><%= @user.first_name %></p>
-<p><%= @user.last_name %></p>
-<p><%= @user.email %></p>
-<p><%= @user.gender %></p>
-<p><%= @user.dob %></p>
+<div>
+    <h3>First Name</h3>
+    <p><%= @user.first_name %></p>
+    <h3>Last Name</h3>
+    <p><%= @user.last_name %></p>
+    <h3>Email</h3>
+    <p><%= @user.email %></p>
+    <h3>Gender</h3>
+    <p><%= @user.gender %></p>
+    <h3>Birthday</h3>
+    <p><%= @user.dob %></p>
+</div>
 
 <div>
+    <h3>Relationship Status</h3>
     <p><%= @user.mate_profile.marital_status %></p>
+    <h3>Occupation</h3>
     <p><%= @user.mate_profile.job %></p>
-    <p><%= @user.mate_profile.is_smoker %></p>
+    <h3>Do I smoke?</h3>
+    <p><%= @user.mate_profile.is_smoker ? "yes" : "no" %></p>
+    <h3>Faith</h3>
     <p><%= @user.mate_profile.faith %></p>
+    <h3>Personality</h3>
     <p><%= @user.mate_profile.personality %></p>
 
 </div>

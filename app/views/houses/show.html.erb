@@ -1,47 +1,20 @@
 <% unless @houses.count < 1 %>
     <% @houses.each do |house| %>
         <h2>My House</h2>
-        <div>
-            <p><%= house.house_type %></p>
-            <p><%= house.address %></p>
-            <p><%= house.state %></p>
-            bio:
-            <p><%= house.bio %></p>
-        </div>
-
-        <div>
-            <h3>invite a mate:</h3>
-            <p>Join Code: <%= house.join_code %></p>
-        </div>
-
-        <div>
-            <%= form_tag "/leave_house", method: "post", :authenticity_token => true do %>
-                <button>leave house</button>
-            <% end %>
-        </div>
-        
-
-        <h2>My Mates</h2>
-        <div>
-            <% house.users.each do |mate| %>
-                <% unless mate == current_user %>
-                    <%= mate.first_name %>
-                    <%= link_to "view", user_path(mate.id) %>
-                <% end %>
-            <% end %>
-        </div>
-    <%= link_to "add to roster", new_user_house_chore_path %>
-        <h2>House Chores</h2>
-        <% house.user_house_chores.each do |chore| %>
-            <p>Chore: <%= chore.chore.name %></p>
-            <p>Mate: <%= chore.user.first_name %></p>
-            <p>Day of Week: <%= chore.day_of_week %></p>
-        <% end %>
+        <%= render '/houses/partials/house_details', :house => house %>
+        <%= render '/houses/partials/invite_code', :house => house %>
+        <%= render '/houses/partials/leave_house', :house => house %>
+        <%= render '/houses/partials/my_mates', :house => house %>
+        <%= render '/houses/partials/chores', :house => house %>
+        <%= render '/houses/partials/bills_owing' %> 
+        <%= render '/houses/partials/bills_all', :house => house %> 
     <% end %>
 <% else %>
-    <h2>Hey mate!</h2>
-    <p>You're not part of a house... :(</p>
-    <p>join one or create one</p>
-    <p>or start at this puppy</p>
-    <p>[dog]</p>
+    <div>
+        <h2>Hey mate!</h2>
+        <p>You're not part of a house... :(</p>
+        <p>join one or create one</p>
+        <p>or start at this puppy</p>
+        <p>[dog]</p>
+    </div>
 <% end %>
