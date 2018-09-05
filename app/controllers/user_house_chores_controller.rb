@@ -1,6 +1,6 @@
 class UserHouseChoresController < ApplicationController
     before_action :set_user_house_chore, only: %i[show update destroy]
-    before_action :authorize!
+    
     def show
       render json: @user_house_chore
     end

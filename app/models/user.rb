@@ -7,6 +7,7 @@ class User < ApplicationRecord
   has_many :house_bills
   has_many :house_users, -> { where active: true }
   has_many :houses, :through => :house_users
+
   has_many :received_reviews,
            class_name: 'MateReview',
            foreign_key: 'user_id'

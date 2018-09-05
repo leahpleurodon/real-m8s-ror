@@ -17,5 +17,8 @@ Rails.application.routes.draw do
   get '/my_profile', to: 'users#my_profile'
   get '/my_house', to: 'houses#my_house'
   get '/sign_up', to: 'users#new'
+  get '/join_house', to: 'houses#join'
+  post '/join_house', to: 'house_users#join_house'
+  
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

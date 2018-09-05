@@ -2,7 +2,6 @@
 
 class UsersController < ApplicationController
   before_action :set_user, only: %i[show update destroy]
-  before_action :authorize!, except: %i[create login new new_session]
 
   def show
     @user
@@ -51,7 +50,7 @@ class UsersController < ApplicationController
         redirect_to :my_profile
     else
       @error = "Wrong email/password combo"
-      render :login
+      render :login, :layout => false
     end
   end
 

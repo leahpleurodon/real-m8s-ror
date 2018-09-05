@@ -1,3 +1,12 @@
+
+
+<div>
+    <% if @user.profile_pic.present? %>  
+        <img src="<%= @user.profile_pic.url %>" alt="Good ol' <%= @user.first_name %>" >
+    <% else %>
+        [default pic]
+    <% end %>
+</div>
 <p><%= @user.first_name %></p>
 <p><%= @user.last_name %></p>
 <p><%= @user.email %></p>
@@ -14,12 +23,14 @@
 </div>
 
 <div>
-    <h1>review me</h1>
-     <%= form_tag "/mate_reviews", method: "post", :authenticity_token => true do %>
-        <input type="hidden" name="mate_review[user_id]" value="<%= @user.id %>">
-        <input type="number" name="mate_review[rating]">
-        <textarea name="mate_review[comment]"></textarea>
-        <button>post</button>
+    <% if shared_houses?(@user) && unreviewed?(@user) && @user != current_user %>
+        <h1>review me</h1>
+        <%= form_tag "/mate_reviews", method: "post", :authenticity_token => true do %>
+            <input type="hidden" name="mate_review[user_id]" value="<%= @user.id %>">
+            <input type="number" name="mate_review[rating]">
+            <textarea name="mate_review[comment]"></textarea>
+            <button>post</button>
+        <% end %>
     <% end %>
 
     <% @user.received_reviews.each do |review| %>

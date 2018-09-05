@@ -1,6 +1,5 @@
 class BillPaymentsController < ApplicationController
     before_action :set_bill_payment, only: %i[show update destroy]
-    before_action :authorize!
     def show
       render json: @bill_payment
     end

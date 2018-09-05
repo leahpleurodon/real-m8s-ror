@@ -1,18 +1,9 @@
 # frozen_string_literal: true
 
 class ApplicationController < ActionController::Base
+    include ApplicationHelper
 
-    def authenticated?
-        !!session[:user_id] ? true : false
-    end
-
-    def current_user
-        User.find(session[:user_id])
-    end
-
-    def authorize!
-        deny! unless authenticated?
-    end
+    
 
     def my_house?(house)
         HouseUser.where(user: current_user, house: house, active: true).empty? ? false : true
@@ -20,10 +11,6 @@ class ApplicationController < ActionController::Base
 
     def is_admin?(house)
         HouseUser.where(user: current_user, house: house, active: true, is_admin: true).empty? ? false : true
-    end
-
-    def deny!
-        redirect_to '/login'
     end
 
     def generate_payments!(bill)

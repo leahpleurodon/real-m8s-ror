@@ -1,6 +1,5 @@
 class HouseBillsController < ApplicationController
     before_action :set_house_bill, only: %i[show update destroy]
-    before_action :authorize!
     def show
       render json: @house_bill
     end

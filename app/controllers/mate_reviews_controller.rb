@@ -2,7 +2,6 @@
 
 class MateReviewsController < ApplicationController
   before_action :set_mate_review, only: %i[show update destroy]
-  before_action :authorize!
 
   def create
     if current_user.id == params[:user_id]

@@ -5,6 +5,7 @@ houses = [
         state: "VIC",
         country: "AUS",
         rent: 403.4,
+        join_code: "EEEEEEEE",
         bio: "Our house, is a very fine house..."
     },
     {
@@ -13,6 +14,7 @@ houses = [
         state: "VIC",
         country: "AUS",
         rent: 403.4,
+        join_code: "FFFFFFFF",
         bio: "Our house, is a very fine house..."
     },
     {
@@ -21,6 +23,7 @@ houses = [
         state: "VIC",
         country: "AUS",
         rent: 403.4,
+        join_code: "GGGGGGGG",
         bio: "Our house, is a very fine house..."
     }
 ]

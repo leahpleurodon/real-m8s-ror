@@ -2,7 +2,6 @@
 
 class MateProfilesController < ApplicationController
   before_action :set_mate_profile, only: %i[show update destroy edit]
-  before_action :authorize!
   def show
     render json: @mate_profile
   end

@@ -4712,3 +4712,1749 @@ Processing by HousesController#my_house as HTML
 Completed 200 OK in 44ms (Views: 40.0ms | ActiveRecord: 2.7ms)
 
 
+Started GET "/my_house" for 127.0.0.1 at 2018-09-05 14:29:18 +1000
+Processing by HousesController#my_house as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", "516af418-46a8-49d9-a66b-e522775616bc"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  Rendering houses/show.erb within layouts/application
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "houses" INNER JOIN "house_users" ON "houses"."id" = "house_users"."house_id" WHERE "house_users"."user_id" = $1 AND "house_users"."active" = $2[0m  [["user_id", "516af418-46a8-49d9-a66b-e522775616bc"], ["active", true]]
+  ↳ app/views/houses/show.erb:1
+  [1m[36mHouse Load (0.8ms)[0m  [1m[34mSELECT "houses".* FROM "houses" INNER JOIN "house_users" ON "houses"."id" = "house_users"."house_id" WHERE "house_users"."user_id" = $1 AND "house_users"."active" = $2[0m  [["user_id", "516af418-46a8-49d9-a66b-e522775616bc"], ["active", true]]
+  ↳ app/views/houses/show.erb:2
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "house_users" ON "users"."id" = "house_users"."user_id" WHERE "house_users"."house_id" = $1 AND "house_users"."active" = $2[0m  [["house_id", "e364ad21-01ec-4daa-a2d9-cdad61356544"], ["active", true]]
+  ↳ app/views/houses/show.erb:20
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", "516af418-46a8-49d9-a66b-e522775616bc"], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:8
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", "516af418-46a8-49d9-a66b-e522775616bc"], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:8
+  Rendered houses/show.erb within layouts/application (12.8ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", "516af418-46a8-49d9-a66b-e522775616bc"], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:8
+  Rendered layouts/partials/_login.html.erb (1.4ms)
+Completed 200 OK in 54ms (Views: 47.8ms | ActiveRecord: 3.9ms)
+
+
+Started GET "/my_house" for 127.0.0.1 at 2018-09-05 14:29:42 +1000
+Processing by HousesController#my_house as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", "516af418-46a8-49d9-a66b-e522775616bc"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  Rendering houses/show.erb within layouts/application
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "houses" INNER JOIN "house_users" ON "houses"."id" = "house_users"."house_id" WHERE "house_users"."user_id" = $1 AND "house_users"."active" = $2[0m  [["user_id", "516af418-46a8-49d9-a66b-e522775616bc"], ["active", true]]
+  ↳ app/views/houses/show.erb:1
+  [1m[36mHouse Load (0.9ms)[0m  [1m[34mSELECT "houses".* FROM "houses" INNER JOIN "house_users" ON "houses"."id" = "house_users"."house_id" WHERE "house_users"."user_id" = $1 AND "house_users"."active" = $2[0m  [["user_id", "516af418-46a8-49d9-a66b-e522775616bc"], ["active", true]]
+  ↳ app/views/houses/show.erb:2
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "house_users" ON "users"."id" = "house_users"."user_id" WHERE "house_users"."house_id" = $1 AND "house_users"."active" = $2[0m  [["house_id", "e364ad21-01ec-4daa-a2d9-cdad61356544"], ["active", true]]
+  ↳ app/views/houses/show.erb:20
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", "516af418-46a8-49d9-a66b-e522775616bc"], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:8
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", "516af418-46a8-49d9-a66b-e522775616bc"], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:8
+  Rendered houses/show.erb within layouts/application (9.7ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", "516af418-46a8-49d9-a66b-e522775616bc"], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:8
+  Rendered layouts/partials/_login.html.erb (2.2ms)
+Completed 200 OK in 46ms (Views: 41.0ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/my_house" for 127.0.0.1 at 2018-09-05 14:34:56 +1000
+Processing by HousesController#my_house as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", "516af418-46a8-49d9-a66b-e522775616bc"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  Rendering houses/show.html.erb within layouts/application
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "houses" INNER JOIN "house_users" ON "houses"."id" = "house_users"."house_id" WHERE "house_users"."user_id" = $1 AND "house_users"."active" = $2[0m  [["user_id", "516af418-46a8-49d9-a66b-e522775616bc"], ["active", true]]
+  ↳ app/views/houses/show.html.erb:1
+  [1m[36mHouse Load (0.8ms)[0m  [1m[34mSELECT "houses".* FROM "houses" INNER JOIN "house_users" ON "houses"."id" = "house_users"."house_id" WHERE "house_users"."user_id" = $1 AND "house_users"."active" = $2[0m  [["user_id", "516af418-46a8-49d9-a66b-e522775616bc"], ["active", true]]
+  ↳ app/views/houses/show.html.erb:2
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "house_users" ON "users"."id" = "house_users"."user_id" WHERE "house_users"."house_id" = $1 AND "house_users"."active" = $2[0m  [["house_id", "e364ad21-01ec-4daa-a2d9-cdad61356544"], ["active", true]]
+  ↳ app/views/houses/show.html.erb:20
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", "516af418-46a8-49d9-a66b-e522775616bc"], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:8
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", "516af418-46a8-49d9-a66b-e522775616bc"], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:8
+  Rendered houses/show.html.erb within layouts/application (41.8ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", "516af418-46a8-49d9-a66b-e522775616bc"], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:8
+  Rendered layouts/partials/_login.html.erb (1.7ms)
+Completed 200 OK in 117ms (Views: 58.7ms | ActiveRecord: 21.1ms)
+
+
+Started GET "/join_houe" for 127.0.0.1 at 2018-09-05 14:35:00 +1000
+  
+ActionController::RoutingError (No route matches [GET] "/join_houe"):
+  
+actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/join_house" for 127.0.0.1 at 2018-09-05 14:35:10 +1000
+  
+ActionController::RoutingError (No route matches [GET] "/join_house"):
+  
+actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/join_house" for 127.0.0.1 at 2018-09-05 14:35:32 +1000
+Processing by HousesController#join as HTML
+  Rendering houses/join.html.erb within layouts/application
+  Rendered houses/join.html.erb within layouts/application (0.6ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", "516af418-46a8-49d9-a66b-e522775616bc"], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:8
+  Rendered layouts/partials/_login.html.erb (29.4ms)
+Completed 200 OK in 56ms (Views: 44.6ms | ActiveRecord: 6.4ms)
+
+
+Started GET "/join_house" for 127.0.0.1 at 2018-09-05 14:36:04 +1000
+Processing by HousesController#join as HTML
+  Rendering houses/join.html.erb within layouts/application
+  Rendered houses/join.html.erb within layouts/application (0.8ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", "516af418-46a8-49d9-a66b-e522775616bc"], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:8
+  Rendered layouts/partials/_login.html.erb (2.8ms)
+Completed 200 OK in 38ms (Views: 32.0ms | ActiveRecord: 0.4ms)
+
+
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[36mHouseUser Load (0.7ms)[0m  [1m[34mSELECT "house_users".* FROM "house_users"[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:10
+  [1m[36mHouseUser Destroy (0.6ms)[0m  [1m[31mDELETE FROM "house_users" WHERE "house_users"."id" = $1[0m  [["id", "ef26928c-ce4d-4535-9aab-39554c758e7c"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:10
+  [1m[36mHouseUser Destroy (0.3ms)[0m  [1m[31mDELETE FROM "house_users" WHERE "house_users"."id" = $1[0m  [["id", "8fa93079-ef1f-452e-81cc-b2b300a97dac"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:10
+  [1m[36mHouseUser Destroy (0.3ms)[0m  [1m[31mDELETE FROM "house_users" WHERE "house_users"."id" = $1[0m  [["id", "08adfa86-2223-4520-97aa-f3018eb97ad7"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:10
+  [1m[36mHouseUser Destroy (0.3ms)[0m  [1m[31mDELETE FROM "house_users" WHERE "house_users"."id" = $1[0m  [["id", "23746cd7-a663-4943-804e-f3bfe9938c29"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:10
+  [1m[36mHouseUser Destroy (0.4ms)[0m  [1m[31mDELETE FROM "house_users" WHERE "house_users"."id" = $1[0m  [["id", "706ba482-c81e-4913-bc61-34e8e28449cc"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:10
+  [1m[36mMateProfile Load (0.7ms)[0m  [1m[34mSELECT "mate_profiles".* FROM "mate_profiles"[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mMateProfile Destroy (0.4ms)[0m  [1m[31mDELETE FROM "mate_profiles" WHERE "mate_profiles"."id" = $1[0m  [["id", "3e603080-0f12-459e-bc0d-43c97dccf969"]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mMateProfile Destroy (0.3ms)[0m  [1m[31mDELETE FROM "mate_profiles" WHERE "mate_profiles"."id" = $1[0m  [["id", "afe7cec0-9ee7-4ef4-8d94-09e914378058"]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mMateProfile Destroy (0.3ms)[0m  [1m[31mDELETE FROM "mate_profiles" WHERE "mate_profiles"."id" = $1[0m  [["id", "051b39f7-bd35-43e7-a424-4b69044f148d"]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mMateProfile Destroy (0.4ms)[0m  [1m[31mDELETE FROM "mate_profiles" WHERE "mate_profiles"."id" = $1[0m  [["id", "a583b6ef-6833-4186-9cfc-a73afda947f7"]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mMateProfile Destroy (0.3ms)[0m  [1m[31mDELETE FROM "mate_profiles" WHERE "mate_profiles"."id" = $1[0m  [["id", "e1a7846b-6843-4a20-ad71-f980d488e615"]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mMateProfile Destroy (0.3ms)[0m  [1m[31mDELETE FROM "mate_profiles" WHERE "mate_profiles"."id" = $1[0m  [["id", "4f50a535-2840-4f43-86bf-b4f4cbc92081"]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mMateProfile Destroy (0.2ms)[0m  [1m[31mDELETE FROM "mate_profiles" WHERE "mate_profiles"."id" = $1[0m  [["id", "b53f21ad-307a-47d9-b9bc-6749fd107359"]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mMateProfile Destroy (0.3ms)[0m  [1m[31mDELETE FROM "mate_profiles" WHERE "mate_profiles"."id" = $1[0m  [["id", "dbb4e002-60ca-4c08-9fcc-84aeba4aee33"]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:12
+  [1m[36mUser Destroy (5.0ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", "516af418-46a8-49d9-a66b-e522775616bc"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:12
+  [1m[36mUser Destroy (1.3ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", "051417e2-ac7a-4a89-85a7-485fa3127115"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:12
+  [1m[36mUser Destroy (1.4ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", "501b9bc0-aab1-461b-bf40-2e58cc7bf294"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:12
+  [1m[36mUser Destroy (1.4ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", "942e4369-4940-4924-9e4b-2b0f83442b44"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:12
+  [1m[36mUser Destroy (1.3ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", "6bc2453e-b621-4313-bacb-731fa3bc34f2"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:12
+  [1m[36mUser Destroy (1.2ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", "060b1fe1-394f-474d-af67-b6cc43b2e3e0"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:12
+  [1m[36mUser Destroy (0.6ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", "0c8cf979-907c-45be-a8a0-06abacd105c4"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:12
+  [1m[36mUser Destroy (0.5ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", "72877078-63f2-453a-a4f0-c624e04869cb"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:12
+  [1m[36mHouse Load (0.6ms)[0m  [1m[34mSELECT "houses".* FROM "houses"[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:13
+  [1m[36mHouse Destroy (1.4ms)[0m  [1m[31mDELETE FROM "houses" WHERE "houses"."id" = $1[0m  [["id", "e364ad21-01ec-4daa-a2d9-cdad61356544"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:13
+  [1m[36mHouse Destroy (0.8ms)[0m  [1m[31mDELETE FROM "houses" WHERE "houses"."id" = $1[0m  [["id", "aaab2f37-0aee-44f7-9121-8c013dfd69f1"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:13
+  [1m[36mHouse Destroy (0.8ms)[0m  [1m[31mDELETE FROM "houses" WHERE "houses"."id" = $1[0m  [["id", "7b768351-55fe-4011-90c0-e164d17af8aa"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds/user.rb:69
+  [1m[36mUser Create (17.6ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "gender", "username", "dob", "active", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["first_name", "Erica"], ["last_name", "Murnane"], ["gender", "female"], ["username", "ricammm"], ["dob", "1990-03-07 00:00:00"], ["active", true], ["email", "facehead@email.com"], ["password_digest", "$2a$10$wbeSdkhzSD3reOcpWwQlXeVwCc8ufycO5LUgEqh1qhidDcw9giP.m"], ["created_at", "2018-09-05 04:37:11.473949"], ["updated_at", "2018-09-05 04:37:11.473949"]]
+  ↳ db/seeds/user.rb:69
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds/user.rb:69
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds/user.rb:70
+  [1m[36mMateProfile Create (0.6ms)[0m  [1m[32mINSERT INTO "mate_profiles" ("user_id", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["user_id", "603e7e80-1354-4d5c-a832-23a24698758b"], ["created_at", "2018-09-05 04:37:11.501466"], ["updated_at", "2018-09-05 04:37:11.501466"]]
+  ↳ db/seeds/user.rb:70
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds/user.rb:70
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds/user.rb:69
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "gender", "username", "dob", "active", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["first_name", "Dave"], ["last_name", "Jackson"], ["gender", "male"], ["username", "genocyyydal"], ["dob", "1950-06-14 00:00:00"], ["active", true], ["email", "son@email.com"], ["password_digest", "$2a$10$iI.DeJQkeFKBV4/HqgoGZe5t//TyaFK6BxQWuXrCgCSxzCWuHDECm"], ["created_at", "2018-09-05 04:37:11.566317"], ["updated_at", "2018-09-05 04:37:11.566317"]]
+  ↳ db/seeds/user.rb:69
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds/user.rb:69
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds/user.rb:70
+  [1m[36mMateProfile Create (0.5ms)[0m  [1m[32mINSERT INTO "mate_profiles" ("user_id", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["user_id", "7f134147-7df7-4fed-81b6-252873a5c067"], ["created_at", "2018-09-05 04:37:11.569436"], ["updated_at", "2018-09-05 04:37:11.569436"]]
+  ↳ db/seeds/user.rb:70
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds/user.rb:70
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds/user.rb:69
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "gender", "username", "dob", "active", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["first_name", "Amy"], ["last_name", "Bullard"], ["gender", "female"], ["username", "amy"], ["dob", "1989-04-19 00:00:00"], ["active", true], ["email", "amyb@email.com"], ["password_digest", "$2a$10$bhmIHXJQQCds0K//77OS7erpTaesWy41rmu9dvjdfTloafuOy7ipa"], ["created_at", "2018-09-05 04:37:11.639140"], ["updated_at", "2018-09-05 04:37:11.639140"]]
+  ↳ db/seeds/user.rb:69
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds/user.rb:69
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds/user.rb:70
+  [1m[36mMateProfile Create (0.5ms)[0m  [1m[32mINSERT INTO "mate_profiles" ("user_id", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["user_id", "752077d3-f384-4d02-a836-52ded26d8c44"], ["created_at", "2018-09-05 04:37:11.642292"], ["updated_at", "2018-09-05 04:37:11.642292"]]
+  ↳ db/seeds/user.rb:70
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds/user.rb:70
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds/user.rb:69
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "gender", "username", "dob", "active", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["first_name", "Paul"], ["last_name", "Attard"], ["gender", "male"], ["username", "paulipoo"], ["dob", "1990-06-17 00:00:00"], ["active", true], ["email", "dsd@email.com"], ["password_digest", "$2a$10$tig7FchkJ5XA/4Ct//URqu1xA.h4hXhTQ2PIEAH7D6eYg7/DdTCDW"], ["created_at", "2018-09-05 04:37:11.709043"], ["updated_at", "2018-09-05 04:37:11.709043"]]
+  ↳ db/seeds/user.rb:69
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds/user.rb:69
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds/user.rb:70
+  [1m[36mMateProfile Create (0.6ms)[0m  [1m[32mINSERT INTO "mate_profiles" ("user_id", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["user_id", "9341b09a-f94f-45c7-bc3c-34958af32960"], ["created_at", "2018-09-05 04:37:11.712628"], ["updated_at", "2018-09-05 04:37:11.712628"]]
+  ↳ db/seeds/user.rb:70
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds/user.rb:70
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds/user.rb:69
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "gender", "username", "dob", "active", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["first_name", "Sam"], ["last_name", "Ketel"], ["gender", "female"], ["username", "sammy"], ["dob", "1993-04-19 00:00:00"], ["active", true], ["email", "samk@email.com"], ["password_digest", "$2a$10$VpWaCVvWFNn0Un64O7B5/eXT5zwXKFV5fHjvqRT9HULXLaJcqjGa6"], ["created_at", "2018-09-05 04:37:11.780954"], ["updated_at", "2018-09-05 04:37:11.780954"]]
+  ↳ db/seeds/user.rb:69
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds/user.rb:69
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds/user.rb:70
+  [1m[36mMateProfile Create (0.5ms)[0m  [1m[32mINSERT INTO "mate_profiles" ("user_id", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["user_id", "437a0d3e-6379-4c87-bf63-1533bdb5e33f"], ["created_at", "2018-09-05 04:37:11.784122"], ["updated_at", "2018-09-05 04:37:11.784122"]]
+  ↳ db/seeds/user.rb:70
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds/user.rb:70
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds/user.rb:69
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "gender", "username", "dob", "active", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["first_name", "Leah"], ["last_name", "Eramo"], ["gender", "female"], ["username", "leelee"], ["dob", "1991-03-13 00:00:00"], ["active", true], ["email", "sonofawesome@email.com"], ["password_digest", "$2a$10$4AcdLwfjxlYTQ7MwNO.SxOwugjNiIilUT1m.ulEzsOrDZPkvzHfnq"], ["created_at", "2018-09-05 04:37:11.848712"], ["updated_at", "2018-09-05 04:37:11.848712"]]
+  ↳ db/seeds/user.rb:69
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds/user.rb:69
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds/user.rb:70
+  [1m[36mMateProfile Create (0.4ms)[0m  [1m[32mINSERT INTO "mate_profiles" ("user_id", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["user_id", "adb77b2d-3cdf-4ed1-9be4-6946915fbb90"], ["created_at", "2018-09-05 04:37:11.851574"], ["updated_at", "2018-09-05 04:37:11.851574"]]
+  ↳ db/seeds/user.rb:70
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds/user.rb:70
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds/house.rb:32
+  [1m[36mHouse Create (0.4ms)[0m  [1m[32mINSERT INTO "houses" ("house_type", "address", "state", "country", "join_code", "bio", "created_at", "updated_at", "rent") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["house_type", "House"], ["address", "13 Robb st Reservoir"], ["state", "VIC"], ["country", "AUS"], ["join_code", "EEEEEEEE"], ["bio", "Our house, is a very fine house..."], ["created_at", "2018-09-05 04:37:11.856014"], ["updated_at", "2018-09-05 04:37:11.856014"], ["rent", "403.4"]]
+  ↳ db/seeds/house.rb:32
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds/house.rb:32
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds/house.rb:32
+  [1m[36mHouse Create (9.5ms)[0m  [1m[32mINSERT INTO "houses" ("house_type", "address", "state", "country", "join_code", "bio", "created_at", "updated_at", "rent") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["house_type", "House"], ["address", "23 Hall Street Epping"], ["state", "VIC"], ["country", "AUS"], ["join_code", "FFFFFFFF"], ["bio", "Our house, is a very fine house..."], ["created_at", "2018-09-05 04:37:11.858410"], ["updated_at", "2018-09-05 04:37:11.858410"], ["rent", "403.4"]]
+  ↳ db/seeds/house.rb:32
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds/house.rb:32
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds/house.rb:32
+  [1m[36mHouse Create (0.7ms)[0m  [1m[32mINSERT INTO "houses" ("house_type", "address", "state", "country", "join_code", "bio", "created_at", "updated_at", "rent") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["house_type", "Apartment"], ["address", "4/1 Lambeth Pace St Kilda"], ["state", "VIC"], ["country", "AUS"], ["join_code", "GGGGGGGG"], ["bio", "Our house, is a very fine house..."], ["created_at", "2018-09-05 04:37:11.870439"], ["updated_at", "2018-09-05 04:37:11.870439"], ["rent", "403.4"]]
+  ↳ db/seeds/house.rb:32
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds/house.rb:32
+  [1m[36mHouse Load (0.4ms)[0m  [1m[34mSELECT  "houses".* FROM "houses" WHERE "houses"."address" = $1 ORDER BY "houses"."id" ASC LIMIT $2[0m  [["address", "23 Hall Street Epping"], ["LIMIT", 1]]
+  ↳ db/seeds/house_user.rb:3
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."last_name" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["last_name", "Ketel"], ["LIMIT", 1]]
+  ↳ db/seeds/house_user.rb:4
+  [1m[36mHouse Load (0.4ms)[0m  [1m[34mSELECT  "houses".* FROM "houses" WHERE "houses"."address" = $1 ORDER BY "houses"."id" ASC LIMIT $2[0m  [["address", "23 Hall Street Epping"], ["LIMIT", 1]]
+  ↳ db/seeds/house_user.rb:9
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."last_name" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["last_name", "Attard"], ["LIMIT", 1]]
+  ↳ db/seeds/house_user.rb:10
+  [1m[36mHouse Load (0.4ms)[0m  [1m[34mSELECT  "houses".* FROM "houses" WHERE "houses"."address" = $1 ORDER BY "houses"."id" ASC LIMIT $2[0m  [["address", "13 Robb st Reservoir"], ["LIMIT", 1]]
+  ↳ db/seeds/house_user.rb:15
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."last_name" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["last_name", "Bullard"], ["LIMIT", 1]]
+  ↳ db/seeds/house_user.rb:16
+  [1m[36mHouse Load (0.3ms)[0m  [1m[34mSELECT  "houses".* FROM "houses" WHERE "houses"."address" = $1 ORDER BY "houses"."id" ASC LIMIT $2[0m  [["address", "13 Robb st Reservoir"], ["LIMIT", 1]]
+  ↳ db/seeds/house_user.rb:21
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."last_name" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["last_name", "Jackson"], ["LIMIT", 1]]
+  ↳ db/seeds/house_user.rb:22
+  [1m[36mHouse Load (0.3ms)[0m  [1m[34mSELECT  "houses".* FROM "houses" WHERE "houses"."address" = $1 ORDER BY "houses"."id" ASC LIMIT $2[0m  [["address", "13 Robb st Reservoir"], ["LIMIT", 1]]
+  ↳ db/seeds/house_user.rb:27
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."last_name" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["last_name", "Murnane"], ["LIMIT", 1]]
+  ↳ db/seeds/house_user.rb:28
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds/house_user.rb:36
+  [1m[36mHouseUser Create (0.8ms)[0m  [1m[32mINSERT INTO "house_users" ("user_id", "is_admin", "active", "house_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["user_id", "437a0d3e-6379-4c87-bf63-1533bdb5e33f"], ["is_admin", true], ["active", true], ["house_id", "855e0736-a962-4ea2-8d5e-db874076971b"], ["created_at", "2018-09-05 04:37:11.888443"], ["updated_at", "2018-09-05 04:37:11.888443"]]
+  ↳ db/seeds/house_user.rb:36
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds/house_user.rb:36
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds/house_user.rb:36
+  [1m[36mHouseUser Create (0.6ms)[0m  [1m[32mINSERT INTO "house_users" ("user_id", "is_admin", "active", "house_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["user_id", "9341b09a-f94f-45c7-bc3c-34958af32960"], ["is_admin", false], ["active", true], ["house_id", "855e0736-a962-4ea2-8d5e-db874076971b"], ["created_at", "2018-09-05 04:37:11.891312"], ["updated_at", "2018-09-05 04:37:11.891312"]]
+  ↳ db/seeds/house_user.rb:36
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds/house_user.rb:36
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds/house_user.rb:36
+  [1m[36mHouseUser Create (0.6ms)[0m  [1m[32mINSERT INTO "house_users" ("user_id", "is_admin", "active", "house_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["user_id", "752077d3-f384-4d02-a836-52ded26d8c44"], ["is_admin", false], ["active", true], ["house_id", "d09cdd17-f4b9-476e-84a3-2087c7a75a85"], ["created_at", "2018-09-05 04:37:11.893928"], ["updated_at", "2018-09-05 04:37:11.893928"]]
+  ↳ db/seeds/house_user.rb:36
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds/house_user.rb:36
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds/house_user.rb:36
+  [1m[36mHouseUser Create (1.0ms)[0m  [1m[32mINSERT INTO "house_users" ("user_id", "is_admin", "active", "house_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["user_id", "7f134147-7df7-4fed-81b6-252873a5c067"], ["is_admin", false], ["active", false], ["house_id", "d09cdd17-f4b9-476e-84a3-2087c7a75a85"], ["created_at", "2018-09-05 04:37:11.897052"], ["updated_at", "2018-09-05 04:37:11.897052"]]
+  ↳ db/seeds/house_user.rb:36
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds/house_user.rb:36
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds/house_user.rb:36
+  [1m[36mHouseUser Create (0.9ms)[0m  [1m[32mINSERT INTO "house_users" ("user_id", "is_admin", "active", "house_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["user_id", "603e7e80-1354-4d5c-a832-23a24698758b"], ["is_admin", false], ["active", true], ["house_id", "d09cdd17-f4b9-476e-84a3-2087c7a75a85"], ["created_at", "2018-09-05 04:37:11.901018"], ["updated_at", "2018-09-05 04:37:11.901018"]]
+  ↳ db/seeds/house_user.rb:36
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds/house_user.rb:36
+Started GET "/join_house" for 127.0.0.1 at 2018-09-05 14:37:18 +1000
+  [1m[35m (1.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/leah.eramo/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Processing by HousesController#join as HTML
+  Rendering houses/join.html.erb within layouts/application
+  Rendered houses/join.html.erb within layouts/application (2.7ms)
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", "516af418-46a8-49d9-a66b-e522775616bc"], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:8
+  Rendered layouts/partials/_login.html.erb (16.0ms)
+Completed 500 Internal Server Error in 291ms (ActiveRecord: 5.3ms)
+
+
+  
+ActionView::Template::Error (undefined method `first_name' for nil:NilClass):
+    1: <% if logged_in? %>
+    2:     <small>logged in as:</small>
+    3:     <p><%= current_user.first_name %> </p>
+    4:     <%= form_tag "/session", method: "delete", :authenticity_token => true do %>
+    5:         <button>logout</button>
+    6:     <% end %>
+  
+app/views/layouts/partials/_login.html.erb:3:in `_app_views_layouts_partials__login_html_erb__538394667615073550_70211727937960'
+app/views/layouts/application.html.erb:16:in `_app_views_layouts_application_html_erb___777867666572587350_70211696031260'
+Started GET "/join_house" for 127.0.0.1 at 2018-09-05 14:38:03 +1000
+Processing by HousesController#join as HTML
+  Rendering houses/join.html.erb within layouts/application
+  Rendered houses/join.html.erb within layouts/application (2.1ms)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", "516af418-46a8-49d9-a66b-e522775616bc"], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:8
+  Rendered layouts/partials/_login.html.erb (27.2ms)
+Completed 500 Internal Server Error in 73ms (ActiveRecord: 5.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `first_name' for nil:NilClass):
+    1: <% if logged_in? %>
+    2:     <small>logged in as:</small>
+    3:     <p><%= current_user.first_name %> </p>
+    4:     <%= form_tag "/session", method: "delete", :authenticity_token => true do %>
+    5:         <button>logout</button>
+    6:     <% end %>
+  
+app/views/layouts/partials/_login.html.erb:3:in `_app_views_layouts_partials__login_html_erb__538394667615073550_70211747207760'
+app/views/layouts/application.html.erb:16:in `_app_views_layouts_application_html_erb___777867666572587350_70211688408980'
+Started GET "/join_house" for 127.0.0.1 at 2018-09-05 14:39:30 +1000
+Processing by HousesController#join as HTML
+  Rendering houses/join.html.erb within layouts/application
+  Rendered houses/join.html.erb within layouts/application (0.8ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", "516af418-46a8-49d9-a66b-e522775616bc"], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:8
+  Rendered layouts/partials/_login.html.erb (20.4ms)
+Completed 500 Internal Server Error in 52ms (ActiveRecord: 3.5ms)
+
+
+  
+ActionView::Template::Error (undefined method `first_name' for nil:NilClass):
+    1: <% if logged_in? %>
+    2:     <small>logged in as:</small>
+    3:     <p><%= current_user.first_name %> </p>
+    4:     <%= form_tag "/session", method: "delete", :authenticity_token => true do %>
+    5:         <button>logout</button>
+    6:     <% end %>
+  
+app/views/layouts/partials/_login.html.erb:3:in `_app_views_layouts_partials__login_html_erb__538394667615073550_70211720776340'
+app/views/layouts/application.html.erb:16:in `_app_views_layouts_application_html_erb___777867666572587350_70211720886220'
+Started GET "/join_house" for 127.0.0.1 at 2018-09-05 14:39:58 +1000
+Processing by HousesController#join as HTML
+  Rendering houses/join.html.erb within layouts/application
+  Rendered houses/join.html.erb within layouts/application (0.9ms)
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", "516af418-46a8-49d9-a66b-e522775616bc"], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:8
+  Rendered layouts/partials/_login.html.erb (27.0ms)
+Completed 500 Internal Server Error in 63ms (ActiveRecord: 5.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `first_name' for nil:NilClass):
+    1: <% if logged_in? %>
+    2:     <small>logged in as:</small>
+    3:     <p><%= current_user.first_name %> </p>
+    4:     <%= form_tag "/session", method: "delete", :authenticity_token => true do %>
+    5:         <button>logout</button>
+    6:     <% end %>
+  
+app/views/layouts/partials/_login.html.erb:3:in `_app_views_layouts_partials__login_html_erb__538394667615073550_70211743173440'
+app/views/layouts/application.html.erb:16:in `_app_views_layouts_application_html_erb___777867666572587350_70211747402120'
+Started GET "/join_house" for 127.0.0.1 at 2018-09-05 14:40:16 +1000
+  
+SyntaxError (/Users/leah.eramo/wdi/projects/oi-m8/real-m8s-ror-full/app/controllers/houses_controller.rb:5: Invalid return in class/module body
+...redirect_to '/login' and return true! unless authenticated?
+...                         ^~~~~~):
+  
+app/controllers/houses_controller.rb:5: Invalid return in class/module body
+Started GET "/join_house" for 127.0.0.1 at 2018-09-05 14:40:36 +1000
+Processing by HousesController#join as HTML
+Redirected to http://localhost:3000/login
+Completed 500 Internal Server Error in 91ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `true!' for #<HousesController:0x00007fb6dd732e68>):
+  
+app/controllers/houses_controller.rb:5:in `block in <class:HousesController>'
+Started GET "/join_house" for 127.0.0.1 at 2018-09-05 14:40:44 +1000
+Processing by HousesController#join as HTML
+Redirected to http://localhost:3000/login
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+LocalJumpError (unexpected return):
+  
+app/controllers/houses_controller.rb:5:in `block in <class:HousesController>'
+Started GET "/join_house" for 127.0.0.1 at 2018-09-05 14:40:55 +1000
+Processing by HousesController#join as HTML
+Redirected to http://localhost:3000/login
+Filter chain halted as #<Proc:0x00007fb6e4080028@/Users/leah.eramo/wdi/projects/oi-m8/real-m8s-ror-full/app/controllers/houses_controller.rb:5> rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2018-09-05 14:40:55 +1000
+Processing by UsersController#login as HTML
+  Rendering users/login.html.erb
+  Rendered users/login.html.erb (1.2ms)
+Completed 200 OK in 6ms (Views: 5.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2018-09-05 14:41:12 +1000
+Processing by UsersController#login as HTML
+  Rendering users/login.html.erb
+  Rendered users/login.html.erb (0.9ms)
+Completed 200 OK in 4ms (Views: 4.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/session" for 127.0.0.1 at 2018-09-05 14:41:33 +1000
+Processing by UsersController#new_session as HTML
+  Parameters: {"email"=>"son@email.com", "authenticity_token"=>"AJ4B7+yBBMsT3Hw5j/J6gZODxhAiNwL4tgNVWShfXiWqoGBgclVpPMO3gKpVMw/8EKqs2jrFe/0MWCFeL+EbBg==", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "son@email.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:47
+Redirected to http://localhost:3000/my_profile
+Completed 302 Found in 154ms (ActiveRecord: 12.1ms)
+
+
+Started GET "/my_profile" for 127.0.0.1 at 2018-09-05 14:41:34 +1000
+Processing by UsersController#my_profile as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", "7f134147-7df7-4fed-81b6-252873a5c067"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mMateProfile Load (0.7ms)[0m  [1m[34mSELECT  "mate_profiles".* FROM "mate_profiles" WHERE "mate_profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", "7f134147-7df7-4fed-81b6-252873a5c067"], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:8
+  [1m[36mMateReview Load (0.6ms)[0m  [1m[34mSELECT "mate_reviews".* FROM "mate_reviews" WHERE "mate_reviews"."user_id" = $1[0m  [["user_id", "7f134147-7df7-4fed-81b6-252873a5c067"]]
+  ↳ app/views/users/show.html.erb:25
+  Rendered users/show.html.erb within layouts/application (39.3ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", "7f134147-7df7-4fed-81b6-252873a5c067"], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:8
+  Rendered layouts/partials/_login.html.erb (1.8ms)
+Completed 200 OK in 68ms (Views: 56.0ms | ActiveRecord: 9.7ms)
+
+
+Started GET "/my_house" for 127.0.0.1 at 2018-09-05 14:41:40 +1000
+  
+ActionController::RoutingError (undefined local variable or method `current_user' for HousesController:Class):
+  
+app/controllers/houses_controller.rb:5:in `<class:HousesController>'
+app/controllers/houses_controller.rb:3:in `<main>'
+Started GET "/my_house" for 127.0.0.1 at 2018-09-05 14:42:11 +1000
+  
+ActionController::RoutingError (undefined local variable or method `current_user' for HousesController:Class):
+  
+app/controllers/houses_controller.rb:5:in `<class:HousesController>'
+app/controllers/houses_controller.rb:3:in `<main>'
+Started GET "/my_house" for 127.0.0.1 at 2018-09-05 14:42:37 +1000
+Processing by HousesController#my_house as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", "7f134147-7df7-4fed-81b6-252873a5c067"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  Rendering houses/show.html.erb within layouts/application
+  [1m[35m (2.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "houses" INNER JOIN "house_users" ON "houses"."id" = "house_users"."house_id" WHERE "house_users"."user_id" = $1 AND "house_users"."active" = $2[0m  [["user_id", "7f134147-7df7-4fed-81b6-252873a5c067"], ["active", true]]
+  ↳ app/views/houses/show.html.erb:1
+  Rendered houses/show.html.erb within layouts/application (22.8ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", "7f134147-7df7-4fed-81b6-252873a5c067"], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:8
+  Rendered layouts/partials/_login.html.erb (2.1ms)
+Completed 200 OK in 105ms (Views: 40.1ms | ActiveRecord: 22.5ms)
+
+
+Started GET "/my_house" for 127.0.0.1 at 2018-09-05 14:44:13 +1000
+  
+ActionController::RoutingError (undefined local variable or method `current_user' for HousesController:Class):
+  
+app/controllers/houses_controller.rb:5:in `<class:HousesController>'
+app/controllers/houses_controller.rb:3:in `<main>'
+Started GET "/my_house" for 127.0.0.1 at 2018-09-05 14:44:25 +1000
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/leah.eramo/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  
+ActionController::RoutingError (undefined local variable or method `current_user' for HousesController:Class):
+  
+app/controllers/houses_controller.rb:5:in `<class:HousesController>'
+app/controllers/houses_controller.rb:3:in `<main>'
+Started GET "/my_house" for 127.0.0.1 at 2018-09-05 14:44:28 +1000
+  
+ActionController::RoutingError (undefined local variable or method `current_user' for HousesController:Class):
+  
+app/controllers/houses_controller.rb:5:in `<class:HousesController>'
+app/controllers/houses_controller.rb:3:in `<main>'
+Started GET "/my_house" for 127.0.0.1 at 2018-09-05 14:44:55 +1000
+  
+ActionController::RoutingError (undefined local variable or method `session' for HousesController:Class):
+  
+app/controllers/houses_controller.rb:5:in `<class:HousesController>'
+app/controllers/houses_controller.rb:3:in `<main>'
+Started GET "/my_house" for 127.0.0.1 at 2018-09-05 14:45:23 +1000
+Processing by HousesController#my_house as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", "7f134147-7df7-4fed-81b6-252873a5c067"], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:8
+  Rendering houses/show.html.erb within layouts/application
+  [1m[35m (2.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "houses" INNER JOIN "house_users" ON "houses"."id" = "house_users"."house_id" WHERE "house_users"."user_id" = $1 AND "house_users"."active" = $2[0m  [["user_id", "7f134147-7df7-4fed-81b6-252873a5c067"], ["active", true]]
+  ↳ app/views/houses/show.html.erb:1
+  Rendered houses/show.html.erb within layouts/application (21.6ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", "7f134147-7df7-4fed-81b6-252873a5c067"], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:8
+  Rendered layouts/partials/_login.html.erb (1.8ms)
+Completed 200 OK in 258ms (Views: 186.3ms | ActiveRecord: 24.1ms)
+
+
+Started GET "/my_house" for 127.0.0.1 at 2018-09-05 14:50:43 +1000
+Processing by HousesController#my_house as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", "7f134147-7df7-4fed-81b6-252873a5c067"], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:8
+  Rendering houses/show.html.erb within layouts/application
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "houses" INNER JOIN "house_users" ON "houses"."id" = "house_users"."house_id" WHERE "house_users"."user_id" = $1 AND "house_users"."active" = $2[0m  [["user_id", "7f134147-7df7-4fed-81b6-252873a5c067"], ["active", true]]
+  ↳ app/views/houses/show.html.erb:1
+  [1m[36mHouse Load (0.7ms)[0m  [1m[34mSELECT "houses".* FROM "houses" INNER JOIN "house_users" ON "houses"."id" = "house_users"."house_id" WHERE "house_users"."user_id" = $1 AND "house_users"."active" = $2[0m  [["user_id", "7f134147-7df7-4fed-81b6-252873a5c067"], ["active", true]]
+  ↳ app/views/houses/show.html.erb:2
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "house_users" ON "users"."id" = "house_users"."user_id" WHERE "house_users"."house_id" = $1 AND "house_users"."active" = $2[0m  [["house_id", "d09cdd17-f4b9-476e-84a3-2087c7a75a85"], ["active", true]]
+  ↳ app/views/houses/show.html.erb:20
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", "7f134147-7df7-4fed-81b6-252873a5c067"], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:8
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", "7f134147-7df7-4fed-81b6-252873a5c067"], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:8
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", "7f134147-7df7-4fed-81b6-252873a5c067"], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:8
+  Rendered houses/show.html.erb within layouts/application (61.0ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", "7f134147-7df7-4fed-81b6-252873a5c067"], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:8
+  Rendered layouts/partials/_login.html.erb (1.6ms)
+Completed 200 OK in 149ms (Views: 78.4ms | ActiveRecord: 26.8ms)
+
+
+Started GET "/join_house" for 127.0.0.1 at 2018-09-05 14:51:37 +1000
+Processing by HousesController#join as HTML
+  Rendering houses/join.html.erb within layouts/application
+  Rendered houses/join.html.erb within layouts/application (1.4ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", "7f134147-7df7-4fed-81b6-252873a5c067"], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:8
+  Rendered layouts/partials/_login.html.erb (2.2ms)
+Completed 200 OK in 39ms (Views: 33.9ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/house_users" for 127.0.0.1 at 2018-09-05 14:52:55 +1000
+  
+SyntaxError (/Users/leah.eramo/wdi/projects/oi-m8/real-m8s-ror-full/app/controllers/house_users_controller.rb:35: syntax error, unexpected tLABEL, expecting keyword_do or '{' or '('
+...ouse, user:current_user active:true)
+...                        ^~~~~~~
+/Users/leah.eramo/wdi/projects/oi-m8/real-m8s-ror-full/app/controllers/house_users_controller.rb:50: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/controllers/house_users_controller.rb:35: syntax error, unexpected tLABEL, expecting keyword_do or '{' or '('
+app/controllers/house_users_controller.rb:50: syntax error, unexpected end-of-input, expecting keyword_end
+Started GET "/join_house" for 127.0.0.1 at 2018-09-05 14:53:56 +1000
+Processing by HousesController#join as HTML
+  Rendering houses/join.html.erb within layouts/application
+  Rendered houses/join.html.erb within layouts/application (1.5ms)
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", "7f134147-7df7-4fed-81b6-252873a5c067"], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:8
+  Rendered layouts/partials/_login.html.erb (51.4ms)
+Completed 200 OK in 134ms (Views: 118.6ms | ActiveRecord: 9.5ms)
+
+
+Started POST "/join_house" for 127.0.0.1 at 2018-09-05 14:54:00 +1000
+Processing by HouseUsersController#join_house as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"5D4QhaRqA+pqhURebiwHcjF5LkMim3xRkpddVMc3pctOAHEKOr5uHbruuM207XIPslBEiTppBVQozClTwIng6A==", "join_code"=>"GGGGGGGG"}
+Completed 500 Internal Server Error in 93ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `authorize!' for #<HouseUsersController:0x00007fd4d5d3a548>):
+  
+activesupport (5.2.1) lib/active_support/callbacks.rb:426:in `block in make_lambda'
+activesupport (5.2.1) lib/active_support/callbacks.rb:198:in `block (2 levels) in halting'
+actionpack (5.2.1) lib/abstract_controller/callbacks.rb:34:in `block (2 levels) in <module:Callbacks>'
+activesupport (5.2.1) lib/active_support/callbacks.rb:199:in `block in halting'
+activesupport (5.2.1) lib/active_support/callbacks.rb:513:in `block in invoke_before'
+activesupport (5.2.1) lib/active_support/callbacks.rb:513:in `each'
+activesupport (5.2.1) lib/active_support/callbacks.rb:513:in `invoke_before'
+activesupport (5.2.1) lib/active_support/callbacks.rb:131:in `run_callbacks'
+actionpack (5.2.1) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (5.2.1) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (5.2.1) lib/action_controller/metal/instrumentation.rb:34:in `block in process_action'
+activesupport (5.2.1) lib/active_support/notifications.rb:168:in `block in instrument'
+activesupport (5.2.1) lib/active_support/notifications/instrumenter.rb:23:in `instrument'
+activesupport (5.2.1) lib/active_support/notifications.rb:168:in `instrument'
+actionpack (5.2.1) lib/action_controller/metal/instrumentation.rb:32:in `process_action'
+actionpack (5.2.1) lib/action_controller/metal/params_wrapper.rb:256:in `process_action'
+activerecord (5.2.1) lib/active_record/railties/controller_runtime.rb:24:in `process_action'
+actionpack (5.2.1) lib/abstract_controller/base.rb:134:in `process'
+actionview (5.2.1) lib/action_view/rendering.rb:32:in `process'
+actionpack (5.2.1) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.1) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.1) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.1) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.1) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.1) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.1) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.1) lib/action_dispatch/routing/route_set.rb:840:in `call'
+rack (2.0.5) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.0.5) lib/rack/etag.rb:25:in `call'
+rack (2.0.5) lib/rack/conditional_get.rb:38:in `call'
+rack (2.0.5) lib/rack/head.rb:12:in `call'
+actionpack (5.2.1) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.0.5) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.5) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+activerecord (5.2.1) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.1) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started POST "/__web_console/repl_sessions/fdd261832af348e96ba0cbfd5cd3ab29/trace" for 127.0.0.1 at 2018-09-05 14:55:01 +1000
+Started GET "/join_house" for 127.0.0.1 at 2018-09-05 14:55:04 +1000
+Processing by HousesController#join as HTML
+  Rendering houses/join.html.erb within layouts/application
+  Rendered houses/join.html.erb within layouts/application (1.7ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", "7f134147-7df7-4fed-81b6-252873a5c067"], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:8
+  Rendered layouts/partials/_login.html.erb (31.6ms)
+Completed 200 OK in 66ms (Views: 54.2ms | ActiveRecord: 8.1ms)
+
+
+Started POST "/join_house" for 127.0.0.1 at 2018-09-05 14:55:07 +1000
+Processing by HouseUsersController#join_house as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ADrmBqLCiNk722q2Y/lEUz9hpfv1OPvOfJxRAddg1VGqBIeJPBblLuuwliW5ODEuvEjPMe3KgsvGxyUG0N6Qcg==", "join_code"=>"GGGGGGGG"}
+Completed 500 Internal Server Error in 170ms (ActiveRecord: 5.6ms)
+
+
+  
+NameError (undefined local variable or method `user' for #<HouseUsersController:0x00007fd4d14a3c58>):
+  
+app/controllers/house_users_controller.rb:30:in `join_house'
+Started GET "/join_house" for 127.0.0.1 at 2018-09-05 14:55:35 +1000
+Processing by HousesController#join as HTML
+  Rendering houses/join.html.erb within layouts/application
+  Rendered houses/join.html.erb within layouts/application (2.0ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", "7f134147-7df7-4fed-81b6-252873a5c067"], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:8
+  Rendered layouts/partials/_login.html.erb (85.4ms)
+Completed 200 OK in 141ms (Views: 128.0ms | ActiveRecord: 9.4ms)
+
+
+Started POST "/join_house" for 127.0.0.1 at 2018-09-05 14:55:37 +1000
+Processing by HouseUsersController#join_house as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"/FfAz8xG15e/P2U1w8TfpcaWf2y98yMoJ+/sr66xv1pWaaFAUpK6YG9UmaYZBarYRb8VpqUBWi2dtJioqQ/6eQ==", "join_code"=>"GGGGGGGG"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", "7f134147-7df7-4fed-81b6-252873a5c067"], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:8
+  [1m[36mHouseUser Load (0.6ms)[0m  [1m[34mSELECT "house_users".* FROM "house_users" WHERE "house_users"."user_id" = $1[0m  [["user_id", "7f134147-7df7-4fed-81b6-252873a5c067"]]
+  ↳ app/controllers/house_users_controller.rb:30
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/house_users_controller.rb:32
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", "7f134147-7df7-4fed-81b6-252873a5c067"], ["LIMIT", 1]]
+  ↳ app/controllers/house_users_controller.rb:32
+  [1m[36mHouse Load (0.4ms)[0m  [1m[34mSELECT  "houses".* FROM "houses" WHERE "houses"."id" = $1 LIMIT $2[0m  [["id", "d09cdd17-f4b9-476e-84a3-2087c7a75a85"], ["LIMIT", 1]]
+  ↳ app/controllers/house_users_controller.rb:32
+  [1m[36mHouseUser Update (1.0ms)[0m  [1m[33mUPDATE "house_users" SET "active" = $1, "updated_at" = $2 WHERE "house_users"."id" = $3[0m  [["active", false], ["updated_at", "2018-09-05 04:55:37.778837"], ["id", "a63f776d-9615-493b-9a10-ac5dee372b92"]]
+  ↳ app/controllers/house_users_controller.rb:32
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/house_users_controller.rb:32
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", "7f134147-7df7-4fed-81b6-252873a5c067"], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:8
+  [1m[36mHouse Load (0.9ms)[0m  [1m[34mSELECT  "houses".* FROM "houses" WHERE "houses"."join_code" = $1 LIMIT $2[0m  [["join_code", "GGGGGGGG"], ["LIMIT", 11]]
+  ↳ app/controllers/house_users_controller.rb:34
+Completed 500 Internal Server Error in 88ms (ActiveRecord: 23.8ms)
+
+
+  
+ActiveRecord::AssociationTypeMismatch (House(#70276049418140) expected, got #<ActiveRecord::Relation [#<House id: "f311a1f6-1e1b-404b-895d-20f05972d699", house_type: "Apartment", profile_pic: nil, address: "4/1 Lambeth Pace St Kilda", state: "VIC", country: "AUS", rent_cycle: nil, rent_start_date: nil, join_code: "GGGGGGGG", code_expiry_date: nil, bio: "Our house, is a very fine house...", created_at: "2018-09-05 04:37:11", updated_at: "2018-09-05 04:37:11", rent: 0.4034e3>]> which is an instance of House::ActiveRecord_Relation(#70276049417120)):
+  
+app/controllers/house_users_controller.rb:34:in `join_house'
+Started GET "/join_house" for 127.0.0.1 at 2018-09-05 14:56:18 +1000
+Processing by HousesController#join as HTML
+  Rendering houses/join.html.erb within layouts/application
+  Rendered houses/join.html.erb within layouts/application (1.1ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", "7f134147-7df7-4fed-81b6-252873a5c067"], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:8
+  Rendered layouts/partials/_login.html.erb (50.9ms)
+Completed 200 OK in 110ms (Views: 88.4ms | ActiveRecord: 7.7ms)
+
+
+Started POST "/join_house" for 127.0.0.1 at 2018-09-05 14:56:29 +1000
+Processing by HouseUsersController#join_house as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"EPX3jQOEk2WFSMtasoBlURJJJPPP5YorZT3RkRXF5uK6y5YCnVD+klUjN8loQRAskWBOOdcX8y7fZqWWEnujwQ==", "join_code"=>"GGGGGGGG"}
+  [1m[36mHouse Load (1.7ms)[0m  [1m[34mSELECT  "houses".* FROM "houses" WHERE "houses"."join_code" = $1 ORDER BY "houses"."id" ASC LIMIT $2[0m  [["join_code", "GGGGGGGG"], ["LIMIT", 1]]
+  ↳ app/controllers/house_users_controller.rb:29
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", "7f134147-7df7-4fed-81b6-252873a5c067"], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:8
+  [1m[36mHouseUser Load (0.5ms)[0m  [1m[34mSELECT "house_users".* FROM "house_users" WHERE "house_users"."user_id" = $1[0m  [["user_id", "7f134147-7df7-4fed-81b6-252873a5c067"]]
+  ↳ app/controllers/house_users_controller.rb:30
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/house_users_controller.rb:32
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", "7f134147-7df7-4fed-81b6-252873a5c067"], ["LIMIT", 1]]
+  ↳ app/controllers/house_users_controller.rb:32
+  [1m[36mHouse Load (1.5ms)[0m  [1m[34mSELECT  "houses".* FROM "houses" WHERE "houses"."id" = $1 LIMIT $2[0m  [["id", "d09cdd17-f4b9-476e-84a3-2087c7a75a85"], ["LIMIT", 1]]
+  ↳ app/controllers/house_users_controller.rb:32
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/house_users_controller.rb:32
+  [1m[36mCACHE User Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", "7f134147-7df7-4fed-81b6-252873a5c067"], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:8
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/house_users_controller.rb:34
+  [1m[36mHouseUser Create (20.0ms)[0m  [1m[32mINSERT INTO "house_users" ("user_id", "active", "house_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", "7f134147-7df7-4fed-81b6-252873a5c067"], ["active", true], ["house_id", "f311a1f6-1e1b-404b-895d-20f05972d699"], ["created_at", "2018-09-05 04:56:29.668700"], ["updated_at", "2018-09-05 04:56:29.668700"]]
+  ↳ app/controllers/house_users_controller.rb:34
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/house_users_controller.rb:34
+No template found for HouseUsersController#join_house, rendering head :no_content
+Completed 204 No Content in 235ms (ActiveRecord: 50.0ms)
+
+
+Started GET "/my_house" for 127.0.0.1 at 2018-09-05 14:56:39 +1000
+Processing by HousesController#my_house as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", "7f134147-7df7-4fed-81b6-252873a5c067"], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:8
+  Rendering houses/show.html.erb within layouts/application
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "houses" INNER JOIN "house_users" ON "houses"."id" = "house_users"."house_id" WHERE "house_users"."user_id" = $1 AND "house_users"."active" = $2[0m  [["user_id", "7f134147-7df7-4fed-81b6-252873a5c067"], ["active", true]]
+  ↳ app/views/houses/show.html.erb:1
+  [1m[36mHouse Load (1.5ms)[0m  [1m[34mSELECT "houses".* FROM "houses" INNER JOIN "house_users" ON "houses"."id" = "house_users"."house_id" WHERE "house_users"."user_id" = $1 AND "house_users"."active" = $2[0m  [["user_id", "7f134147-7df7-4fed-81b6-252873a5c067"], ["active", true]]
+  ↳ app/views/houses/show.html.erb:2
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "house_users" ON "users"."id" = "house_users"."user_id" WHERE "house_users"."house_id" = $1 AND "house_users"."active" = $2[0m  [["house_id", "f311a1f6-1e1b-404b-895d-20f05972d699"], ["active", true]]
+  ↳ app/views/houses/show.html.erb:20
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", "7f134147-7df7-4fed-81b6-252873a5c067"], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:8
+  Rendered houses/show.html.erb within layouts/application (13.8ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", "7f134147-7df7-4fed-81b6-252873a5c067"], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:8
+  Rendered layouts/partials/_login.html.erb (3.0ms)
+Completed 200 OK in 54ms (Views: 45.3ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/join_house" for 127.0.0.1 at 2018-09-05 15:00:29 +1000
+Processing by HousesController#join as HTML
+  Rendering houses/join.html.erb within layouts/application
+  Rendered houses/join.html.erb within layouts/application (1.2ms)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", "7f134147-7df7-4fed-81b6-252873a5c067"], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:8
+  Rendered layouts/partials/_login.html.erb (50.8ms)
+Completed 200 OK in 93ms (Views: 77.9ms | ActiveRecord: 10.6ms)
+
+
+Started POST "/join_house" for 127.0.0.1 at 2018-09-05 15:00:41 +1000
+Processing by HouseUsersController#join_house as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Q1ui9qa5jfjon8So5KCTZvp69+qdA+kArUO8B0McUDzpZcN5OG3gDzj0ODs+YeYbeVOdIIXxkAUXGMgARKIVHw==", "join_code"=>"EEEEEEEE"}
+  [1m[36mHouse Load (0.5ms)[0m  [1m[34mSELECT  "houses".* FROM "houses" WHERE "houses"."join_code" = $1 ORDER BY "houses"."id" ASC LIMIT $2[0m  [["join_code", "EEEEEEEE"], ["LIMIT", 1]]
+  ↳ app/controllers/house_users_controller.rb:29
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", "7f134147-7df7-4fed-81b6-252873a5c067"], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:8
+  [1m[36mHouseUser Load (0.4ms)[0m  [1m[34mSELECT "house_users".* FROM "house_users" WHERE "house_users"."user_id" = $1[0m  [["user_id", "7f134147-7df7-4fed-81b6-252873a5c067"]]
+  ↳ app/controllers/house_users_controller.rb:30
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/house_users_controller.rb:32
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", "7f134147-7df7-4fed-81b6-252873a5c067"], ["LIMIT", 1]]
+  ↳ app/controllers/house_users_controller.rb:32
+  [1m[36mHouse Load (0.4ms)[0m  [1m[34mSELECT  "houses".* FROM "houses" WHERE "houses"."id" = $1 LIMIT $2[0m  [["id", "d09cdd17-f4b9-476e-84a3-2087c7a75a85"], ["LIMIT", 1]]
+  ↳ app/controllers/house_users_controller.rb:32
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/house_users_controller.rb:32
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/house_users_controller.rb:32
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", "7f134147-7df7-4fed-81b6-252873a5c067"], ["LIMIT", 1]]
+  ↳ app/controllers/house_users_controller.rb:32
+  [1m[36mHouse Load (0.5ms)[0m  [1m[34mSELECT  "houses".* FROM "houses" WHERE "houses"."id" = $1 LIMIT $2[0m  [["id", "f311a1f6-1e1b-404b-895d-20f05972d699"], ["LIMIT", 1]]
+  ↳ app/controllers/house_users_controller.rb:32
+  [1m[36mHouseUser Update (0.5ms)[0m  [1m[33mUPDATE "house_users" SET "active" = $1, "updated_at" = $2 WHERE "house_users"."id" = $3[0m  [["active", false], ["updated_at", "2018-09-05 05:00:41.152773"], ["id", "7e7624b5-9193-484b-8d90-031044536529"]]
+  ↳ app/controllers/house_users_controller.rb:32
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/house_users_controller.rb:32
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", "7f134147-7df7-4fed-81b6-252873a5c067"], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:8
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/house_users_controller.rb:36
+  [1m[36mHouseUser Create (0.7ms)[0m  [1m[32mINSERT INTO "house_users" ("user_id", "active", "house_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", "7f134147-7df7-4fed-81b6-252873a5c067"], ["active", true], ["house_id", "d09cdd17-f4b9-476e-84a3-2087c7a75a85"], ["created_at", "2018-09-05 05:00:41.157535"], ["updated_at", "2018-09-05 05:00:41.157535"]]
+  ↳ app/controllers/house_users_controller.rb:36
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/house_users_controller.rb:36
+Redirected to http://localhost:3000/my_house
+Completed 302 Found in 76ms (ActiveRecord: 18.9ms)
+
+
+Started GET "/my_house" for 127.0.0.1 at 2018-09-05 15:00:41 +1000
+Processing by HousesController#my_house as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", "7f134147-7df7-4fed-81b6-252873a5c067"], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:8
+  Rendering houses/show.html.erb within layouts/application
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "houses" INNER JOIN "house_users" ON "houses"."id" = "house_users"."house_id" WHERE "house_users"."user_id" = $1 AND "house_users"."active" = $2[0m  [["user_id", "7f134147-7df7-4fed-81b6-252873a5c067"], ["active", true]]
+  ↳ app/views/houses/show.html.erb:1
+  [1m[36mHouse Load (0.9ms)[0m  [1m[34mSELECT "houses".* FROM "houses" INNER JOIN "house_users" ON "houses"."id" = "house_users"."house_id" WHERE "house_users"."user_id" = $1 AND "house_users"."active" = $2[0m  [["user_id", "7f134147-7df7-4fed-81b6-252873a5c067"], ["active", true]]
+  ↳ app/views/houses/show.html.erb:2
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "house_users" ON "users"."id" = "house_users"."user_id" WHERE "house_users"."house_id" = $1 AND "house_users"."active" = $2[0m  [["house_id", "d09cdd17-f4b9-476e-84a3-2087c7a75a85"], ["active", true]]
+  ↳ app/views/houses/show.html.erb:20
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", "7f134147-7df7-4fed-81b6-252873a5c067"], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:8
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", "7f134147-7df7-4fed-81b6-252873a5c067"], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:8
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", "7f134147-7df7-4fed-81b6-252873a5c067"], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:8
+  Rendered houses/show.html.erb within layouts/application (11.3ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", "7f134147-7df7-4fed-81b6-252873a5c067"], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:8
+  Rendered layouts/partials/_login.html.erb (2.3ms)
+Completed 200 OK in 37ms (Views: 30.6ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/join_house" for 127.0.0.1 at 2018-09-05 15:01:00 +1000
+Processing by HousesController#join as HTML
+  Rendering houses/join.html.erb within layouts/application
+  Rendered houses/join.html.erb within layouts/application (1.4ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", "7f134147-7df7-4fed-81b6-252873a5c067"], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:8
+  Rendered layouts/partials/_login.html.erb (122.1ms)
+Completed 200 OK in 247ms (Views: 234.4ms | ActiveRecord: 9.0ms)
+
+
+Started POST "/join_house" for 127.0.0.1 at 2018-09-05 15:01:06 +1000
+Processing by HouseUsersController#join_house as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"3YSVHds1sNnKAajikHmFgfOF1bMz8EmYGe5e8vVlLN13uvSSReHdLhpqVHFKuPD8cKy/eSsCMJ2jtSr18ttp/g==", "join_code"=>"GGGGGGGG"}
+  [1m[36mHouse Load (0.7ms)[0m  [1m[34mSELECT  "houses".* FROM "houses" WHERE "houses"."join_code" = $1 ORDER BY "houses"."id" ASC LIMIT $2[0m  [["join_code", "GGGGGGGG"], ["LIMIT", 1]]
+  ↳ app/controllers/house_users_controller.rb:29
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", "7f134147-7df7-4fed-81b6-252873a5c067"], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:8
+  [1m[36mHouseUser Load (0.4ms)[0m  [1m[34mSELECT "house_users".* FROM "house_users" WHERE "house_users"."user_id" = $1[0m  [["user_id", "7f134147-7df7-4fed-81b6-252873a5c067"]]
+  ↳ app/controllers/house_users_controller.rb:30
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/house_users_controller.rb:32
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", "7f134147-7df7-4fed-81b6-252873a5c067"], ["LIMIT", 1]]
+  ↳ app/controllers/house_users_controller.rb:32
+  [1m[36mHouse Load (0.4ms)[0m  [1m[34mSELECT  "houses".* FROM "houses" WHERE "houses"."id" = $1 LIMIT $2[0m  [["id", "d09cdd17-f4b9-476e-84a3-2087c7a75a85"], ["LIMIT", 1]]
+  ↳ app/controllers/house_users_controller.rb:32
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/house_users_controller.rb:32
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/house_users_controller.rb:32
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", "7f134147-7df7-4fed-81b6-252873a5c067"], ["LIMIT", 1]]
+  ↳ app/controllers/house_users_controller.rb:32
+  [1m[36mHouse Load (0.4ms)[0m  [1m[34mSELECT  "houses".* FROM "houses" WHERE "houses"."id" = $1 LIMIT $2[0m  [["id", "f311a1f6-1e1b-404b-895d-20f05972d699"], ["LIMIT", 1]]
+  ↳ app/controllers/house_users_controller.rb:32
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/house_users_controller.rb:32
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/house_users_controller.rb:32
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", "7f134147-7df7-4fed-81b6-252873a5c067"], ["LIMIT", 1]]
+  ↳ app/controllers/house_users_controller.rb:32
+  [1m[36mCACHE House Load (0.0ms)[0m  [1m[34mSELECT  "houses".* FROM "houses" WHERE "houses"."id" = $1 LIMIT $2[0m  [["id", "d09cdd17-f4b9-476e-84a3-2087c7a75a85"], ["LIMIT", 1]]
+  ↳ app/controllers/house_users_controller.rb:32
+  [1m[36mHouseUser Update (0.5ms)[0m  [1m[33mUPDATE "house_users" SET "active" = $1, "updated_at" = $2 WHERE "house_users"."id" = $3[0m  [["active", false], ["updated_at", "2018-09-05 05:01:06.698190"], ["id", "ee543519-bd7c-4095-8347-cc2961aea318"]]
+  ↳ app/controllers/house_users_controller.rb:32
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/house_users_controller.rb:32
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", "7f134147-7df7-4fed-81b6-252873a5c067"], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:8
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/house_users_controller.rb:36
+  [1m[36mHouse Update (0.7ms)[0m  [1m[33mUPDATE "houses" SET "join_code" = $1, "updated_at" = $2 WHERE "houses"."id" = $3[0m  [["join_code", "964f8a5e"], ["updated_at", "2018-09-05 05:01:06.703840"], ["id", "f311a1f6-1e1b-404b-895d-20f05972d699"]]
+  ↳ app/controllers/house_users_controller.rb:36
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/house_users_controller.rb:36
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/house_users_controller.rb:37
+  [1m[36mHouseUser Create (0.8ms)[0m  [1m[32mINSERT INTO "house_users" ("user_id", "active", "house_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", "7f134147-7df7-4fed-81b6-252873a5c067"], ["active", true], ["house_id", "f311a1f6-1e1b-404b-895d-20f05972d699"], ["created_at", "2018-09-05 05:01:06.708408"], ["updated_at", "2018-09-05 05:01:06.708408"]]
+  ↳ app/controllers/house_users_controller.rb:37
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/house_users_controller.rb:37
+Redirected to http://localhost:3000/my_house
+Completed 302 Found in 82ms (ActiveRecord: 21.7ms)
+
+
+Started GET "/my_house" for 127.0.0.1 at 2018-09-05 15:01:06 +1000
+Processing by HousesController#my_house as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", "7f134147-7df7-4fed-81b6-252873a5c067"], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:8
+  Rendering houses/show.html.erb within layouts/application
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "houses" INNER JOIN "house_users" ON "houses"."id" = "house_users"."house_id" WHERE "house_users"."user_id" = $1 AND "house_users"."active" = $2[0m  [["user_id", "7f134147-7df7-4fed-81b6-252873a5c067"], ["active", true]]
+  ↳ app/views/houses/show.html.erb:1
+  [1m[36mHouse Load (0.9ms)[0m  [1m[34mSELECT "houses".* FROM "houses" INNER JOIN "house_users" ON "houses"."id" = "house_users"."house_id" WHERE "house_users"."user_id" = $1 AND "house_users"."active" = $2[0m  [["user_id", "7f134147-7df7-4fed-81b6-252873a5c067"], ["active", true]]
+  ↳ app/views/houses/show.html.erb:2
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "house_users" ON "users"."id" = "house_users"."user_id" WHERE "house_users"."house_id" = $1 AND "house_users"."active" = $2[0m  [["house_id", "f311a1f6-1e1b-404b-895d-20f05972d699"], ["active", true]]
+  ↳ app/views/houses/show.html.erb:20
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", "7f134147-7df7-4fed-81b6-252873a5c067"], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:8
+  Rendered houses/show.html.erb within layouts/application (12.4ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", "7f134147-7df7-4fed-81b6-252873a5c067"], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:8
+  Rendered layouts/partials/_login.html.erb (2.3ms)
+Completed 200 OK in 56ms (Views: 51.0ms | ActiveRecord: 3.1ms)
+
+
+Started DELETE "/session" for 127.0.0.1 at 2018-09-05 15:02:04 +1000
+Processing by UsersController#delete_session as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"6TpJcwvWQPiaSDl/zz6ojyEjxER2lzXbDELANEgOMMdDBCj8lQItD0ojxewV/93yogqujm5lTN62GbQzT7B15A=="}
+Redirected to http://localhost:3000/
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-09-05 15:02:04 +1000
+Processing by StaticPagesController#index as HTML
+  Rendering static_pages/index.html.erb
+  Rendered static_pages/index.html.erb (0.4ms)
+Completed 200 OK in 5ms (Views: 4.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2018-09-05 15:02:06 +1000
+Processing by UsersController#login as HTML
+  Rendering users/login.html.erb
+  Rendered users/login.html.erb (2.1ms)
+Completed 200 OK in 8ms (Views: 7.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/session" for 127.0.0.1 at 2018-09-05 15:02:22 +1000
+Processing by UsersController#new_session as HTML
+  Parameters: {"email"=>"sonofawesome.email.com", "authenticity_token"=>"nKQ9jn9cW64CQMSfa0bWSsKSN4bmgLauSDFi7dBjrAU2mlwB4Yg2WdIrOAyxh6M3QbtdTP5yz6vyahbq193pJg==", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "sonofawesome.email.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:46
+  Rendering users/login.html.erb within layouts/application
+  Rendered users/login.html.erb within layouts/application (1.6ms)
+  Rendered layouts/partials/_login.html.erb (1.3ms)
+Completed 200 OK in 72ms (Views: 62.7ms | ActiveRecord: 1.7ms)
+
+
+Started POST "/session" for 127.0.0.1 at 2018-09-05 15:02:45 +1000
+Processing by UsersController#new_session as HTML
+  Parameters: {"email"=>"sonofawesome@email.com", "authenticity_token"=>"DmunWNMIsxnvtWpKmdvAWEAKbvn2049Cd32IymcGvEakVcbXTdze7j/eltlDGrUlwyMEM+4h9kfNJvzNYLj5ZQ==", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "sonofawesome@email.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:46
+  Rendering users/login.html.erb within layouts/application
+  Rendered users/login.html.erb within layouts/application (0.4ms)
+  Rendered layouts/partials/_login.html.erb (0.8ms)
+Completed 200 OK in 123ms (Views: 43.3ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/session" for 127.0.0.1 at 2018-09-05 15:02:59 +1000
+Processing by UsersController#new_session as HTML
+  Parameters: {"email"=>"sonofawesome@email.com", "authenticity_token"=>"4KezNQr46iR1CrCjqYdGmyKSZlAMCiceDxjHhhfjec1KmdK6lCyH06VhTDBzRjPmobsMmhT4Xhu1Q7OBEF087g==", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "sonofawesome@email.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:46
+  Rendering users/login.html.erb within layouts/application
+  Rendered users/login.html.erb within layouts/application (0.4ms)
+  Rendered layouts/partials/_login.html.erb (1.2ms)
+Completed 200 OK in 100ms (Views: 19.0ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/session" for 127.0.0.1 at 2018-09-05 15:05:04 +1000
+Processing by UsersController#new_session as HTML
+  Parameters: {"email"=>"", "authenticity_token"=>"oLMx3CsASYjSAdb2jxpwHkqynSJ88As1auYXUk5xG6kKjVBTtdQkfwJqKmVV2wVjyZv36GQCcjDQvWNVSc9eig==", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", ""], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:46
+  Rendering users/login.html.erb
+  Rendered users/login.html.erb (0.5ms)
+Completed 200 OK in 26ms (Views: 3.0ms | ActiveRecord: 3.3ms)
+
+
+Started POST "/session" for 127.0.0.1 at 2018-09-05 15:05:20 +1000
+Processing by UsersController#new_session as HTML
+  Parameters: {"email"=>"sonofawesome@email.com", "authenticity_token"=>"IZ0u+0LHgyDr6Nw7VotbJKQOp8TZoUkMMh9ULAkqD9eLo0903BPu1zuDIKiMSi5ZJyfNDsFTMAmIRCArDpRK9A==", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "sonofawesome@email.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:46
+Redirected to http://localhost:3000/my_profile
+Completed 302 Found in 111ms (ActiveRecord: 12.1ms)
+
+
+Started GET "/my_profile" for 127.0.0.1 at 2018-09-05 15:05:20 +1000
+Processing by UsersController#my_profile as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", "adb77b2d-3cdf-4ed1-9be4-6946915fbb90"], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:8
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mMateProfile Load (1.1ms)[0m  [1m[34mSELECT  "mate_profiles".* FROM "mate_profiles" WHERE "mate_profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", "adb77b2d-3cdf-4ed1-9be4-6946915fbb90"], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:8
+  [1m[36mMateReview Load (0.6ms)[0m  [1m[34mSELECT "mate_reviews".* FROM "mate_reviews" WHERE "mate_reviews"."user_id" = $1[0m  [["user_id", "adb77b2d-3cdf-4ed1-9be4-6946915fbb90"]]
+  ↳ app/views/users/show.html.erb:25
+  Rendered users/show.html.erb within layouts/application (44.8ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", "adb77b2d-3cdf-4ed1-9be4-6946915fbb90"], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:8
+  Rendered layouts/partials/_login.html.erb (6.5ms)
+Completed 200 OK in 88ms (Views: 71.4ms | ActiveRecord: 14.1ms)
+
+
+Started GET "/my_house" for 127.0.0.1 at 2018-09-05 15:05:35 +1000
+Processing by HousesController#my_house as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", "adb77b2d-3cdf-4ed1-9be4-6946915fbb90"], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:8
+  Rendering houses/show.html.erb within layouts/application
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "houses" INNER JOIN "house_users" ON "houses"."id" = "house_users"."house_id" WHERE "house_users"."user_id" = $1 AND "house_users"."active" = $2[0m  [["user_id", "adb77b2d-3cdf-4ed1-9be4-6946915fbb90"], ["active", true]]
+  ↳ app/views/houses/show.html.erb:1
+  Rendered houses/show.html.erb within layouts/application (21.7ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", "adb77b2d-3cdf-4ed1-9be4-6946915fbb90"], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:8
+  Rendered layouts/partials/_login.html.erb (6.3ms)
+Completed 200 OK in 73ms (Views: 46.5ms | ActiveRecord: 12.7ms)
+
+
+Started GET "/join_house" for 127.0.0.1 at 2018-09-05 15:05:41 +1000
+Processing by HousesController#join as HTML
+  Rendering houses/join.html.erb within layouts/application
+  Rendered houses/join.html.erb within layouts/application (2.2ms)
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", "adb77b2d-3cdf-4ed1-9be4-6946915fbb90"], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:8
+  Rendered layouts/partials/_login.html.erb (5.3ms)
+Completed 200 OK in 72ms (Views: 65.3ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/join_house" for 127.0.0.1 at 2018-09-05 15:05:45 +1000
+Processing by HouseUsersController#join_house as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"3PksK3wPBxZKxHcErhGR/1Gov2SpQchcKzwxZtJKk9R2x02k4ttq4Zqvi5d00OSC0oHVrrGzsVmRZ0Vh1fTW9w==", "join_code"=>"964f8a5e"}
+  [1m[36mHouse Load (4.5ms)[0m  [1m[34mSELECT  "houses".* FROM "houses" WHERE "houses"."join_code" = $1 ORDER BY "houses"."id" ASC LIMIT $2[0m  [["join_code", "964f8a5e"], ["LIMIT", 1]]
+  ↳ app/controllers/house_users_controller.rb:29
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", "adb77b2d-3cdf-4ed1-9be4-6946915fbb90"], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:8
+  [1m[36mHouseUser Load (0.4ms)[0m  [1m[34mSELECT "house_users".* FROM "house_users" WHERE "house_users"."user_id" = $1[0m  [["user_id", "adb77b2d-3cdf-4ed1-9be4-6946915fbb90"]]
+  ↳ app/controllers/house_users_controller.rb:30
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", "adb77b2d-3cdf-4ed1-9be4-6946915fbb90"], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:8
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/house_users_controller.rb:36
+  [1m[36mHouse Update (0.5ms)[0m  [1m[33mUPDATE "houses" SET "join_code" = $1, "updated_at" = $2 WHERE "houses"."id" = $3[0m  [["join_code", "9c51b89f"], ["updated_at", "2018-09-05 05:05:45.218280"], ["id", "f311a1f6-1e1b-404b-895d-20f05972d699"]]
+  ↳ app/controllers/house_users_controller.rb:36
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/house_users_controller.rb:36
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/house_users_controller.rb:37
+  [1m[36mHouseUser Create (1.4ms)[0m  [1m[32mINSERT INTO "house_users" ("user_id", "active", "house_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", "adb77b2d-3cdf-4ed1-9be4-6946915fbb90"], ["active", true], ["house_id", "f311a1f6-1e1b-404b-895d-20f05972d699"], ["created_at", "2018-09-05 05:05:45.222746"], ["updated_at", "2018-09-05 05:05:45.222746"]]
+  ↳ app/controllers/house_users_controller.rb:37
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/house_users_controller.rb:37
+Redirected to http://localhost:3000/my_house
+Completed 302 Found in 60ms (ActiveRecord: 13.2ms)
+
+
+Started GET "/my_house" for 127.0.0.1 at 2018-09-05 15:05:45 +1000
+Processing by HousesController#my_house as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", "adb77b2d-3cdf-4ed1-9be4-6946915fbb90"], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:8
+  Rendering houses/show.html.erb within layouts/application
+  [1m[35m (5.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "houses" INNER JOIN "house_users" ON "houses"."id" = "house_users"."house_id" WHERE "house_users"."user_id" = $1 AND "house_users"."active" = $2[0m  [["user_id", "adb77b2d-3cdf-4ed1-9be4-6946915fbb90"], ["active", true]]
+  ↳ app/views/houses/show.html.erb:1
+  [1m[36mHouse Load (2.1ms)[0m  [1m[34mSELECT "houses".* FROM "houses" INNER JOIN "house_users" ON "houses"."id" = "house_users"."house_id" WHERE "house_users"."user_id" = $1 AND "house_users"."active" = $2[0m  [["user_id", "adb77b2d-3cdf-4ed1-9be4-6946915fbb90"], ["active", true]]
+  ↳ app/views/houses/show.html.erb:2
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "house_users" ON "users"."id" = "house_users"."user_id" WHERE "house_users"."house_id" = $1 AND "house_users"."active" = $2[0m  [["house_id", "f311a1f6-1e1b-404b-895d-20f05972d699"], ["active", true]]
+  ↳ app/views/houses/show.html.erb:20
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", "adb77b2d-3cdf-4ed1-9be4-6946915fbb90"], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:8
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", "adb77b2d-3cdf-4ed1-9be4-6946915fbb90"], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:8
+  Rendered houses/show.html.erb within layouts/application (24.6ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", "adb77b2d-3cdf-4ed1-9be4-6946915fbb90"], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:8
+  Rendered layouts/partials/_login.html.erb (2.2ms)
+Completed 200 OK in 59ms (Views: 48.0ms | ActiveRecord: 8.7ms)
+
+
+Started GET "/users/7f134147-7df7-4fed-81b6-252873a5c067" for 127.0.0.1 at 2018-09-05 15:05:52 +1000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"7f134147-7df7-4fed-81b6-252873a5c067"}
+  [1m[36mUser Load (4.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", "7f134147-7df7-4fed-81b6-252873a5c067"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:64
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mMateProfile Load (0.4ms)[0m  [1m[34mSELECT  "mate_profiles".* FROM "mate_profiles" WHERE "mate_profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", "7f134147-7df7-4fed-81b6-252873a5c067"], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:8
+  [1m[36mMateReview Load (11.6ms)[0m  [1m[34mSELECT "mate_reviews".* FROM "mate_reviews" WHERE "mate_reviews"."user_id" = $1[0m  [["user_id", "7f134147-7df7-4fed-81b6-252873a5c067"]]
+  ↳ app/views/users/show.html.erb:25
+  Rendered users/show.html.erb within layouts/application (16.7ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", "adb77b2d-3cdf-4ed1-9be4-6946915fbb90"], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:8
+  Rendered layouts/partials/_login.html.erb (2.1ms)
+Completed 200 OK in 70ms (Views: 42.0ms | ActiveRecord: 16.8ms)
+
+
+Started GET "/users/7f134147-7df7-4fed-81b6-252873a5c067" for 127.0.0.1 at 2018-09-05 15:08:53 +1000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"7f134147-7df7-4fed-81b6-252873a5c067"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", "7f134147-7df7-4fed-81b6-252873a5c067"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:64
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mMateProfile Load (0.4ms)[0m  [1m[34mSELECT  "mate_profiles".* FROM "mate_profiles" WHERE "mate_profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", "7f134147-7df7-4fed-81b6-252873a5c067"], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:8
+  [1m[36mMateReview Load (0.4ms)[0m  [1m[34mSELECT "mate_reviews".* FROM "mate_reviews" WHERE "mate_reviews"."user_id" = $1[0m  [["user_id", "7f134147-7df7-4fed-81b6-252873a5c067"]]
+  ↳ app/views/users/show.html.erb:25
+  Rendered users/show.html.erb within layouts/application (5.2ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", "adb77b2d-3cdf-4ed1-9be4-6946915fbb90"], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:8
+  Rendered layouts/partials/_login.html.erb (2.4ms)
+Completed 200 OK in 50ms (Views: 43.1ms | ActiveRecord: 1.5ms)
+
+
+  [1m[36mHouseUser Load (0.7ms)[0m  [1m[34mSELECT  "house_users".* FROM "house_users" WHERE "house_users"."user_id" = $1 LIMIT $2[0m  [["user_id", "ADB77B2D-3CDF-4ED1-9BE4-6946915FBB90"], ["LIMIT", 11]]
+  [1m[36mHouseUser Load (0.6ms)[0m  [1m[34mSELECT "house_users".* FROM "house_users" WHERE "house_users"."user_id" = $1[0m  [["user_id", "ADB77B2D-3CDF-4ED1-9BE4-6946915FBB90"]]
+  [1m[36mHouseUser Load (0.6ms)[0m  [1m[34mSELECT "house_users".* FROM "house_users" WHERE "house_users"."user_id" = $1[0m  [["user_id", "7F134147-7DF7-4FED-81B6-252873A5C067"]]
+Started GET "/users/7f134147-7df7-4fed-81b6-252873a5c067" for 127.0.0.1 at 2018-09-05 15:30:15 +1000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"7f134147-7df7-4fed-81b6-252873a5c067"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", "7f134147-7df7-4fed-81b6-252873a5c067"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:64
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mMateProfile Load (0.8ms)[0m  [1m[34mSELECT  "mate_profiles".* FROM "mate_profiles" WHERE "mate_profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", "7f134147-7df7-4fed-81b6-252873a5c067"], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:8
+  Rendered users/show.html.erb within layouts/application (151.6ms)
+Completed 500 Internal Server Error in 201ms (ActiveRecord: 22.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `shared_houses' for #<#<Class:0x00007fd4d6a147f0>:0x00007fd4d14b1b00>
+Did you mean?  shared_houses?):
+    14: </div>
+    15: 
+    16: <div>
+    17:     <%= shared_houses(@user) %>
+    18:     <h1>review me</h1>
+    19:      <%= form_tag "/mate_reviews", method: "post", :authenticity_token => true do %>
+    20:         <input type="hidden" name="mate_review[user_id]" value="<%= @user.id %>">
+  
+app/views/users/show.html.erb:17:in `_app_views_users_show_html_erb___2594990762403092971_70276055345200'
+Started GET "/users/7f134147-7df7-4fed-81b6-252873a5c067" for 127.0.0.1 at 2018-09-05 15:30:24 +1000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"7f134147-7df7-4fed-81b6-252873a5c067"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", "7f134147-7df7-4fed-81b6-252873a5c067"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:64
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mMateProfile Load (0.6ms)[0m  [1m[34mSELECT  "mate_profiles".* FROM "mate_profiles" WHERE "mate_profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", "7f134147-7df7-4fed-81b6-252873a5c067"], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:8
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", "adb77b2d-3cdf-4ed1-9be4-6946915fbb90"], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:8
+  [1m[36mHouseUser Load (1.1ms)[0m  [1m[34mSELECT "house_users".* FROM "house_users" WHERE "house_users"."user_id" = $1[0m  [["user_id", "adb77b2d-3cdf-4ed1-9be4-6946915fbb90"]]
+  ↳ app/helpers/application_helper.rb:12
+  [1m[36mHouseUser Load (0.6ms)[0m  [1m[34mSELECT "house_users".* FROM "house_users" WHERE "house_users"."user_id" = $1[0m  [["user_id", "7f134147-7df7-4fed-81b6-252873a5c067"]]
+  ↳ app/helpers/application_helper.rb:13
+  [1m[36mMateReview Load (0.5ms)[0m  [1m[34mSELECT "mate_reviews".* FROM "mate_reviews" WHERE "mate_reviews"."user_id" = $1[0m  [["user_id", "7f134147-7df7-4fed-81b6-252873a5c067"]]
+  ↳ app/views/users/show.html.erb:26
+  Rendered users/show.html.erb within layouts/application (52.3ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", "adb77b2d-3cdf-4ed1-9be4-6946915fbb90"], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:8
+  Rendered layouts/partials/_login.html.erb (3.0ms)
+Completed 200 OK in 98ms (Views: 78.3ms | ActiveRecord: 16.0ms)
+
+
+Started GET "/users/9341B09A-F94F-45C7-BC3C-34958AF32960" for 127.0.0.1 at 2018-09-05 15:30:56 +1000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"9341B09A-F94F-45C7-BC3C-34958AF32960"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", "9341B09A-F94F-45C7-BC3C-34958AF32960"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:64
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mMateProfile Load (0.6ms)[0m  [1m[34mSELECT  "mate_profiles".* FROM "mate_profiles" WHERE "mate_profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", "9341b09a-f94f-45c7-bc3c-34958af32960"], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:8
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", "adb77b2d-3cdf-4ed1-9be4-6946915fbb90"], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:8
+  [1m[36mHouseUser Load (0.5ms)[0m  [1m[34mSELECT "house_users".* FROM "house_users" WHERE "house_users"."user_id" = $1[0m  [["user_id", "adb77b2d-3cdf-4ed1-9be4-6946915fbb90"]]
+  ↳ app/helpers/application_helper.rb:12
+  [1m[36mHouseUser Load (0.9ms)[0m  [1m[34mSELECT "house_users".* FROM "house_users" WHERE "house_users"."user_id" = $1[0m  [["user_id", "9341b09a-f94f-45c7-bc3c-34958af32960"]]
+  ↳ app/helpers/application_helper.rb:13
+  [1m[36mMateReview Load (0.5ms)[0m  [1m[34mSELECT "mate_reviews".* FROM "mate_reviews" WHERE "mate_reviews"."user_id" = $1[0m  [["user_id", "9341b09a-f94f-45c7-bc3c-34958af32960"]]
+  ↳ app/views/users/show.html.erb:26
+  Rendered users/show.html.erb within layouts/application (16.1ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", "adb77b2d-3cdf-4ed1-9be4-6946915fbb90"], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:8
+  Rendered layouts/partials/_login.html.erb (3.6ms)
+Completed 200 OK in 62ms (Views: 54.2ms | ActiveRecord: 3.7ms)
+
+
+Started GET "/users/9341B09A-F94F-45C7-BC3C-34958AF32960" for 127.0.0.1 at 2018-09-05 15:33:14 +1000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"9341B09A-F94F-45C7-BC3C-34958AF32960"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", "9341B09A-F94F-45C7-BC3C-34958AF32960"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:64
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (1.5ms)
+Completed 500 Internal Server Error in 55ms (ActiveRecord: 11.3ms)
+
+
+  
+SyntaxError (/Users/leah.eramo/wdi/projects/oi-m8/real-m8s-ror-full/app/views/users/show.html.erb:17: syntax error, unexpected ')', expecting keyword_then or ';' or '\n'
+...(@user) && unreviewed?(@user) );@output_buffer.safe_append='
+...                              ^
+/Users/leah.eramo/wdi/projects/oi-m8/real-m8s-ror-full/app/views/users/show.html.erb:25: syntax error, unexpected keyword_end, expecting ')'
+     end 
+     ^~~
+/Users/leah.eramo/wdi/projects/oi-m8/real-m8s-ror-full/app/views/users/show.html.erb:36: syntax error, unexpected keyword_ensure, expecting ')'
+          ensure
+          ^~~~~~
+/Users/leah.eramo/wdi/projects/oi-m8/real-m8s-ror-full/app/views/users/show.html.erb:38: syntax error, unexpected keyword_end, expecting ')'
+          end
+          ^~~):
+  
+app/views/users/show.html.erb:17: syntax error, unexpected ')', expecting keyword_then or ';' or '\n'
+app/views/users/show.html.erb:25: syntax error, unexpected keyword_end, expecting ')'
+app/views/users/show.html.erb:36: syntax error, unexpected keyword_ensure, expecting ')'
+app/views/users/show.html.erb:38: syntax error, unexpected keyword_end, expecting ')'
+Started GET "/users/9341B09A-F94F-45C7-BC3C-34958AF32960" for 127.0.0.1 at 2018-09-05 15:33:28 +1000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"9341B09A-F94F-45C7-BC3C-34958AF32960"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", "9341B09A-F94F-45C7-BC3C-34958AF32960"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:64
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mMateProfile Load (0.5ms)[0m  [1m[34mSELECT  "mate_profiles".* FROM "mate_profiles" WHERE "mate_profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", "9341b09a-f94f-45c7-bc3c-34958af32960"], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:8
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", "adb77b2d-3cdf-4ed1-9be4-6946915fbb90"], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:8
+  [1m[36mHouseUser Load (0.5ms)[0m  [1m[34mSELECT "house_users".* FROM "house_users" WHERE "house_users"."user_id" = $1[0m  [["user_id", "adb77b2d-3cdf-4ed1-9be4-6946915fbb90"]]
+  ↳ app/helpers/application_helper.rb:12
+  [1m[36mHouseUser Load (0.6ms)[0m  [1m[34mSELECT "house_users".* FROM "house_users" WHERE "house_users"."user_id" = $1[0m  [["user_id", "9341b09a-f94f-45c7-bc3c-34958af32960"]]
+  ↳ app/helpers/application_helper.rb:13
+  [1m[36mMateReview Load (0.4ms)[0m  [1m[34mSELECT "mate_reviews".* FROM "mate_reviews" WHERE "mate_reviews"."user_id" = $1[0m  [["user_id", "9341b09a-f94f-45c7-bc3c-34958af32960"]]
+  ↳ app/views/users/show.html.erb:27
+  Rendered users/show.html.erb within layouts/application (69.0ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", "adb77b2d-3cdf-4ed1-9be4-6946915fbb90"], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:8
+  Rendered layouts/partials/_login.html.erb (2.5ms)
+Completed 200 OK in 106ms (Views: 77.3ms | ActiveRecord: 24.0ms)
+
+
+Started GET "/users/7f134147-7df7-4fed-81b6-252873a5c067" for 127.0.0.1 at 2018-09-05 15:33:33 +1000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"7f134147-7df7-4fed-81b6-252873a5c067"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", "7f134147-7df7-4fed-81b6-252873a5c067"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:64
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mMateProfile Load (0.6ms)[0m  [1m[34mSELECT  "mate_profiles".* FROM "mate_profiles" WHERE "mate_profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", "7f134147-7df7-4fed-81b6-252873a5c067"], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:8
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", "adb77b2d-3cdf-4ed1-9be4-6946915fbb90"], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:8
+  [1m[36mHouseUser Load (0.4ms)[0m  [1m[34mSELECT "house_users".* FROM "house_users" WHERE "house_users"."user_id" = $1[0m  [["user_id", "adb77b2d-3cdf-4ed1-9be4-6946915fbb90"]]
+  ↳ app/helpers/application_helper.rb:12
+  [1m[36mHouseUser Load (0.5ms)[0m  [1m[34mSELECT "house_users".* FROM "house_users" WHERE "house_users"."user_id" = $1[0m  [["user_id", "7f134147-7df7-4fed-81b6-252873a5c067"]]
+  ↳ app/helpers/application_helper.rb:13
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", "adb77b2d-3cdf-4ed1-9be4-6946915fbb90"], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:8
+  [1m[36mMateReview Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "mate_reviews" WHERE "mate_reviews"."user_id" = $1 AND "mate_reviews"."author_id" = $2 LIMIT $3[0m  [["user_id", "7f134147-7df7-4fed-81b6-252873a5c067"], ["author_id", "adb77b2d-3cdf-4ed1-9be4-6946915fbb90"], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:19
+  [1m[36mMateReview Load (0.4ms)[0m  [1m[34mSELECT "mate_reviews".* FROM "mate_reviews" WHERE "mate_reviews"."user_id" = $1[0m  [["user_id", "7f134147-7df7-4fed-81b6-252873a5c067"]]
+  ↳ app/views/users/show.html.erb:27
+  Rendered users/show.html.erb within layouts/application (15.8ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", "adb77b2d-3cdf-4ed1-9be4-6946915fbb90"], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:8
+  Rendered layouts/partials/_login.html.erb (1.9ms)
+Completed 200 OK in 54ms (Views: 44.3ms | ActiveRecord: 3.9ms)
+
+
+Started POST "/mate_reviews" for 127.0.0.1 at 2018-09-05 15:33:39 +1000
+Processing by MateReviewsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"r0F+nPBabVvLIplgjyCIqcAmpR9V85uBDYoz38RM8aAFfx8Tbo4ArBtJZfNV4f3UQw/P1U0B4oS30UfYw/K0gw==", "mate_review"=>{"user_id"=>"7f134147-7df7-4fed-81b6-252873a5c067", "rating"=>"4", "comment"=>"test"}}
+  [1m[36mUser Load (5.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", "adb77b2d-3cdf-4ed1-9be4-6946915fbb90"], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:8
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", "adb77b2d-3cdf-4ed1-9be4-6946915fbb90"], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:8
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/mate_reviews_controller.rb:13
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", "7f134147-7df7-4fed-81b6-252873a5c067"], ["LIMIT", 1]]
+  ↳ app/controllers/mate_reviews_controller.rb:13
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", "adb77b2d-3cdf-4ed1-9be4-6946915fbb90"], ["LIMIT", 1]]
+  ↳ app/controllers/mate_reviews_controller.rb:13
+  [1m[36mMateReview Create (0.9ms)[0m  [1m[32mINSERT INTO "mate_reviews" ("rating", "comment", "author_id", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["rating", "4.0"], ["comment", "test"], ["author_id", "adb77b2d-3cdf-4ed1-9be4-6946915fbb90"], ["user_id", "7f134147-7df7-4fed-81b6-252873a5c067"], ["created_at", "2018-09-05 05:33:39.416411"], ["updated_at", "2018-09-05 05:33:39.416411"]]
+  ↳ app/controllers/mate_reviews_controller.rb:13
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/mate_reviews_controller.rb:13
+Redirected to http://localhost:3000/users/7f134147-7df7-4fed-81b6-252873a5c067
+Completed 302 Found in 34ms (ActiveRecord: 12.1ms)
+
+
+Started GET "/users/7f134147-7df7-4fed-81b6-252873a5c067" for 127.0.0.1 at 2018-09-05 15:33:39 +1000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"7f134147-7df7-4fed-81b6-252873a5c067"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", "7f134147-7df7-4fed-81b6-252873a5c067"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:64
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mMateProfile Load (0.4ms)[0m  [1m[34mSELECT  "mate_profiles".* FROM "mate_profiles" WHERE "mate_profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", "7f134147-7df7-4fed-81b6-252873a5c067"], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:8
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", "adb77b2d-3cdf-4ed1-9be4-6946915fbb90"], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:8
+  [1m[36mHouseUser Load (0.5ms)[0m  [1m[34mSELECT "house_users".* FROM "house_users" WHERE "house_users"."user_id" = $1[0m  [["user_id", "adb77b2d-3cdf-4ed1-9be4-6946915fbb90"]]
+  ↳ app/helpers/application_helper.rb:12
+  [1m[36mHouseUser Load (0.5ms)[0m  [1m[34mSELECT "house_users".* FROM "house_users" WHERE "house_users"."user_id" = $1[0m  [["user_id", "7f134147-7df7-4fed-81b6-252873a5c067"]]
+  ↳ app/helpers/application_helper.rb:13
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", "adb77b2d-3cdf-4ed1-9be4-6946915fbb90"], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:8
+  [1m[36mMateReview Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "mate_reviews" WHERE "mate_reviews"."user_id" = $1 AND "mate_reviews"."author_id" = $2 LIMIT $3[0m  [["user_id", "7f134147-7df7-4fed-81b6-252873a5c067"], ["author_id", "adb77b2d-3cdf-4ed1-9be4-6946915fbb90"], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:19
+  [1m[36mMateReview Load (0.5ms)[0m  [1m[34mSELECT "mate_reviews".* FROM "mate_reviews" WHERE "mate_reviews"."user_id" = $1[0m  [["user_id", "7f134147-7df7-4fed-81b6-252873a5c067"]]
+  ↳ app/views/users/show.html.erb:27
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", "adb77b2d-3cdf-4ed1-9be4-6946915fbb90"], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:30
+  Rendered users/show.html.erb within layouts/application (12.8ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", "adb77b2d-3cdf-4ed1-9be4-6946915fbb90"], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:8
+  Rendered layouts/partials/_login.html.erb (1.9ms)
+Completed 200 OK in 41ms (Views: 34.2ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/users/7f134147-7df7-4fed-81b6-252873a5c067" for 127.0.0.1 at 2018-09-05 15:40:12 +1000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"7f134147-7df7-4fed-81b6-252873a5c067"}
+  [1m[36mUser Load (3.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", "7f134147-7df7-4fed-81b6-252873a5c067"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:64
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mMateProfile Load (0.9ms)[0m  [1m[34mSELECT  "mate_profiles".* FROM "mate_profiles" WHERE "mate_profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", "7f134147-7df7-4fed-81b6-252873a5c067"], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:11
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", "adb77b2d-3cdf-4ed1-9be4-6946915fbb90"], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:8
+  [1m[36mHouseUser Load (1.3ms)[0m  [1m[34mSELECT "house_users".* FROM "house_users" WHERE "house_users"."user_id" = $1[0m  [["user_id", "adb77b2d-3cdf-4ed1-9be4-6946915fbb90"]]
+  ↳ app/helpers/application_helper.rb:12
+  [1m[36mHouseUser Load (0.6ms)[0m  [1m[34mSELECT "house_users".* FROM "house_users" WHERE "house_users"."user_id" = $1[0m  [["user_id", "7f134147-7df7-4fed-81b6-252873a5c067"]]
+  ↳ app/helpers/application_helper.rb:13
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", "adb77b2d-3cdf-4ed1-9be4-6946915fbb90"], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:8
+  [1m[36mMateReview Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "mate_reviews" WHERE "mate_reviews"."user_id" = $1 AND "mate_reviews"."author_id" = $2 LIMIT $3[0m  [["user_id", "7f134147-7df7-4fed-81b6-252873a5c067"], ["author_id", "adb77b2d-3cdf-4ed1-9be4-6946915fbb90"], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:19
+  [1m[36mMateReview Load (0.6ms)[0m  [1m[34mSELECT "mate_reviews".* FROM "mate_reviews" WHERE "mate_reviews"."user_id" = $1[0m  [["user_id", "7f134147-7df7-4fed-81b6-252873a5c067"]]
+  ↳ app/views/users/show.html.erb:30
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", "adb77b2d-3cdf-4ed1-9be4-6946915fbb90"], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:33
+  Rendered users/show.html.erb within layouts/application (18.1ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", "adb77b2d-3cdf-4ed1-9be4-6946915fbb90"], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:8
+  Rendered layouts/partials/_login.html.erb (1.8ms)
+Completed 200 OK in 56ms (Views: 42.7ms | ActiveRecord: 8.6ms)
+
+
+Started GET "/my_profile" for 127.0.0.1 at 2018-09-05 15:40:23 +1000
+Processing by UsersController#my_profile as HTML
+  [1m[36mUser Load (5.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", "adb77b2d-3cdf-4ed1-9be4-6946915fbb90"], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:8
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mMateProfile Load (0.7ms)[0m  [1m[34mSELECT  "mate_profiles".* FROM "mate_profiles" WHERE "mate_profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", "adb77b2d-3cdf-4ed1-9be4-6946915fbb90"], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:11
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", "adb77b2d-3cdf-4ed1-9be4-6946915fbb90"], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:8
+  [1m[36mHouseUser Load (0.6ms)[0m  [1m[34mSELECT "house_users".* FROM "house_users" WHERE "house_users"."user_id" = $1[0m  [["user_id", "adb77b2d-3cdf-4ed1-9be4-6946915fbb90"]]
+  ↳ app/helpers/application_helper.rb:12
+  [1m[36mCACHE HouseUser Load (0.0ms)[0m  [1m[34mSELECT "house_users".* FROM "house_users" WHERE "house_users"."user_id" = $1[0m  [["user_id", "adb77b2d-3cdf-4ed1-9be4-6946915fbb90"]]
+  ↳ app/helpers/application_helper.rb:13
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", "adb77b2d-3cdf-4ed1-9be4-6946915fbb90"], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:8
+  [1m[36mMateReview Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "mate_reviews" WHERE "mate_reviews"."user_id" = $1 AND "mate_reviews"."author_id" = $2 LIMIT $3[0m  [["user_id", "adb77b2d-3cdf-4ed1-9be4-6946915fbb90"], ["author_id", "adb77b2d-3cdf-4ed1-9be4-6946915fbb90"], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:19
+  [1m[36mMateReview Load (0.5ms)[0m  [1m[34mSELECT "mate_reviews".* FROM "mate_reviews" WHERE "mate_reviews"."user_id" = $1[0m  [["user_id", "adb77b2d-3cdf-4ed1-9be4-6946915fbb90"]]
+  ↳ app/views/users/show.html.erb:30
+  Rendered users/show.html.erb within layouts/application (18.1ms)
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", "adb77b2d-3cdf-4ed1-9be4-6946915fbb90"], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:8
+  Rendered layouts/partials/_login.html.erb (14.0ms)
+Completed 200 OK in 80ms (Views: 69.0ms | ActiveRecord: 8.0ms)
+
+
+Started GET "/my_profile" for 127.0.0.1 at 2018-09-05 15:40:46 +1000
+Processing by UsersController#my_profile as HTML
+  [1m[36mUser Load (5.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", "adb77b2d-3cdf-4ed1-9be4-6946915fbb90"], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:8
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mMateProfile Load (0.5ms)[0m  [1m[34mSELECT  "mate_profiles".* FROM "mate_profiles" WHERE "mate_profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", "adb77b2d-3cdf-4ed1-9be4-6946915fbb90"], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:11
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", "adb77b2d-3cdf-4ed1-9be4-6946915fbb90"], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:8
+  [1m[36mHouseUser Load (0.7ms)[0m  [1m[34mSELECT "house_users".* FROM "house_users" WHERE "house_users"."user_id" = $1[0m  [["user_id", "adb77b2d-3cdf-4ed1-9be4-6946915fbb90"]]
+  ↳ app/helpers/application_helper.rb:12
+  [1m[36mCACHE HouseUser Load (0.0ms)[0m  [1m[34mSELECT "house_users".* FROM "house_users" WHERE "house_users"."user_id" = $1[0m  [["user_id", "adb77b2d-3cdf-4ed1-9be4-6946915fbb90"]]
+  ↳ app/helpers/application_helper.rb:13
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", "adb77b2d-3cdf-4ed1-9be4-6946915fbb90"], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:8
+  [1m[36mMateReview Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "mate_reviews" WHERE "mate_reviews"."user_id" = $1 AND "mate_reviews"."author_id" = $2 LIMIT $3[0m  [["user_id", "adb77b2d-3cdf-4ed1-9be4-6946915fbb90"], ["author_id", "adb77b2d-3cdf-4ed1-9be4-6946915fbb90"], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:19
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", "adb77b2d-3cdf-4ed1-9be4-6946915fbb90"], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:8
+  [1m[36mMateReview Load (0.4ms)[0m  [1m[34mSELECT "mate_reviews".* FROM "mate_reviews" WHERE "mate_reviews"."user_id" = $1[0m  [["user_id", "adb77b2d-3cdf-4ed1-9be4-6946915fbb90"]]
+  ↳ app/views/users/show.html.erb:30
+  Rendered users/show.html.erb within layouts/application (16.3ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", "adb77b2d-3cdf-4ed1-9be4-6946915fbb90"], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:8
+  Rendered layouts/partials/_login.html.erb (1.6ms)
+Completed 200 OK in 43ms (Views: 33.7ms | ActiveRecord: 7.2ms)
+
+
+Started GET "/my_profile" for 127.0.0.1 at 2018-09-05 15:41:10 +1000
+Processing by UsersController#my_profile as HTML
+  [1m[36mUser Load (4.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", "adb77b2d-3cdf-4ed1-9be4-6946915fbb90"], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:8
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mMateProfile Load (0.5ms)[0m  [1m[34mSELECT  "mate_profiles".* FROM "mate_profiles" WHERE "mate_profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", "adb77b2d-3cdf-4ed1-9be4-6946915fbb90"], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:13
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", "adb77b2d-3cdf-4ed1-9be4-6946915fbb90"], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:8
+  [1m[36mHouseUser Load (0.4ms)[0m  [1m[34mSELECT "house_users".* FROM "house_users" WHERE "house_users"."user_id" = $1[0m  [["user_id", "adb77b2d-3cdf-4ed1-9be4-6946915fbb90"]]
+  ↳ app/helpers/application_helper.rb:12
+  [1m[36mCACHE HouseUser Load (0.0ms)[0m  [1m[34mSELECT "house_users".* FROM "house_users" WHERE "house_users"."user_id" = $1[0m  [["user_id", "adb77b2d-3cdf-4ed1-9be4-6946915fbb90"]]
+  ↳ app/helpers/application_helper.rb:13
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", "adb77b2d-3cdf-4ed1-9be4-6946915fbb90"], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:8
+  [1m[36mMateReview Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "mate_reviews" WHERE "mate_reviews"."user_id" = $1 AND "mate_reviews"."author_id" = $2 LIMIT $3[0m  [["user_id", "adb77b2d-3cdf-4ed1-9be4-6946915fbb90"], ["author_id", "adb77b2d-3cdf-4ed1-9be4-6946915fbb90"], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:19
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", "adb77b2d-3cdf-4ed1-9be4-6946915fbb90"], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:8
+  [1m[36mMateReview Load (0.6ms)[0m  [1m[34mSELECT "mate_reviews".* FROM "mate_reviews" WHERE "mate_reviews"."user_id" = $1[0m  [["user_id", "adb77b2d-3cdf-4ed1-9be4-6946915fbb90"]]
+  ↳ app/views/users/show.html.erb:32
+  Rendered users/show.html.erb within layouts/application (15.7ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", "adb77b2d-3cdf-4ed1-9be4-6946915fbb90"], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:8
+  Rendered layouts/partials/_login.html.erb (2.1ms)
+Completed 200 OK in 57ms (Views: 47.2ms | ActiveRecord: 6.2ms)
+
+
+Started GET "/my_profile" for 127.0.0.1 at 2018-09-05 15:41:55 +1000
+Processing by UsersController#my_profile as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", "adb77b2d-3cdf-4ed1-9be4-6946915fbb90"], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:8
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mMateProfile Load (0.6ms)[0m  [1m[34mSELECT  "mate_profiles".* FROM "mate_profiles" WHERE "mate_profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", "adb77b2d-3cdf-4ed1-9be4-6946915fbb90"], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:15
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", "adb77b2d-3cdf-4ed1-9be4-6946915fbb90"], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:8
+  [1m[36mHouseUser Load (0.9ms)[0m  [1m[34mSELECT "house_users".* FROM "house_users" WHERE "house_users"."user_id" = $1[0m  [["user_id", "adb77b2d-3cdf-4ed1-9be4-6946915fbb90"]]
+  ↳ app/helpers/application_helper.rb:12
+  [1m[36mCACHE HouseUser Load (0.0ms)[0m  [1m[34mSELECT "house_users".* FROM "house_users" WHERE "house_users"."user_id" = $1[0m  [["user_id", "adb77b2d-3cdf-4ed1-9be4-6946915fbb90"]]
+  ↳ app/helpers/application_helper.rb:13
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", "adb77b2d-3cdf-4ed1-9be4-6946915fbb90"], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:8
+  [1m[36mMateReview Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "mate_reviews" WHERE "mate_reviews"."user_id" = $1 AND "mate_reviews"."author_id" = $2 LIMIT $3[0m  [["user_id", "adb77b2d-3cdf-4ed1-9be4-6946915fbb90"], ["author_id", "adb77b2d-3cdf-4ed1-9be4-6946915fbb90"], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:19
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", "adb77b2d-3cdf-4ed1-9be4-6946915fbb90"], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:8
+  [1m[36mMateReview Load (0.5ms)[0m  [1m[34mSELECT "mate_reviews".* FROM "mate_reviews" WHERE "mate_reviews"."user_id" = $1[0m  [["user_id", "adb77b2d-3cdf-4ed1-9be4-6946915fbb90"]]
+  ↳ app/views/users/show.html.erb:34
+  Rendered users/show.html.erb within layouts/application (18.6ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", "adb77b2d-3cdf-4ed1-9be4-6946915fbb90"], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:8
+  Rendered layouts/partials/_login.html.erb (2.2ms)
+Completed 200 OK in 57ms (Views: 50.1ms | ActiveRecord: 3.7ms)
+
+
+Started GET "/my_profile" for 127.0.0.1 at 2018-09-05 15:42:20 +1000
+Processing by UsersController#my_profile as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", "adb77b2d-3cdf-4ed1-9be4-6946915fbb90"], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:8
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mMateProfile Load (0.8ms)[0m  [1m[34mSELECT  "mate_profiles".* FROM "mate_profiles" WHERE "mate_profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", "adb77b2d-3cdf-4ed1-9be4-6946915fbb90"], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:17
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", "adb77b2d-3cdf-4ed1-9be4-6946915fbb90"], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:8
+  [1m[36mHouseUser Load (0.5ms)[0m  [1m[34mSELECT "house_users".* FROM "house_users" WHERE "house_users"."user_id" = $1[0m  [["user_id", "adb77b2d-3cdf-4ed1-9be4-6946915fbb90"]]
+  ↳ app/helpers/application_helper.rb:12
+  [1m[36mCACHE HouseUser Load (0.0ms)[0m  [1m[34mSELECT "house_users".* FROM "house_users" WHERE "house_users"."user_id" = $1[0m  [["user_id", "adb77b2d-3cdf-4ed1-9be4-6946915fbb90"]]
+  ↳ app/helpers/application_helper.rb:13
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", "adb77b2d-3cdf-4ed1-9be4-6946915fbb90"], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:8
+  [1m[36mMateReview Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "mate_reviews" WHERE "mate_reviews"."user_id" = $1 AND "mate_reviews"."author_id" = $2 LIMIT $3[0m  [["user_id", "adb77b2d-3cdf-4ed1-9be4-6946915fbb90"], ["author_id", "adb77b2d-3cdf-4ed1-9be4-6946915fbb90"], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:19
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", "adb77b2d-3cdf-4ed1-9be4-6946915fbb90"], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:8
+  [1m[36mMateReview Load (0.5ms)[0m  [1m[34mSELECT "mate_reviews".* FROM "mate_reviews" WHERE "mate_reviews"."user_id" = $1[0m  [["user_id", "adb77b2d-3cdf-4ed1-9be4-6946915fbb90"]]
+  ↳ app/views/users/show.html.erb:36
+  Rendered users/show.html.erb within layouts/application (18.4ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", "adb77b2d-3cdf-4ed1-9be4-6946915fbb90"], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:8
+  Rendered layouts/partials/_login.html.erb (1.6ms)
+Completed 200 OK in 51ms (Views: 45.9ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/users/7f134147-7df7-4fed-81b6-252873a5c067" for 127.0.0.1 at 2018-09-05 15:42:52 +1000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"7f134147-7df7-4fed-81b6-252873a5c067"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", "7f134147-7df7-4fed-81b6-252873a5c067"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:64
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mMateProfile Load (0.8ms)[0m  [1m[34mSELECT  "mate_profiles".* FROM "mate_profiles" WHERE "mate_profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", "7f134147-7df7-4fed-81b6-252873a5c067"], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:17
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", "adb77b2d-3cdf-4ed1-9be4-6946915fbb90"], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:8
+  [1m[36mHouseUser Load (0.7ms)[0m  [1m[34mSELECT "house_users".* FROM "house_users" WHERE "house_users"."user_id" = $1[0m  [["user_id", "adb77b2d-3cdf-4ed1-9be4-6946915fbb90"]]
+  ↳ app/helpers/application_helper.rb:12
+  [1m[36mHouseUser Load (0.5ms)[0m  [1m[34mSELECT "house_users".* FROM "house_users" WHERE "house_users"."user_id" = $1[0m  [["user_id", "7f134147-7df7-4fed-81b6-252873a5c067"]]
+  ↳ app/helpers/application_helper.rb:13
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", "adb77b2d-3cdf-4ed1-9be4-6946915fbb90"], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:8
+  [1m[36mMateReview Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "mate_reviews" WHERE "mate_reviews"."user_id" = $1 AND "mate_reviews"."author_id" = $2 LIMIT $3[0m  [["user_id", "7f134147-7df7-4fed-81b6-252873a5c067"], ["author_id", "adb77b2d-3cdf-4ed1-9be4-6946915fbb90"], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:19
+  [1m[36mMateReview Load (0.4ms)[0m  [1m[34mSELECT "mate_reviews".* FROM "mate_reviews" WHERE "mate_reviews"."user_id" = $1[0m  [["user_id", "7f134147-7df7-4fed-81b6-252873a5c067"]]
+  ↳ app/views/users/show.html.erb:36
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", "adb77b2d-3cdf-4ed1-9be4-6946915fbb90"], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:39
+  Rendered users/show.html.erb within layouts/application (21.9ms)
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", "adb77b2d-3cdf-4ed1-9be4-6946915fbb90"], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:8
+  Rendered layouts/partials/_login.html.erb (2.8ms)
+Completed 200 OK in 56ms (Views: 48.3ms | ActiveRecord: 4.6ms)
+
+
+Started GET "/my_house" for 127.0.0.1 at 2018-09-05 15:43:01 +1000
+Processing by HousesController#my_house as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", "adb77b2d-3cdf-4ed1-9be4-6946915fbb90"], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:8
+  Rendering houses/show.html.erb within layouts/application
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "houses" INNER JOIN "house_users" ON "houses"."id" = "house_users"."house_id" WHERE "house_users"."user_id" = $1 AND "house_users"."active" = $2[0m  [["user_id", "adb77b2d-3cdf-4ed1-9be4-6946915fbb90"], ["active", true]]
+  ↳ app/views/houses/show.html.erb:1
+  [1m[36mHouse Load (0.8ms)[0m  [1m[34mSELECT "houses".* FROM "houses" INNER JOIN "house_users" ON "houses"."id" = "house_users"."house_id" WHERE "house_users"."user_id" = $1 AND "house_users"."active" = $2[0m  [["user_id", "adb77b2d-3cdf-4ed1-9be4-6946915fbb90"], ["active", true]]
+  ↳ app/views/houses/show.html.erb:2
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "house_users" ON "users"."id" = "house_users"."user_id" WHERE "house_users"."house_id" = $1 AND "house_users"."active" = $2[0m  [["house_id", "f311a1f6-1e1b-404b-895d-20f05972d699"], ["active", true]]
+  ↳ app/views/houses/show.html.erb:20
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", "adb77b2d-3cdf-4ed1-9be4-6946915fbb90"], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:8
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", "adb77b2d-3cdf-4ed1-9be4-6946915fbb90"], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:8
+  Rendered houses/show.html.erb within layouts/application (43.7ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", "adb77b2d-3cdf-4ed1-9be4-6946915fbb90"], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:8
+  Rendered layouts/partials/_login.html.erb (2.4ms)
+Completed 200 OK in 88ms (Views: 60.3ms | ActiveRecord: 16.9ms)
+
+
+Started GET "/users/7f134147-7df7-4fed-81b6-252873a5c067" for 127.0.0.1 at 2018-09-05 15:43:04 +1000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"7f134147-7df7-4fed-81b6-252873a5c067"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", "7f134147-7df7-4fed-81b6-252873a5c067"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:64
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mMateProfile Load (0.4ms)[0m  [1m[34mSELECT  "mate_profiles".* FROM "mate_profiles" WHERE "mate_profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", "7f134147-7df7-4fed-81b6-252873a5c067"], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:17
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", "adb77b2d-3cdf-4ed1-9be4-6946915fbb90"], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:8
+  [1m[36mHouseUser Load (0.5ms)[0m  [1m[34mSELECT "house_users".* FROM "house_users" WHERE "house_users"."user_id" = $1[0m  [["user_id", "adb77b2d-3cdf-4ed1-9be4-6946915fbb90"]]
+  ↳ app/helpers/application_helper.rb:12
+  [1m[36mHouseUser Load (0.5ms)[0m  [1m[34mSELECT "house_users".* FROM "house_users" WHERE "house_users"."user_id" = $1[0m  [["user_id", "7f134147-7df7-4fed-81b6-252873a5c067"]]
+  ↳ app/helpers/application_helper.rb:13
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", "adb77b2d-3cdf-4ed1-9be4-6946915fbb90"], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:8
+  [1m[36mMateReview Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "mate_reviews" WHERE "mate_reviews"."user_id" = $1 AND "mate_reviews"."author_id" = $2 LIMIT $3[0m  [["user_id", "7f134147-7df7-4fed-81b6-252873a5c067"], ["author_id", "adb77b2d-3cdf-4ed1-9be4-6946915fbb90"], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:19
+  [1m[36mMateReview Load (0.6ms)[0m  [1m[34mSELECT "mate_reviews".* FROM "mate_reviews" WHERE "mate_reviews"."user_id" = $1[0m  [["user_id", "7f134147-7df7-4fed-81b6-252873a5c067"]]
+  ↳ app/views/users/show.html.erb:36
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", "adb77b2d-3cdf-4ed1-9be4-6946915fbb90"], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:39
+  Rendered users/show.html.erb within layouts/application (15.1ms)
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", "adb77b2d-3cdf-4ed1-9be4-6946915fbb90"], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:8
+  Rendered layouts/partials/_login.html.erb (2.8ms)
+Completed 200 OK in 60ms (Views: 51.7ms | ActiveRecord: 3.6ms)
+
+
+Started GET "/join_house" for 127.0.0.1 at 2018-09-05 15:43:07 +1000
+Processing by HousesController#join as HTML
+  Rendering houses/join.html.erb within layouts/application
+  Rendered houses/join.html.erb within layouts/application (1.5ms)
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", "adb77b2d-3cdf-4ed1-9be4-6946915fbb90"], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:8
+  Rendered layouts/partials/_login.html.erb (3.3ms)
+Completed 200 OK in 41ms (Views: 35.1ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/my_house" for 127.0.0.1 at 2018-09-05 15:43:22 +1000
+Processing by HousesController#my_house as HTML
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", "adb77b2d-3cdf-4ed1-9be4-6946915fbb90"], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:8
+  Rendering houses/show.html.erb within layouts/application
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "houses" INNER JOIN "house_users" ON "houses"."id" = "house_users"."house_id" WHERE "house_users"."user_id" = $1 AND "house_users"."active" = $2[0m  [["user_id", "adb77b2d-3cdf-4ed1-9be4-6946915fbb90"], ["active", true]]
+  ↳ app/views/houses/show.html.erb:1
+  [1m[36mHouse Load (1.6ms)[0m  [1m[34mSELECT "houses".* FROM "houses" INNER JOIN "house_users" ON "houses"."id" = "house_users"."house_id" WHERE "house_users"."user_id" = $1 AND "house_users"."active" = $2[0m  [["user_id", "adb77b2d-3cdf-4ed1-9be4-6946915fbb90"], ["active", true]]
+  ↳ app/views/houses/show.html.erb:2
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "house_users" ON "users"."id" = "house_users"."user_id" WHERE "house_users"."house_id" = $1 AND "house_users"."active" = $2[0m  [["house_id", "f311a1f6-1e1b-404b-895d-20f05972d699"], ["active", true]]
+  ↳ app/views/houses/show.html.erb:20
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", "adb77b2d-3cdf-4ed1-9be4-6946915fbb90"], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:8
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", "adb77b2d-3cdf-4ed1-9be4-6946915fbb90"], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:8
+  Rendered houses/show.html.erb within layouts/application (15.8ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", "adb77b2d-3cdf-4ed1-9be4-6946915fbb90"], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:8
+  Rendered layouts/partials/_login.html.erb (2.5ms)
+Completed 200 OK in 52ms (Views: 44.6ms | ActiveRecord: 5.2ms)
+
+

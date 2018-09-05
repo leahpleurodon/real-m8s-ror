@@ -2,11 +2,6 @@
 
 class HousesController < ApplicationController
   before_action :set_house, only: %i[show update destroy]
-  before_action :authorize!
-  
-  def show
-      render json: @house 
-  end
 
   def new
     @house = House.new
@@ -22,7 +17,7 @@ class HousesController < ApplicationController
   end
 
   def edit
-
+    @house
   end
 
   def update
@@ -36,6 +31,10 @@ class HousesController < ApplicationController
   def my_house
     @houses = current_user.houses
     render :show
+  end
+
+  def join
+
   end
 
   private

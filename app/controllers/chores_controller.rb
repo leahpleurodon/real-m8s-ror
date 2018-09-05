@@ -1,6 +1,5 @@
 class ChoresController < ApplicationController
     before_action :set_chore, only: %i[show]
-    before_action :authorize!
     def show
       render json: @chore
     end

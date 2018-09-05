@@ -2,7 +2,6 @@
 
 class UserPetsController < ApplicationController
   before_action :set_user_pet, only: %i[show update]
-  before_action :authorize!
 
   def show
     render json: @user_pet
