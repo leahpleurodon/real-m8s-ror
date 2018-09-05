@@ -1,4 +1,5 @@
 class BillImagesController < ApplicationController
+    before_action :notloggedin!
     before_action :set_bill_image, only: %i[show]
 
     def show

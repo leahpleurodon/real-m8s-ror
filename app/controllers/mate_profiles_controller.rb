@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 class MateProfilesController < ApplicationController
+  before_action :notloggedin!
   before_action :set_mate_profile, only: %i[show update destroy edit]
   def show
     render json: @mate_profile

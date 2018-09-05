@@ -11,8 +11,10 @@ HouseUser.destroy_all
 MateProfile.destroy_all
 User.destroy_all
 House.destroy_all
+Chore.destroy_all
 
 
 require_relative './seeds/user'
 require_relative './seeds/house'
 require_relative './seeds/house_user'
+require_relative './seeds/chore'

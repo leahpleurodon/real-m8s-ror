@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 class HousesController < ApplicationController
+  before_action :notloggedin!
   before_action :set_house, only: %i[show update destroy]
 
   def new

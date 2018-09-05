@@ -3,7 +3,9 @@
 class ApplicationController < ActionController::Base
     include ApplicationHelper
 
-    
+    def notloggedin!
+        redirect_to '/login' and return true if !session[:user_id]
+    end
 
     def my_house?(house)
         HouseUser.where(user: current_user, house: house, active: true).empty? ? false : true

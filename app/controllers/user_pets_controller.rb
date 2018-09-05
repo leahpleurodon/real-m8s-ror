@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 class UserPetsController < ApplicationController
+  before_action :notloggedin!
   before_action :set_user_pet, only: %i[show update]
 
   def show

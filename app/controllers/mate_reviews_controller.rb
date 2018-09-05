@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 class MateReviewsController < ApplicationController
+  before_action :notloggedin!
   before_action :set_mate_review, only: %i[show update destroy]
 
   def create

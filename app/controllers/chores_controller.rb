@@ -1,4 +1,5 @@
 class ChoresController < ApplicationController
+    before_action :notloggedin!
     before_action :set_chore, only: %i[show]
     def show
       render json: @chore

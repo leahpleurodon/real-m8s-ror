@@ -13,6 +13,12 @@
             <h3>invite a mate:</h3>
             <p>Join Code: <%= house.join_code %></p>
         </div>
+
+        <div>
+            <%= form_tag "/leave_house", method: "post", :authenticity_token => true do %>
+                <button>leave house</button>
+            <% end %>
+        </div>
         
 
         <h2>My Mates</h2>
@@ -23,8 +29,15 @@
                     <%= link_to "view", user_path(mate.id) %>
                 <% end %>
             <% end %>
-    <% end %>
         </div>
+    <%= link_to "add to roster", new_user_house_chore_path %>
+        <h2>House Chores</h2>
+        <% house.user_house_chores.each do |chore| %>
+            <p>Chore: <%= chore.chore.name %></p>
+            <p>Mate: <%= chore.user.first_name %></p>
+            <p>Day of Week: <%= chore.day_of_week %></p>
+        <% end %>
+    <% end %>
 <% else %>
     <h2>Hey mate!</h2>
     <p>You're not part of a house... :(</p>

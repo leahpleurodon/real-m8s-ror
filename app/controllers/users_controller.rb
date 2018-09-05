@@ -1,7 +1,8 @@
 # frozen_string_literal: true
 
 class UsersController < ApplicationController
-  before_action :set_user, only: %i[show update destroy]
+    before_action :notloggedin!, except: %i[create new login new_session]
+    before_action :set_user, only: %i[show update destroy]
 
   def show
     @user
@@ -39,6 +40,7 @@ class UsersController < ApplicationController
   end
 
   def login
+    redirect_to '/my_profile' and return if !!session[:user_id]
     render :layout => false
   end
 

@@ -41,6 +41,14 @@ class HouseUsersController < ApplicationController
     end
   end
 
+  def leave_house
+    HouseUser.where(user: current_user).each do |hu|
+        hu.active = false
+        hu.save
+    end
+    redirect_to '/my_profile'
+  end
+
   private
 
   def set_house_user

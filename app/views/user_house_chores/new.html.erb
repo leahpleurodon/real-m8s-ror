@@ -1,0 +1,32 @@
+<%= form_tag "/user_house_chores", method: "post", :authenticity_token => true do %>
+        <h2>Add to the chore roster:</h2>
+        <label for="user_house_chore[user_id]">Mate:</label>
+        <select name="user_house_chore[user_id]" >
+            <% @house_mates.each do |mate| %>
+                <option value="<%= mate.id %>">
+                    <%= "#{mate.first_name} #{mate.last_name}" %>
+                </option>
+            <% end %>
+        </select>
+        <input type="hidden" name="user_house_chore[house_id]" value="<%= @house.id %>">
+        <label for="user_house_chore[chore_id]">Chore:</label>
+        <select name="user_house_chore[chore_id]" >
+            <% @chores.each do |chore| %>
+                <option value="<%= chore.id %>">
+                    <%= chore.name %>
+                </option>
+            <% end %>
+        </select>
+        <label for="user_house_chore[chore_id]">Day of Week:</label>
+        <select name="user_house_chore[day_of_week]" >
+            <option value="monday">monday</option>
+            <option value="tuesday">tuesday</option>
+            <option value="wednesday">wednesday</option>
+            <option value="thursday">thursday</option>
+            <option value="friday">friday</option>
+            <option value="saturday">saturday</option>
+            <option value="sunday">sunday</option>
+        </select>
+
+        <button>add to roster</button>
+<% end %>

@@ -1,0 +1,60 @@
+
+  * {
+    box-sizing: border-box; }
+  html {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    overflow: hidden; }
+  body {
+    margin: 0;
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#4464ad+0,4a90e2+40,4a90e2+60,4a90e2+72,4464ad+100 */
+    background: #4464ad;
+    background-image: linear-gradient(-45deg, #4464ad 0%, #4a90e2 40%, #4a90e2 60%, #4a90e2 72%, #4464ad 100%);
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: "Raleway", sans-serif; }
+  main {
+    display: flex;
+    justify-content: space-around; }
+  h1 {
+    font-size: 3vw;
+    color: #f1f7ed; }
+  .logo {
+    width: 15vw;
+    margin-bottom: 10vh; }
+  .logo > img {
+    width: 100%;
+    margin: 3vh; }
+  .call-to-action {
+    margin: auto 0;
+    text-align: center;
+    width: 50vw; }
+  .buttons {
+    display: flex;
+    justify-content: space-evenly; }
+  .buttons button {
+    width: 18vw;
+    height: 5vw;
+    border-radius: 5px;
+    font-size: 2vw;
+    color: #f1f7ed; }
+  .sign-in {
+    border: 1px solid #f1f7ed;
+    background-color: transparent; }
+  .sign-up {
+    border: none;
+    background-color: #e56399; }
+  .sign-in:hover {
+    border: 1px solid #e56399;
+    background-color: transparent;
+    color: #e56399; }
+  .sign-up:hover {
+    border: none;
+    background-color: #f1f7ed;
+    color: #e56399; }
+  .hero-img {
+    width: 30vw;
+    margin-right: 5vw; }
+  .hero-img > img {
+    width: 100%; } 

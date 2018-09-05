@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
-  resources :user_house_chores
-  resources :chores
+  resources :user_house_chores, only: [:new, :create]
   resources :bill_images
   resources :bill_payments
   resources :house_bills
@@ -19,6 +18,7 @@ Rails.application.routes.draw do
   get '/sign_up', to: 'users#new'
   get '/join_house', to: 'houses#join'
   post '/join_house', to: 'house_users#join_house'
+  post '/leave_house', to: 'house_users#leave_house'
   
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

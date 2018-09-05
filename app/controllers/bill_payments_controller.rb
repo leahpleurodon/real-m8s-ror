@@ -1,4 +1,5 @@
 class BillPaymentsController < ApplicationController
+    before_action :notloggedin!
     before_action :set_bill_payment, only: %i[show update destroy]
     def show
       render json: @bill_payment

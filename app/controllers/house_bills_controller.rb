@@ -1,4 +1,5 @@
 class HouseBillsController < ApplicationController
+    before_action :notloggedin!
     before_action :set_house_bill, only: %i[show update destroy]
     def show
       render json: @house_bill

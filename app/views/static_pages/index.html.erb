@@ -1,3 +1,28 @@
-<%= link_to 'sign in', '/login' %>
+<%= stylesheet_link_tag    'pages/index', media: 'only screen and (min-device-width: 500px)' %>
+<%= stylesheet_link_tag    'pages/index-mobile', media: 'only screen and (max-device-width: 500px)' %>
 
-<%= link_to 'sign up', '/sign_up' %>
+<div>
+    <section class="logo">
+        <img src='/logo.svg' alt="real m8s logo" />
+    </section>
+    <main>
+        <section class="call-to-action">
+            <h1>Start your sharehouse journey...<br />Become a mate of ours</h1>
+            <section class="buttons">
+                <form action="/login" method="get">
+                    <button class="sign-in">
+                        sign in
+                    </button>
+                </form>
+                <form action="/sign_up" method="get">
+                    <button class="sign-up">
+                        sign up
+                    </button>
+                </form>
+            </section>
+        </section>
+        <section class="hero-img">
+            <img src="/home.svg" alt="a nice house" />
+        </section>
+    </main>
+</div>

@@ -1,18 +1,24 @@
 class UserHouseChoresController < ApplicationController
+    before_action :notloggedin!
     before_action :set_user_house_chore, only: %i[show update destroy]
     
     def show
       render json: @user_house_chore
     end
-  
+    
+    def new
+        @house = current_user.houses.first
+        @house_mates = @house.users
+        @chores = Chore.where(active: true)
+    end
+
     def create
-      @user_house_chore = UserHouseChore.new(user_house_chore_params)
-      
-      if @user_house_chore.save
-        render json: @user_house_chore, status: :created, location: @user_house_chore
-      else
-        render json: @user_house_chore.errors, status: :unprocessable_entity
-      end
+        @user_house_chore = UserHouseChore.new(user_house_chore_params)
+        if @user_house_chore.save
+            redirect_to '/my_house'
+        else
+            render :new
+        end
     end
   
     def update
@@ -31,7 +37,7 @@ class UserHouseChoresController < ApplicationController
   
     def user_house_chore_params
         params.require(:user_house_chore).permit(
-            :chore_id, :day_of_week, :frequency, :active, :house_id, :user_id
+            :chore_id, :day_of_week, :active, :house_id, :user_id
         )
     end
   end
