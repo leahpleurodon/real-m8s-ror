@@ -1,0 +1,17 @@
+ 
+ <%= form_tag "/users", method: "post", :authenticity_token => true do %>
+        <label for="first_name">First Name</label>
+        <input type="text" name="user[first_name]">
+        <label for="last_name">Last Name</label>
+        <input type="text" name="user[last_name]">
+        <label for="dob">Date of Birth</label>
+        <input type="date" name="user[dob]">
+        <label for="username">username (must be unique)</label>
+        <input type="text" name="user[username]">
+        <label for="email">email</label>
+        <input type="email" name="user[email]">
+        <label for="password">Password</label>
+        <input type="password" name="user[password]">
+        
+        <button>Sign Up</button>
+<% end %>

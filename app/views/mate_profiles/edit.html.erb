@@ -1,0 +1,19 @@
+ <h1>My Mate Profile</h1>
+
+ <%= form_tag "/mate_profiles/#{@mate_profile.id}", method: "patch", :authenticity_token => true do %>
+        <label for="job">Occupation</label>
+        <input type="text" name="mate_profile[job]" value="<%= @mate_profile.job %>">
+        <label for="marital_status">Relationship Status</label>
+        <input type="text" name="mate_profile[marital_status]" value="<%= @mate_profile.marital_status %>">
+        <label for="is_smoker">Smoker</label>
+        <select name="mate_profile[is_smoker]" value="<%= @mate_profile.is_smoker %>">
+                <option value="true">Yes</option>
+                <option value="false">No</option>
+        </select>
+        <label for="faith">My Religion</label>
+        <input type="text" name="mate_profile[faith]" value="<%= @mate_profile.faith %>">
+        <label for="personality">My personality</label>
+        <input type="text" name="mate_profile[personality]" value="<%= @mate_profile.personality %>">
+    <button>save my details</button>
+        
+<% end %>

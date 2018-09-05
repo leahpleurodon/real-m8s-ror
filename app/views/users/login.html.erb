@@ -1,0 +1,19 @@
+    <div>
+        <h1>login</h1>
+    </div>
+
+    <div>
+        <%= @error %>
+    </div>
+
+    <div>
+        <form action="/session" method='post'>
+            <label class="form-label"for="">email </label>
+            <input class="input-box" type="text" name="email">
+            <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+            <label class="form-label" for="">password</label>
+            <input class="input-box" type="password" name="password">
+
+            <button class="submit-btn">login</button>
+        </form> 
+    </div>

@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class MateProfilesController < ApplicationController
-  before_action :set_mate_profile, only: %i[show update destroy]
+  before_action :set_mate_profile, only: %i[show update destroy edit]
   before_action :authorize!
   def show
     render json: @mate_profile
@@ -9,13 +9,17 @@ class MateProfilesController < ApplicationController
 
   def update
     if current_user.id != @mate_profile.user_id
-      render deny! and return
+      redirect_to '/my_profile' and return
     end
     if @mate_profile.update(mate_profile_params)
-      render json: @mate_profile
+      redirect_to '/my_profile' and return
     else
-      render json: @mate_profile.errors, status: :unprocessable_entity
+      render :edit
     end
+  end
+
+  def edit
+    @mate_profile
   end
 
   private

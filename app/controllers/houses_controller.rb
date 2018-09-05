@@ -8,22 +8,34 @@ class HousesController < ApplicationController
       render json: @house 
   end
 
+  def new
+    @house = House.new
+  end
+
   def create
     @house = House.new(house_params)
-
     if @house.save
-      render json: @house, status: :created, location: @house
+      redirect_to house_path(@house.id)
     else
-      render json: @house.errors, status: :unprocessable_entity
+      render :new
     end
+  end
+
+  def edit
+
   end
 
   def update
     if @house.update(house_params)
-      render json: @house
+      redirect_to house_path(@house.id)
     else
-      render json: @house.errors, status: :unprocessable_entity
+      render :edit
     end
+  end
+
+  def my_house
+    @houses = current_user.houses
+    render :show
   end
 
   private

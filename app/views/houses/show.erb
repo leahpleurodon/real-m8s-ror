@@ -1,0 +1,34 @@
+<% unless @houses.count < 1 %>
+    <% @houses.each do |house| %>
+        <h2>My House</h2>
+        <div>
+            <p><%= house.house_type %></p>
+            <p><%= house.address %></p>
+            <p><%= house.state %></p>
+            bio:
+            <p><%= house.bio %></p>
+        </div>
+
+        <div>
+            <h3>invite a mate:</h3>
+            <p><%= house.join_code %></p>
+        </div>
+        
+
+        <h2>My Mates</h2>
+        <div>
+            <% house.users.each do |mate| %>
+                <% unless mate == current_user %>
+                    <%= mate.first_name %>
+                    <%= link_to "view", user_path(mate.id) %>
+                <% end %>
+            <% end %>
+    <% end %>
+        </div>
+<% else %>
+    <h2>Hey mate!</h2>
+    <p>You're not part of a house... :(</p>
+    <p>join one or create one</p>
+    <p>or start at this puppy</p>
+    <p>[dog]</p>
+<% end %>

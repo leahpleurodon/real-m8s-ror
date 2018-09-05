@@ -1,0 +1,31 @@
+<p><%= @user.first_name %></p>
+<p><%= @user.last_name %></p>
+<p><%= @user.email %></p>
+<p><%= @user.gender %></p>
+<p><%= @user.dob %></p>
+
+<div>
+    <p><%= @user.mate_profile.marital_status %></p>
+    <p><%= @user.mate_profile.job %></p>
+    <p><%= @user.mate_profile.is_smoker %></p>
+    <p><%= @user.mate_profile.faith %></p>
+    <p><%= @user.mate_profile.personality %></p>
+
+</div>
+
+<div>
+    <h1>review me</h1>
+     <%= form_tag "/mate_reviews", method: "post", :authenticity_token => true do %>
+        <input type="hidden" name="mate_review[user_id]" value="<%= @user.id %>">
+        <input type="number" name="mate_review[rating]">
+        <textarea name="mate_review[comment]"></textarea>
+        <button>post</button>
+    <% end %>
+
+    <% @user.received_reviews.each do |review| %>
+        <%= review.rating %>
+        <%= review.comment %>
+        <%= review.author.first_name %>
+    <% end %>
+</div>
+

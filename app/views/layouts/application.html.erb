@@ -10,6 +10,13 @@
   </head>
 
   <body>
+    <nav>
+        <ul>
+            <li><%= link_to "My House", '/my_house' %></li>
+            <li><%= render "/layouts/partials/login" %></li>
+        </ul>
+      
+    </nav>
     <%= yield %>
   </body>
 </html>

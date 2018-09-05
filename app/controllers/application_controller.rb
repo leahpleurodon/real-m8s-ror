@@ -1,14 +1,13 @@
 # frozen_string_literal: true
 
-class ApplicationController < ActionController::API
+class ApplicationController < ActionController::Base
 
     def authenticated?
-        user = User.find_by(id: params[:auth_id])
-        user ? true : false
+        !!session[:user_id] ? true : false
     end
 
     def current_user
-        User.find_by(id: params[:auth_id])
+        User.find(session[:user_id])
     end
 
     def authorize!
@@ -24,7 +23,7 @@ class ApplicationController < ActionController::API
     end
 
     def deny!
-        {json: {error: 'Unauthorised'}, status: 401}
+        redirect_to '/login'
     end
 
     def generate_payments!(bill)

@@ -2,49 +2,63 @@
 
 class UsersController < ApplicationController
   before_action :set_user, only: %i[show update destroy]
-  before_action :authorize!, except: %i[create login]
+  before_action :authorize!, except: %i[create login new new_session]
 
   def show
-    render json: @user
+    @user
   end
 
   def create
     @user = User.new(user_params)
 
     if @user.save
-      MateProfile.create(user: @user)
-      render json: @user, status: :created, location: @user
+      profile = MateProfile.create(user: @user)
+      session[:user_id] = @user.id
+      redirect_to edit_mate_profile_path(profile.id)
     else
-      render json: @user.errors, status: :unprocessable_entity
+      render :new
     end
   end
 
+  def new
+    redirect_to '/my_profile' and return if !!session[:user_id]
+    @user = User.new()
+    render :layout => false
+  end
+
+  def edit
+
+  end
   def update
-    if @user.update(user_params)
-      render json: @user
-    else
-      render json: @user.errors, status: :unprocessable_entity
-    end
+    render edit unless @user.update(user_params)
   end
 
   def my_profile
     
-    @user = User.find(params[:auth_id])
-    @profile = MateProfile.where(user: @user).first
-    render json: {user: @user, profile: @profile}
+    @user = current_user
+    render :show
   end
 
   def login
+    render :layout => false
+  end
+
+  def new_session
     user = User.find_by(email: params[:email].to_s.downcase)
     
     if user && user.authenticate(params[:password])
-        auth_id = user.id.to_s
-        render json: {auth_id: auth_id, time: Time.now}, status: :ok
+        session[:user_id] = user.id
+        redirect_to :my_profile
     else
-      render json: {error: 'Invalid username / password'}, status: :unauthorized
+      @error = "Wrong email/password combo"
+      render :login
     end
   end
 
+  def delete_session
+    session[:user_id] = nil
+    redirect_to "/"
+  end
   private
 
   def set_user

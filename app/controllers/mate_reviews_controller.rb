@@ -3,20 +3,18 @@
 class MateReviewsController < ApplicationController
   before_action :set_mate_review, only: %i[show update destroy]
   before_action :authorize!
-  def show
-    render json: @mate_review
-  end
 
   def create
     if current_user.id == params[:user_id]
-      render deny! and return
+      redirect_to '/my_profile' and return
     end
+    
     @mate_review = MateReview.new(mate_review_params)
-
+    @mate_review.author_id = current_user.id
     if @mate_review.save
-      render json: @mate_review, status: :created, location: @mate_review
+      redirect_to user_path(@mate_review.user_id)
     else
-      render json: @mate_review.errors, status: :unprocessable_entity
+      redirect_to root
     end
   end
 
@@ -39,7 +37,7 @@ class MateReviewsController < ApplicationController
 
   def mate_review_params
     params.require(:mate_review).permit(
-      :rating, :comment, :active, :author_id, :user_id
+      :rating, :comment, :active, :user_id
     )
   end
 end
