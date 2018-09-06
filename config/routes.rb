@@ -10,7 +10,10 @@ Rails.application.routes.draw do
   resources :mate_reviews
   resources :mate_profiles
   get '/',  to: 'static_pages#index'
+  get '/about',  to: 'static_pages#about'
   get '/login', to: 'users#login'
+  get 'auth/:provider/callback', to: 'users#login_oauth'
+  get 'auth/failure', to: redirect('/')
   post '/session', to: 'users#new_session'
   delete '/session', to: 'users#delete_session'
   get '/my_profile', to: 'users#my_profile'
@@ -25,5 +28,6 @@ Rails.application.routes.draw do
   get '/houses/:id/unpaid_bills', to: 'houses#unpaid_bills'
   get '/houses/:id/chores', to: 'houses#chores'
   get '/my_share_history', to: 'house_users#my_history'
+  get '/my_chores', to: 'users#my_chores'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

@@ -5,7 +5,7 @@ houses = [
         state: "VIC",
         country: "AUS",
         rent: 403.4,
-        join_code: "EEEEEEEE",
+        join_code: SecureRandom.hex 4,
         bio: "Our house, is a very fine house..."
     },
     {
@@ -14,7 +14,7 @@ houses = [
         state: "VIC",
         country: "AUS",
         rent: 403.4,
-        join_code: "FFFFFFFF",
+        join_code: SecureRandom.hex 4,
         bio: "Our house, is a very fine house..."
     },
     {
@@ -23,7 +23,7 @@ houses = [
         state: "VIC",
         country: "AUS",
         rent: 403.4,
-        join_code: "GGGGGGGG",
+        join_code: SecureRandom.hex 4,
         bio: "Our house, is a very fine house..."
     }
 ]

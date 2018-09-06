@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 class UsersController < ApplicationController
-    before_action :notloggedin!, except: %i[create new login new_session]
+    before_action :notloggedin!, except: %i[create new login new_session login_oauth]
     before_action :set_user, only: %i[show update reviews destroy]
-
+    skip_before_action :verify_authenticity_token
   def show
     @user
   end
@@ -38,6 +38,10 @@ class UsersController < ApplicationController
     redirect_to '/my_profile'
   end
 
+  def my_chores
+ 
+  end
+
   def my_profile
     
     @user = current_user
@@ -47,6 +51,12 @@ class UsersController < ApplicationController
   def login
     redirect_to '/my_profile' and return if !!session[:user_id]
     render :layout => false
+  end
+  def login_oauth
+    session['omniauth.state']
+    user = User.from_omniauth(request.env["omniauth.auth"])
+    session[:user_id] = user.id
+    redirect_to 'my/profile'
   end
 
   def new_session

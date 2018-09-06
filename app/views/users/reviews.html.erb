@@ -1,6 +1,3 @@
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/rateYo/2.3.2/jquery.rateyo.min.css">
-<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/rateYo/2.3.2/jquery.rateyo.min.js"></script>
 
 <header>
     <h1><%= @user.first_name %>'s Reviews</h1>
@@ -65,7 +62,7 @@
         });
 
         $("#rateYo-average").rateYo({
-            rating: <%= @overall_rating %>,
+            rating: <%= @overall_rating || 0 %>,
             readOnly: true,
             starWidth: "20px"
         });

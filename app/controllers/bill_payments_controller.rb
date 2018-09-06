@@ -1,27 +1,10 @@
 class BillPaymentsController < ApplicationController
     before_action :notloggedin!
     before_action :set_bill_payment, only: %i[show update destroy]
-    def show
-      render json: @bill_payment
-    end
-  
-    def create
-      @bill_payment = BillPayment.new(bill_payment_params)
-      
-      if @bill_payment.save
-        render json: @bill_payment, status: :created, location: @bill_payment
-      else
-        render json: @bill_payment.errors, status: :unprocessable_entity
-      end
-    end
   
     def update
-
-      if @bill_payment.update(bill_payment_params)
-        render json: @bill_payment
-      else
-        render json: @bill_payment.errors, status: :unprocessable_entity
-      end
+        @bill_payment.update(bill_payment_params)
+        redirect_to '/my_house'
     end
   
     private

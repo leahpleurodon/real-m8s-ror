@@ -1,5 +1,6 @@
 <div style="border-bottom: 1px solid gray;">
-    <h2>Bills - History</h2>
+    <h2>Bills - History</h2> 
+    <p><a href="/house_bills/new">Add a bill</a></p>
     <% @house_bills.each do |bill| %>
         <p>Description: <%= bill.desc %></p>
         <p>Amount: <%= bill.amount %></p>
@@ -14,8 +15,18 @@
                         <%= payment.user.first_name %>
                         <% if payment.paid %>
                             has paid
+                            <%= form_tag "/bill_payments/#{payment.id}", method: "patch", :authenticity_token => true do %>
+                                <input type="hidden" name="bill_payment[paid]" value="false">
+                                <button>mark as unpaid</button>
+                        
+                            <% end %>
                         <% else %>
-                            owes <%= payment.amount_due %>
+                            owes <%= payment.amount_due %> 
+                            <%= form_tag "/bill_payments/#{payment.id}", method: "patch", :authenticity_token => true do %>
+                                <input type="hidden" name="bill_payment[paid]" value="true">
+                                <button>mark as paid</button>
+                            <% end %>
+     
                         <% end %>
                     </li>
                 <% end %>

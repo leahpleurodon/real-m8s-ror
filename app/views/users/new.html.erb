@@ -4,17 +4,19 @@
 <%= stylesheet_link_tag    'pages/login-mobile', media: 'only screen and (max-device-width: 500px)' %>
 <div>
     <section class="logo">
-        <img src='/logo.svg' alt="real m8s logo" />
+        <a href="/">
+            <img src='/logo.svg' alt="real m8s logo" />
+        </a>
     </section>
 
     <main>
 
         <div class="login-form">
             <section class="ouath">
-                <p>Google</p>
+                <p><%= link_to "Sign in with Google", "/auth/google_oauth2", id: "sign_in" %></p>
                 <p>Facebook</p>
             </section>
-            <h5><span>or sign up with email</span></h5>
+            <h5><span>or sign up with email, already a member? <a href="/login">login</a></span></h5>
             <section class="email">
                 <div style="margin: 1vh 0; color: red;">
                     <% unless @user.errors.full_messages.empty? %>

@@ -26,6 +26,8 @@ gem 'carrierwave'
 gem "figaro"
 gem "fog-aws"
 gem "mini_magick"
+gem "omniauth-google-oauth2", "~> 0.2.1"
+gem "httparty"
 
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'

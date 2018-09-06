@@ -28,6 +28,12 @@ house_users = [
         user: User.where(last_name: "Murnane").first,
         is_admin: false,
         active: true
+    },
+    {
+        house: House.where(address: "13 Robb st Reservoir").first,
+        user: User.where(last_name: "Eramo").first,
+        is_admin: false,
+        active: false
     }
 
 ]

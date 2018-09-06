@@ -23,7 +23,7 @@ main {
     width: 15vw;
     margin-bottom: 10vh; 
 }
-.logo > img {
+.logo > a > img {
     width: 100%;
     margin: 3vh; 
 }

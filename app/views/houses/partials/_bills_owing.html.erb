@@ -1,5 +1,6 @@
 <div style="border-bottom: 1px solid gray;">
     <h2>Bills - Owing</h2>
+    <p><a href="/house_bills/new">Add a bill</a></p>
     <% @house_bills.each do |bill| %>
         <p>Description: <%= bill.desc %></p>
         <p>Amount: <%= bill.amount %></p>

@@ -1,0 +1,86 @@
+
+<header>
+    <h1>My Chores</h1>
+</header>
+<nav class="horizontal-nav">
+    <ul>
+        <a href="<%= user_path(current_user.id) %>">
+            <li>profile</li>
+        </a>
+        <a href="/users/<%= current_user.id %>/reviews">
+            <li>reviews</li>
+        </a>
+        <% if current_user == current_user %>
+            <a href="<%= edit_mate_profile_path(current_user.mate_profile.id) %>">
+                <li>edit profile</li>
+            </a>
+        <% end %>
+    </ul>
+</nav>
+<main>
+    <div>
+        <h4>Monday</h4>
+        <div class="day">
+            <% current_user.user_house_chores.where(day_of_week: "monday").each do |chore| %>
+                <div style="background-color: <%= random_color %>">
+                    <p>Chore: <%= chore.chore.name %></p>
+                    <p>Mate: <%= chore.user.first_name %></p>
+                </div>
+            <% end %>
+        </div>
+        <h4>Tuesday</h4>
+        <div class="day">
+            <% current_user.user_house_chores.where(day_of_week: "tuesday").each do |chore| %>
+                <div style="background-color: <%= random_color %>">
+                    <p>Chore: <%= chore.chore.name %></p>
+                    <p>Mate: <%= chore.user.first_name %></p>
+                </div>
+            <% end %>
+        </div>
+        <h4>Wednesday</h4>
+        <div class="day">
+            <% current_user.user_house_chores.where(day_of_week: "wednesday").each do |chore| %>
+                <div style="background-color: <%= random_color %>">
+                    <p>Chore: <%= chore.chore.name %></p>
+                    <p>Mate: <%= chore.user.first_name %></p>
+                </div>
+            <% end %>
+        </div>
+        <h4>Thursday</h4>
+        <div class="day">
+            <% current_user.user_house_chores.where(day_of_week: "thursday").each do |chore| %>
+                <div style="background-color: <%= random_color %>">
+                    <p>Chore: <%= chore.chore.name %></p>
+                    <p>Mate: <%= chore.user.first_name %></p>
+                </div>
+            <% end %>
+        </div>
+        <h4>Friday</h4>
+        <div class="day">
+            <% current_user.user_house_chores.where(day_of_week: "friday").each do |chore| %>
+                <div style="background-color: <%= random_color %>">
+                    <p>Chore: <%= chore.chore.name %></p>
+                    <p>Mate: <%= chore.user.first_name %></p>
+                </div>
+            <% end %>
+        </div>
+        <h4>Saturday</h4>
+        <div class="day">
+            <% current_user.user_house_chores.where(day_of_week: "saturday").each do |chore| %>
+                <div style="background-color: <%= random_color %>">
+                    <p>Chore: <%= chore.chore.name %></p>
+                    <p>Mate: <%= chore.user.first_name %></p>
+                </div>
+            <% end %>
+        </div>
+        <h4>Sunday</h4>
+        <div class="day">
+            <% current_user.user_house_chores.where(day_of_week: "sunday").each do |chore| %>
+                <div style="background-color: <%= random_color %>">
+                    <p>Chore: <%= chore.chore.name %></p>
+                    <p>Mate: <%= chore.user.first_name %></p>
+                </div>
+            <% end %>
+        </div>
+    </div>
+</main>

@@ -67,5 +67,12 @@ users.each do |u|
   
   user = User.new(u)
   user.save
-  MateProfile.create(user: user)
+  MateProfile.create(
+    user: user,
+    marital_status: ["single","married","widowed"].sample,
+    job: ["farmer","doctor","undertaker"].sample,
+    is_smoker: [true, false].sample,
+    faith: ["jedi", "none", "catholic"].sample,
+    personality: ["party animal", "hermit"].sample
+    )
 end

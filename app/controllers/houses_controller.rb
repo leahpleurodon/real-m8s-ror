@@ -10,6 +10,7 @@ class HousesController < ApplicationController
 
   def create
     @house = House.new(house_params)
+    @house.join_code = SecureRandom.hex 4
     if @house.save
       redirect_to house_path(@house.id)
     else

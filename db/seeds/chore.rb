@@ -28,6 +28,16 @@ chores = [
         name: "Clean the kitchen",
         outdoor: false,
         active: true
+    },
+    {
+        name: "Weeding",
+        outdoor: true,
+        active: true
+    },
+    {
+        name: "Dusting",
+        outdoor: true,
+        active: true
     }
 ]
 
