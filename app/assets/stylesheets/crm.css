@@ -99,10 +99,10 @@ aside{
     line-height: 5vh;
     margin: 4vh auto;
     border-radius: 30px;
-    background-color: rgba(243, 247, 237, 30%)
+    background-color: rgba(243, 247, 237, 30)
 }
 .links li:hover{
-    background-color: rgba(243, 247, 237, 60%)
+    background-color: rgba(243, 247, 237, 60)
 }
 header{
     margin: 0;
