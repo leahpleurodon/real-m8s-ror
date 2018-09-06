@@ -19,7 +19,10 @@ Rails.application.routes.draw do
   get '/join_house', to: 'houses#join'
   post '/join_house', to: 'house_users#join_house'
   post '/leave_house', to: 'house_users#leave_house'
-  
+  get '/users/:id/reviews', to: 'users#reviews'
+  get '/houses/:id/all_bills', to: 'houses#all_bills'
+  get '/houses/:id/invite_code', to: 'houses#invite_code'
+  get '/houses/:id/unpaid_bills', to: 'houses#unpaid_bills'
   
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

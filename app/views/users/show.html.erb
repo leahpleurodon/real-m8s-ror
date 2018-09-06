@@ -4,41 +4,60 @@
 <nav class="horizontal-nav">
     <ul>
         <a href="<%= user_path(@user.id) %>">
-            <li class="active">Profile</li>
+            <li class="active">profile</li>
         </a>
-        <a href="<%= user_path(@user.id) %>">
-            <li>Profile</li>
+        <a href="/users/<%= @user.id %>/reviews">
+            <li>reviews</li>
         </a>
-        <a href="<%= user_path(@user.id) %>">
-            <li>Profile</li>
-        </a>
+        <% if @user == current_user %>
+            <a href="<%= edit_mate_profile_path(@user.mate_profile.id) %>">
+                <li>edit profile</li>
+            </a>
+        <% end %>
     </ul>
 </nav>
 <main>
     <%= render 'users/partials/image_form'%>
     
-    <div>
-        <h3>Name</h3>
-        <p><%= @user.first_name %> <%= @user.last_name %></p>
-        <h3>Gender</h3>
-        <p><%= @user.gender %></p>
-        <h3>Birthday</h3>
-        <p><%= @user.dob %></p>
+    <div class="col2">
+        <p>
+            <b>Name</b>
+            <%= @user.first_name %> <%= @user.last_name %>
+        </p>
+        <p>
+            <b>Gender</b>
+            <%= @user.gender %>
+        </p>
+        <p>
+            <b>Birthday</b>
+            <%= @user.dob.strftime('%d %B') %>
+        </p>
     </div>
 
-    <div>
-        <h3>Relationship Status</h3>
-        <p><%= @user.mate_profile.marital_status %></p>
-        <h3>Occupation</h3>
-        <p><%= @user.mate_profile.job %></p>
-        <h3>Do I smoke?</h3>
-        <p><%= @user.mate_profile.is_smoker ? "yes" : "no" %></p>
-        <h3>Faith</h3>
-        <p><%= @user.mate_profile.faith %></p>
-        <h3>Personality</h3>
-        <p><%= @user.mate_profile.personality %></p>
+    <div class="col2">
+        <p>
+            <b>Relationship Status</b>
+            <%= @user.mate_profile.marital_status %>
+        </p>
+        <p>
+            <b>Occupation</b>
+            <%= @user.mate_profile.job %>
+        </p>
+        <p>
+            <b>Do I smoke?</b>
+            <%= @user.mate_profile.is_smoker ? "yes" : "no" %>
+        </p>
+        <p>
+            <b>Faith</b>
+            <%= @user.mate_profile.faith %>
+        </p>
+        <p>
+            <b>Personality</b>
+            <%= @user.mate_profile.personality %>
+        </p>
 
     </div>
+
 
 </main>
 

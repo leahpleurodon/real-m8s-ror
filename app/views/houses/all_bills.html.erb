@@ -11,10 +11,10 @@
                 <li>unpaid bills</li>
             </a>
             <a href="/houses/<%= @house.id %>/all_bills">
-                <li>bill history</li>
+                <li class="active">bill history</li>
             </a>
-            <a href="/houses/<%= @house.id %>/join_code">
-                <li class="active">invite mates</li>
+            <a href="/houses/<%= @house.id %>/invite_code">
+                <li>invite mates</li>
             </a>
         <% else %>
             <a href="/join_house">
@@ -24,12 +24,4 @@
     </ul>
 </nav>
 <main>
-     <h2>Get ready to join your new mates...</h2>
-    <h3>If you join a house when you're part of another, you will leave that house.</h3>
- <%= form_tag "/join_house", method: "post", :authenticity_token => true do %>
-        <label for="join_code">Enter Join Code</label>
-        <input type="text" name="join_code">
-        
-        <button class="submit">Join House</button>
-<% end %>
 </main>

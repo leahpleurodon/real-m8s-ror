@@ -1,4 +1,4 @@
-<div>
+<div style="border-bottom: 1px solid gray;">
     <h2>Bills Owing</h2>
     <% @house_bills.each do |bill| %>
         <p>Description: <%= bill.desc %></p>
@@ -17,6 +17,27 @@
                         <% else %>
                             owes <%= payment.amount_due %>
                         <% end %>
+                    </li>
+                <% end %>
+            </ul>
+        </div>
+        <div>
+            <ul>
+                <% bill.bill_images.each do |img| %>
+                    <li style="display: inline;">
+                        <a href="<%= img.image.url %>"
+                            target="_blank"
+                        >
+                        <div style="
+                            display: inline-block;
+                            margin: 4vh 3vw;
+                            background-image: url('<%= img.image.url(:thumb)%>');
+                            background-position: 50% 50%;
+                            background-size: cover;
+                            width: 15vw;
+                            height:15vw;
+                        ">
+                        </div></a>
                     </li>
                 <% end %>
             </ul>

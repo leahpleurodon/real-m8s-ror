@@ -5,6 +5,7 @@ class User < ApplicationRecord
   has_one :mate_profile
   has_many :user_pets
   has_many :house_bills
+  has_many :mate_reviews
   has_many :house_users, -> { where active: true }
   has_many :houses, :through => :house_users
 

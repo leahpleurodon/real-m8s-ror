@@ -1,19 +1,35 @@
- <h2>My Mate Profile</h2>
-
- <%= form_tag "/mate_profiles/#{@mate_profile.id}", method: "patch", :authenticity_token => true do %>
-        <label for="job">Occupation</label>
+<header>
+    <h1>edit my profile</h1>
+</header>
+<nav class="horizontal-nav">
+    <ul>
+        <a href="<%= user_path(@mate_profile.user.id) %>">
+            <li>profile</li>
+        </a>
+        <a href="/users/<%= @mate_profile.user.id %>/reviews">
+            <li>reviews</li>
+        </a>
+        <a href="<%= edit_mate_profile_path(@mate_profile.id) %>">
+            <li class="active">edit profile</li>
+        </a>
+    </ul>
+</nav>
+<main>
+     <%= form_tag "/mate_profiles/#{@mate_profile.id}", method: "patch", :authenticity_token => true do %>
+        <h3>Occupation</h3>
         <input type="text" name="mate_profile[job]" value="<%= @mate_profile.job %>">
-        <label for="marital_status">Relationship Status</label>
+        <h3>Relationship Status</h3>
         <input type="text" name="mate_profile[marital_status]" value="<%= @mate_profile.marital_status %>">
-        <label for="is_smoker">Smoker</label>
+        <h3>Smoker</h3>
         <select name="mate_profile[is_smoker]" value="<%= @mate_profile.is_smoker %>">
                 <option value="true">Yes</option>
                 <option value="false">No</option>
         </select>
-        <label for="faith">My Religion</label>
+        <h3>My Religion</h3>
         <input type="text" name="mate_profile[faith]" value="<%= @mate_profile.faith %>">
-        <label for="personality">My personality</label>
+        <h3>My personality</h3>
         <input type="text" name="mate_profile[personality]" value="<%= @mate_profile.personality %>">
-    <button>save my details</button>
+        <button class="submit">save my details</button>
         
-<% end %>
+    <% end %>
+</main>

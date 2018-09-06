@@ -2,10 +2,15 @@
 
 class UsersController < ApplicationController
     before_action :notloggedin!, except: %i[create new login new_session]
-    before_action :set_user, only: %i[show update destroy]
+    before_action :set_user, only: %i[show update reviews destroy]
 
   def show
     @user
+  end
+
+  def reviews
+    @reviews = @user.mate_reviews
+    @overall_rating = @reviews.average(:rating)
   end
 
   def create

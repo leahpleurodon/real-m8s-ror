@@ -4,7 +4,7 @@
 }
 a, a:visited{
     text-decoration: none;
-    color: #F3F7ED;
+    color: #E56399;
 }
 html{
     font-family: 'Raleway', 'sans-serif';
@@ -19,13 +19,16 @@ body{
     background-size: cover;
     background-attachment: fixed;
 }
+h3{
+    margin: 2vh 0;
+}
 ul,li{
     padding:0;
     list-style: none;
 }
 aside{
     width: 25vw;
-    height: 100vw;
+    height: 100vh;
     background: #4A4A4A;
     text-align: center;
     display: inline-block;
@@ -42,19 +45,19 @@ aside{
     margin: 3vh 0;
 }
 .circle-image{
-    width: 9vw;
-    height: 9vw;
+    width: 7vw;
+    height: 7vw;
     margin: 3vh auto;
     border-radius: 50%;
     background-position: 50% 50%;
     background-size: cover;
 }
 .default-circle, .profile-default{
-    width: 8vw;
-    height: 8vw;
+    width: 7vw;
+    height: 7vw;
     border-radius: 50%;
-    line-height: 8vw;
-    font-size: 6vw;
+    line-height: 7vw;
+    font-size: 4vw;
     color: #F3F7ED;
 }
 .default-circle{
@@ -114,8 +117,9 @@ header{
     text-align: center;
     margin: 0;
 }
-.horizontal-nav li,a{
+.horizontal-nav li, .horizontal-nav a{
     background-color: #4A4A4A;
+    color: #F3F7ED;
     height: 8vh;
     line-height: 7vh;
     font-size: 1.5vw;
@@ -146,10 +150,45 @@ main{
     background-color: #F3F7ED;
     padding: 3vh;
     width:100%;
-    height:72vh;
+    height:75vh;
     position: fixed;
 }
 .profile-image{
     float:left;
     margin-right: 5vw;
+}
+.col2{
+    display: inline-block;
+    width: 30%;
+    margin: 5vh 1vw 0 1vw;
+    vertical-align: top;
+}
+main textarea{
+    display: block;
+    margin: 0;
+    height: 10vh;
+    width: 30vw;
+    border: none;
+
+}
+.list{
+    margin-top: 3vh;
+    border-bottom: 1px solid #4A4A4A;
+}
+.submit{
+    border: none;
+    background-color: #e56399;
+    width: 10vw;
+    height:5vh;
+    margin: 3vh 0;
+    border-radius: 5px;
+    color: #f1f7ed;
+}
+input, select{
+    display: block;
+    height: 2vw;
+    width: 20vw;
+}
+.link:hover{
+    color: #4a90e2;
 }

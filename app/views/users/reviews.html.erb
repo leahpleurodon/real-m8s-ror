@@ -1,15 +1,47 @@
+<header>
+    <h1><%= @user.first_name %>'s Reviews</h1>
+</header>
+<nav class="horizontal-nav">
+    <ul>
+        <a href="<%= user_path(@user.id) %>">
+            <li>profile</li>
+        </a>
+        <a href="/users/<%= @user.id %>/reviews">
+            <li class="active">reviews</li>
+        </a>
+        <% if @user == current_user %>
+            <a href="<%= edit_mate_profile_path(@user.mate_profile.id) %>">
+                <li>edit profile</li>
+            </a>
+        <% end %>
+    </ul>
+</nav>
+<main>
     <% if shared_houses?(@user) && unreviewed?(@user) && @user != current_user %>
-        <h1>review me</h1>
+        <h2>review me</h2>
         <%= form_tag "/mate_reviews", method: "post", :authenticity_token => true do %>
             <input type="hidden" name="mate_review[user_id]" value="<%= @user.id %>">
             <input type="number" name="mate_review[rating]">
             <textarea name="mate_review[comment]"></textarea>
-            <button>post</button>
+            <button class="submit">post</button>
         <% end %>
     <% end %>
-
-    <% @user.received_reviews.each do |review| %>
-        <%= review.rating %>
-        <%= review.comment %>
-        <%= review.author.first_name %>
-    <% end %>
+    <div>
+        Overall rating: <%= @overall_rating %>
+    </div>
+    <div>
+        <% @user.received_reviews.each do |review| %>
+            <div class="list">
+                <div>
+                    Rating: <%= review.rating %>
+                </div>
+                <div>
+                    Comment: <%= review.comment %>
+                </div>
+                <div>
+                    Written by: <%= review.author.first_name %>
+                </div>
+            </div>
+        <% end %>
+    </div>
+</main>

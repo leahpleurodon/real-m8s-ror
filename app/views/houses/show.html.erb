@@ -1,20 +1,49 @@
-<% unless @houses.count < 1 %>
-    <% @houses.each do |house| %>
-        <h2>My House</h2>
-        <%= render '/houses/partials/house_details', :house => house %>
-        <%= render '/houses/partials/invite_code', :house => house %>
-        <%= render '/houses/partials/leave_house', :house => house %>
-        <%= render '/houses/partials/my_mates', :house => house %>
-        <%= render '/houses/partials/chores', :house => house %>
-        <%= render '/houses/partials/bills_owing' %> 
-        <%= render '/houses/partials/bills_all', :house => house %> 
+<header>
+    <h1>My House</h1>
+</header>
+<nav class="horizontal-nav">
+    <ul>
+        <% unless @houses.count < 1 %>
+            <a href="/my_house">
+                <li class="active">my house</li>
+            </a>
+            <a href="/houses/<%= @house.id %>/unpaid_bills">
+                <li>unpaid bills</li>
+            </a>
+            <a href="/houses/<%= @house.id %>/all_bills">
+                <li>bill history</li>
+            </a>
+            <a href="/houses/<%= @house.id %>/invite_code">
+                <li>invite mates</li>
+            </a>
+        <% else %>
+            <a href="/join_house">
+                <li>join a house</li>
+            </a>
+        <% end %>
+    </ul>
+</nav>
+<main>
+    <% unless @houses.count < 1 %>
+        <% @houses.each do |house| %>
+            <%= render '/houses/partials/leave_house', :house => house %>
+            <%= render '/houses/partials/house_details', :house => house %>
+            <%= render '/houses/partials/my_mates', :house => house %>
+        <% end %>
+    <% else %>
+        <div>
+            <h2>Hey mate!</h2>
+            <p>You're not part of a house... :(</p>
+            <p>join one or create one</p>
+            <p>or stare at this puppy</p>
+            <div style="
+                background-image: url('dogberto.jpg');
+                background-position: 50% 50%;
+                background-size: cover;
+                width: 20vw;
+                height:20vw;
+            ">
+            </div>
+        </div>
     <% end %>
-<% else %>
-    <div>
-        <h2>Hey mate!</h2>
-        <p>You're not part of a house... :(</p>
-        <p>join one or create one</p>
-        <p>or start at this puppy</p>
-        <p>[dog]</p>
-    </div>
-<% end %>
+</main>
