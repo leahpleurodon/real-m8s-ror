@@ -3,19 +3,29 @@
 </header>
 <nav class="horizontal-nav">
     <ul>
-        <a href="/my_house">
-            <li>my house</li>
-        </a>
-        <a href="/houses/<%= @house.id %>/unpaid_bills">
-            <li>unpaid bills</li>
-        </a>
-        <a href="/houses/<%= @house.id %>/all_bills">
-            <li>bill history</li>
-        </a>
-        <a href="/houses/<%= @house.id %>/join_code">
-            <li class="active">invite mates</li>
-        </a>
+        <% unless @houses.count < 1 %>
+            <a href="/my_house">
+                <li>my house</li>
+            </a>
+            <a href="/houses/<%= @house.id %>/unpaid_bills">
+                <li>unpaid bills</li>
+            </a>
+            <a href="/houses/<%= @house.id %>/all_bills">
+                <li>bill history</li>
+            </a>
+            <a href="/houses/<%= @house.id %>/invite_code">
+                <li class="active">invite mates</li>
+            </a>
+            <a href="/houses/<%= @house.id %>/chores">
+                <li>house chores</li>
+            </a>
+        <% else %>
+            <a href="/join_house">
+                <li>join a house</li>
+            </a>
+        <% end %>
     </ul>
 </nav>
 <main>
+    <%= render 'houses/partials/invite_code' %>
 </main>

@@ -1,55 +1,68 @@
 <div>
-    <%= link_to "add to roster", new_user_house_chore_path %>
-    <h2>House Chores</h2>
+    <%= link_to "add to roster", new_user_house_chore_path, class: "link" %>
  
-    <div style="display:flex; text-align:centre;">
-        <div class="day" style="flex:1;">
-            <h3>Monday</h3>
-            <% house.user_house_chores.where(day_of_week: "monday").each do |chore| %>
-                <p>Chore: <%= chore.chore.name %></p>
-                <p>Mate: <%= chore.user.first_name %></p>
+    <div>
+        <h4>Monday</h4>
+        <div class="day">
+            <% @house.user_house_chores.where(day_of_week: "monday").each do |chore| %>
+                <div style="background-color: <%= random_color %>">
+                    <p>Chore: <%= chore.chore.name %></p>
+                    <p>Mate: <%= chore.user.first_name %></p>
+                </div>
             <% end %>
         </div>
-        <div class="day" style="flex:1;">
-            <h3>Tuesday</h3>
-            <% house.user_house_chores.where(day_of_week: "tuesday").each do |chore| %>
-                <p>Chore: <%= chore.chore.name %></p>
-                <p>Mate: <%= chore.user.first_name %></p>
+        <h4>Tuesday</h4>
+        <div class="day">
+            <% @house.user_house_chores.where(day_of_week: "tuesday").each do |chore| %>
+                <div style="background-color: <%= random_color %>">
+                    <p>Chore: <%= chore.chore.name %></p>
+                    <p>Mate: <%= chore.user.first_name %></p>
+                </div>
             <% end %>
         </div>
-        <div class="day" style="flex:1;">
-            <h3>Wednesday</h3>
-            <% house.user_house_chores.where(day_of_week: "wednesday").each do |chore| %>
-                <p>Chore: <%= chore.chore.name %></p>
-                <p>Mate: <%= chore.user.first_name %></p>
+        <h4>Wednesday</h4>
+        <div class="day">
+            <% @house.user_house_chores.where(day_of_week: "wednesday").each do |chore| %>
+                <div style="background-color: <%= random_color %>">
+                    <p>Chore: <%= chore.chore.name %></p>
+                    <p>Mate: <%= chore.user.first_name %></p>
+                </div>
             <% end %>
         </div>
-        <div class="day" style="flex:1;">
-            <h3>Thursday</h3>
-            <% house.user_house_chores.where(day_of_week: "thursday").each do |chore| %>
-                <p>Chore: <%= chore.chore.name %></p>
-                <p>Mate: <%= chore.user.first_name %></p>
+        <h4>Thursday</h4>
+        <div class="day">
+            <% @house.user_house_chores.where(day_of_week: "thursday").each do |chore| %>
+                <div style="background-color: <%= random_color %>">
+                    <p>Chore: <%= chore.chore.name %></p>
+                    <p>Mate: <%= chore.user.first_name %></p>
+                </div>
             <% end %>
         </div>
-        <div class="day" style="flex:1;">
-            <h3>Friday</h3>
-            <% house.user_house_chores.where(day_of_week: "friday").each do |chore| %>
-                <p>Chore: <%= chore.chore.name %></p>
-                <p>Mate: <%= chore.user.first_name %></p>
+        <h4>Friday</h4>
+        <div class="day">
+            <% @house.user_house_chores.where(day_of_week: "friday").each do |chore| %>
+                <div style="background-color: <%= random_color %>">
+                    <p>Chore: <%= chore.chore.name %></p>
+                    <p>Mate: <%= chore.user.first_name %></p>
+                </div>
             <% end %>
         </div>
-        <div class="day" style="flex:1;">
-            <h3>Saturday</h3>
-            <% house.user_house_chores.where(day_of_week: "saturday").each do |chore| %>
-                <p>Chore: <%= chore.chore.name %></p>
-                <p>Mate: <%= chore.user.first_name %></p>
+        <h4>Saturday</h4>
+        <div class="day">
+            <% @house.user_house_chores.where(day_of_week: "saturday").each do |chore| %>
+                <div style="background-color: <%= random_color %>">
+                    <p>Chore: <%= chore.chore.name %></p>
+                    <p>Mate: <%= chore.user.first_name %></p>
+                </div>
             <% end %>
         </div>
-        <div class="day" style="flex:1;">
-            <h3>Sunday</h3>
-            <% house.user_house_chores.where(day_of_week: "sunday").each do |chore| %>
-                <p>Chore: <%= chore.chore.name %></p>
-                <p>Mate: <%= chore.user.first_name %></p>
+        <h4>Sunday</h4>
+        <div class="day">
+            <% @house.user_house_chores.where(day_of_week: "sunday").each do |chore| %>
+                <div style="background-color: <%= random_color %>">
+                    <p>Chore: <%= chore.chore.name %></p>
+                    <p>Mate: <%= chore.user.first_name %></p>
+                </div>
             <% end %>
         </div>
     </div>

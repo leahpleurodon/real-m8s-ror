@@ -183,6 +183,7 @@ main textarea{
     margin: 3vh 0;
     border-radius: 5px;
     color: #f1f7ed;
+    cursor: pointer;
 }
 input, select{
     display: block;
@@ -191,4 +192,33 @@ input, select{
 }
 .link:hover{
     color: #4a90e2;
+}
+.day{
+    font-size: 1.6vh;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    height: 25vh;
+    border: 1px solid #4A4A4A;
+    width: 65vw;
+    padding: 0 2vw;
+
+}
+.day div{
+    flex: 1;
+    color: white;
+    max-width: 15vh;
+    height: 15vh;
+    padding: 1vh 1vw;
+    margin: auto 0;
+}
+.invite-code{
+    background-color: white;
+    max-width: 60vw;
+    height: 25vh;
+    margin: auto 0;
+    font-size: 7vw;
+    line-height: 25vh;
+    text-align: center;
+    overflow: hidden;
 }

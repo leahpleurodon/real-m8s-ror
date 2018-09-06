@@ -37,7 +37,7 @@ main {
 input{
     display: block;
     margin: 0 auto 3vh auto;
-    height: 3.5vw;
+    height: 3vw;
     width: 60%;
 }
 label{

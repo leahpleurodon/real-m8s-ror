@@ -1,0 +1,77 @@
+<header>
+    <h1><%= @house_bill.desc %></h1>
+</header>
+<nav class="horizontal-nav">
+    <ul>
+        <% unless current_user.houses.count < 1 %>
+            <a href="/my_house">
+                <li>my house</li>
+            </a>
+            <a href="/houses/<%= current_user.houses.first.id %>/unpaid_bills">
+                <li>unpaid bills</li>
+            </a>
+            <a href="/houses/<%= current_user.houses.first.id %>/all_bills">
+                <li>bill history</li>
+            </a>
+            <a href="/houses/<%= current_user.houses.first.id %>/invite_code">
+                <li>invite mates</li>
+            </a>
+            <a href="/houses/<%= current_user.houses.first.id %>/chores">
+                <li>house chores</li>
+            </a>
+        <% else %>
+            <a href="/join_house">
+                <li>join a house</li>
+            </a>
+        <% end %>
+    </ul>
+</nav>
+<main>
+<div style="border-bottom: 1px solid gray;">
+        <p>Description: <%= @house_bill.desc %></p>
+        <p>Amount: <%= @house_bill.amount %></p>
+        <p>Category: <%= @house_bill.category %></p>
+        <p><%= link_to "edit", edit_house_bill_path(@house_bill.id) %></p>
+        <p><%= link_to "show", house_bill_path(@house_bill.id) %></p>
+
+        <div>
+            <ul>
+                <% @house_bill.bill_payments.each do |payment| %>
+                    <li>
+                        <%= payment.user.first_name %>
+                        <% if payment.paid %>
+                            has paid
+                        <% else %>
+                            owes <%= payment.amount_due %>
+                        <% end %>
+                    </li>
+                <% end %>
+            </ul>
+        </div>
+        <div>
+            <%= form_tag "/house_bills/#{@house_bill.id}", method: "patch", :authenticity_token => true, :multipart => true, :remote => true do %>
+                <label for="images">Upload Images</label>
+                <%= file_field_tag "images[]", :multiple => true %>
+            <% end %>
+            <ul>
+                <% @house_bill.bill_images.each do |img| %>
+                    <li style="display: inline;">
+                        <a href="<%= img.image.url %>"
+                            target="_blank"
+                        >
+                        <div style="
+                            display: inline-block;
+                            margin: 4vh 3vw;
+                            background-image: url('<%= img.image.url(:thumb)%>');
+                            background-position: 50% 50%;
+                            background-size: cover;
+                            width: 10vw;
+                            height:10vw;
+                        ">
+                        </div></a>
+                    </li>
+                <% end %>
+            </ul>
+        </div>
+    </div>
+</main>

@@ -2,7 +2,7 @@ class HouseBillsController < ApplicationController
     before_action :notloggedin!
     before_action :set_house_bill, only: %i[show update destroy edit]
     def show
-      @house_bill
+      
     end
     def new
         @house_bill = HouseBill.new()
@@ -12,7 +12,7 @@ class HouseBillsController < ApplicationController
       
       if @house_bill.save
         generate_payments!(@house_bill)
-        redirect '/my_house'
+        redirect_to house_bill_path(@house_bill.id)
       else
         render :new
       end
@@ -25,8 +25,10 @@ class HouseBillsController < ApplicationController
     def update
         
       if @house_bill.update(house_bill_params)
-        params[:images].each do |img|
-            BillImage.create(active: true, house_bill_id: @house_bill.id, image: img )
+        if !!params[:images]
+            params[:images].each do |img|
+                BillImage.create(active: true, house_bill_id: @house_bill.id, image: img )
+            end
         end
         redirect_to house_bill_path(@house_bill.id)
       else

@@ -16,6 +16,15 @@
             </section>
             <h5><span>or sign up with email</span></h5>
             <section class="email">
+                <div style="margin: 1vh 0; color: red;">
+                    <% unless @user.errors.full_messages.empty? %>
+                        <% @user.errors.full_messages.each do |error| %>
+                            <% unless error == "Password digest can't be blank" %>
+                                <p><%= error %></p>
+                            <% end %>
+                        <% end %>
+                    <% end %>
+                </div>
                 <%= form_tag "/users", method: "post", :authenticity_token => true do %>
                      <label for="first_name">First Name</label>
                     <input type="text" name="user[first_name]">

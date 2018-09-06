@@ -1,5 +1,4 @@
 # frozen_string_literal: true
-
 class UsersController < ApplicationController
     before_action :notloggedin!, except: %i[create new login new_session]
     before_action :set_user, only: %i[show update reviews destroy]
@@ -21,7 +20,7 @@ class UsersController < ApplicationController
       session[:user_id] = @user.id
       redirect_to edit_mate_profile_path(profile.id)
     else
-      render :new
+        render :new,  :layout => false
     end
   end
 

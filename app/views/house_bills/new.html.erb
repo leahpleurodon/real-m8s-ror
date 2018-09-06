@@ -1,18 +1,47 @@
- <h2>Create Bill</h2>
 
- <%= form_tag "/house_bills", method: "post", :authenticity_token => true do %>
-        <label for="house_bill[desc]">Description</label>
-        <input type="text" name="house_bill[desc]">
-        <label for="house_bill[amount]">Amount Due</label>
-        <input type="text" name="house_bill[amount]" >
-        <label for="house_bill[category]">Category</label>
-        <input type="text" name="house_bill[category]">
-        <label for="house_bill[due_date]">Due Date</label>
-        <input type="date" name="house_bill[due_date]">
-        <input type="hidden" name="house_bill[active]" value="true">
-        <input type="hidden" name="house_bill[user_id]" value="<%= current_user.id %>">
-        <input type="hidden" name="house_bill[house_id]" value="<%= current_user.houses.first.id %>">
-        <input type="hidden" name="house_bill[paid]" value="false">
-    <button>save the bill</button>
-        
-<% end %>
+<header>
+    <h1>Create a Bill</h1>
+</header>
+<nav class="horizontal-nav">
+    <ul>
+        <% unless current_user.houses.count < 1 %>
+            <a href="/my_house">
+                <li>my house</li>
+            </a>
+            <a href="/houses/<%= current_user.houses.first.id %>/unpaid_bills">
+                <li>unpaid bills</li>
+            </a>
+            <a href="/houses/<%= current_user.houses.first.id %>/all_bills">
+                <li>bill history</li>
+            </a>
+            <a href="/houses/<%= current_user.houses.first.id %>/invite_code">
+                <li>invite mates</li>
+            </a>
+            <a href="/houses/<%= current_user.houses.first.id %>/chores">
+                <li>house chores</li>
+            </a>
+        <% else %>
+            <a href="/join_house">
+                <li>join a house</li>
+            </a>
+        <% end %>
+    </ul>
+</nav>
+<main>
+    <%= form_tag "/house_bills", method: "post", :authenticity_token => true do %>
+            <label for="house_bill[desc]">Description</label>
+            <input type="text" name="house_bill[desc]">
+            <label for="house_bill[amount]">Amount Due</label>
+            <input type="text" name="house_bill[amount]" >
+            <label for="house_bill[category]">Category</label>
+            <input type="text" name="house_bill[category]">
+            <label for="house_bill[due_date]">Due Date</label>
+            <input type="date" name="house_bill[due_date]">
+            <input type="hidden" name="house_bill[active]" value="true">
+            <input type="hidden" name="house_bill[user_id]" value="<%= current_user.id %>">
+            <input type="hidden" name="house_bill[house_id]" value="<%= current_user.houses.first.id %>">
+            <input type="hidden" name="house_bill[paid]" value="false">
+        <button class="submit">save the bill</button>
+            
+    <% end %>
+</main>

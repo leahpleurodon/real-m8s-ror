@@ -1,10 +1,15 @@
 # frozen_string_literal: true
-
 class HouseUsersController < ApplicationController
+  before_action :notloggedin!
   before_action :set_house_user, only: %i[show update destroy]
   def show
     render json: @house_user
   end
+
+  def my_history
+    
+    @history = HouseUser.where(user: current_user)
+  end 
 
   def create
     @house_user = HouseUser.new(house_user_params)

@@ -1,0 +1,30 @@
+
+<header>
+    <h1>My Share History</h1>
+</header>
+<nav class="horizontal-nav">
+    <ul>
+        <a href="<%= user_path(current_user.id) %>">
+            <li>profile</li>
+        </a>
+        <a href="/users/<%= current_user.id %>/reviews">
+            <li>reviews</li>
+        </a>
+        <a href="/my_share_history">
+            <li class="active">my share history</li>
+        </a>
+        <a href="<%= edit_mate_profile_path(current_user.mate_profile.id) %>">
+            <li>edit profile</li>
+        </a>
+    </ul>
+</nav>
+<main>
+
+    <% @history.each do |item| %>
+        <div style="border-bottom: 1px solid gray;">
+            <p>House address: <%= item.house.address %></p>
+            <p>Date Joined: <%= item.created_at.strftime("%d/%m/%Y") %></p>
+            <p>Current? <%= item.active ? "yes" : "no" %></p>
+        </div>
+    <% end %>
+</main>

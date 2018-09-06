@@ -23,6 +23,7 @@ Rails.application.routes.draw do
   get '/houses/:id/all_bills', to: 'houses#all_bills'
   get '/houses/:id/invite_code', to: 'houses#invite_code'
   get '/houses/:id/unpaid_bills', to: 'houses#unpaid_bills'
-  
+  get '/houses/:id/chores', to: 'houses#chores'
+  get '/my_share_history', to: 'house_users#my_history'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

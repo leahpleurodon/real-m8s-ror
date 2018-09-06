@@ -1,3 +1,7 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/rateYo/2.3.2/jquery.rateyo.min.css">
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/rateYo/2.3.2/jquery.rateyo.min.js"></script>
+
 <header>
     <h1><%= @user.first_name %>'s Reviews</h1>
 </header>
@@ -21,19 +25,20 @@
         <h2>review me</h2>
         <%= form_tag "/mate_reviews", method: "post", :authenticity_token => true do %>
             <input type="hidden" name="mate_review[user_id]" value="<%= @user.id %>">
-            <input type="number" name="mate_review[rating]">
+            <div id="rateYo-new"></div>
+            <input type="hidden" name="mate_review[rating]" id="rating">
             <textarea name="mate_review[comment]"></textarea>
             <button class="submit">post</button>
         <% end %>
     <% end %>
     <div>
-        Overall rating: <%= @overall_rating %>
+        Overall rating: <%= @overall_rating %> <div id="rateYo-average" style="display:inline-block"></div>
     </div>
     <div>
         <% @user.received_reviews.each do |review| %>
             <div class="list">
                 <div>
-                    Rating: <%= review.rating %>
+                    <div id="rateYo-<%= review.id %>"></div>
                 </div>
                 <div>
                     Comment: <%= review.comment %>
@@ -42,6 +47,30 @@
                     Written by: <%= review.author.first_name %>
                 </div>
             </div>
+            <script>
+                 $("#rateYo-<%= review.id %>").rateYo({
+                    rating: <%= review.rating %>,
+                    readOnly: true,
+                    starWidth: "20px"
+                });
+            </script>
         <% end %>
     </div>
 </main>
+<script>
+
+        $(function () {
+            $("#rateYo-new").rateYo({
+            starWidth: "30px"
+        });
+
+        $("#rateYo-average").rateYo({
+            rating: <%= @overall_rating %>,
+            readOnly: true,
+            starWidth: "20px"
+        });
+        $("#rateYo-new").on("click", () =>{
+            $("#rating").val($("#rateYo-new").rateYo("rating"))
+        })
+    });
+</script>

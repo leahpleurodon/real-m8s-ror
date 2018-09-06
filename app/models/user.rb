@@ -17,7 +17,7 @@ class User < ApplicationRecord
            foreign_key: 'author_id'
 
   validates_presence_of :password_digest, :email, :username
-  
+  validates_uniqueness_of :username, :email
   mount_uploader :profile_pic, ProfilePicUploader
   
   def full_name

@@ -13,9 +13,9 @@ class UserHouseChoresController < ApplicationController
     end
 
     def create
-        @user_house_chore = UserHouseChore.new(user_house_chore_params)
-        if @user_house_chore.save
-            redirect_to '/my_house'
+        @u = UserHouseChore.new(user_house_chore_params)
+        if @u.save
+            redirect_to "/houses/#{@u.house_id}/chores"
         else
             render :new
         end
