@@ -52,7 +52,7 @@
             <%= form_tag "/house_bills/#{@house_bill.id}", method: "patch", :authenticity_token => true, :multipart => true, :remote => true do %>
                 <label for="images">Upload Images</label>
                 <%= file_field_tag "images[]", :multiple => true %>
-                <button class="submit">upload</button>
+                <button type="submit" class="submit">upload</button>
             <% end %>
             <ul>
                 <% @house_bill.bill_images.each do |img| %>

@@ -18,6 +18,7 @@
                              <%= form_tag "/bill_payments/#{payment.id}", method: "patch", :authenticity_token => true do %>
                                 <input type="hidden" name="bill_payment[paid]" value="false">
                                 <button>mark as unpaid</button>
+                            <% end %>
                         <% else %>
                             owes <%= payment.amount_due %>
                              <%= form_tag "/bill_payments/#{payment.id}", method: "patch", :authenticity_token => true do %>
