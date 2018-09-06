@@ -2,7 +2,7 @@
 
 class HousesController < ApplicationController
   before_action :notloggedin!
-  before_action :set_house, except: %i[new create my_house]
+  before_action :set_house, except: %i[new create my_house join]
   before_action :set_houses
   def new
     @house = House.new
