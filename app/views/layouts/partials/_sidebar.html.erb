@@ -1,0 +1,12 @@
+<aside>
+    <div class="logo">
+        <img src='/logo-light-blue.svg' alt="real m8s logo" />
+    </div>
+    <% if logged_in? %>
+        <%= render 'layouts/partials/sidebar_partials/loginpic' %>
+        <%= render 'layouts/partials/sidebar_partials/loginformation' %>
+    <% end %>
+        <%= render 'layouts/partials/sidebar_partials/links' %>
+    <footer>
+    </footer>
+</aside>

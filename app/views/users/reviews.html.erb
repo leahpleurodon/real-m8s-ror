@@ -1,0 +1,15 @@
+    <% if shared_houses?(@user) && unreviewed?(@user) && @user != current_user %>
+        <h1>review me</h1>
+        <%= form_tag "/mate_reviews", method: "post", :authenticity_token => true do %>
+            <input type="hidden" name="mate_review[user_id]" value="<%= @user.id %>">
+            <input type="number" name="mate_review[rating]">
+            <textarea name="mate_review[comment]"></textarea>
+            <button>post</button>
+        <% end %>
+    <% end %>
+
+    <% @user.received_reviews.each do |review| %>
+        <%= review.rating %>
+        <%= review.comment %>
+        <%= review.author.first_name %>
+    <% end %>

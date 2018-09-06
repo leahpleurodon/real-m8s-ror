@@ -16,4 +16,6 @@ Rails.application.config.assets.precompile += %w(
     pages/index-mobile.css
     pages/login-mobile.css
     pages/login.css
+    crm-mobile.css
+    crm.css
 )

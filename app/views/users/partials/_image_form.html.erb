@@ -1,0 +1,20 @@
+<div>
+    <% if @user.profile_pic.present? %>  
+        <div class="circle-image profile-image"
+            style="
+            background-image:url('<%= @user.profile_pic.url(:thumb) %>');">
+        </div>
+    <% else %>
+        <div class="profile-default" 
+            style="background-color: <%= random_color %>">
+                <%= current_user.first_name.chars.first %>
+        </div>
+    <% end %>
+    <% if @user == current_user %>
+        <%= form_tag "/users/#{@user.id}", method: "patch", :enctype =>"multipart/form-data" do %>
+            <h3>Change Avatar</h3>
+            <%= file_field_tag "user[profile_pic]", :class => "upload-btn" %>
+            <button class="submit-btn">Save my pic!</button>
+        <% end %>
+    <% end %>
+</div>

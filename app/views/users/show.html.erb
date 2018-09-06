@@ -1,61 +1,44 @@
-<div>
-    <div class="change-avatar">
-        <% if @user.profile_pic.present? %>  
-            <img src="<%= @user.profile_pic.url(:thumb) %>" alt="Good ol' <%= @user.first_name %>" >
-        <% else %>
-            [default pic]
-        <% end %>
-        <% if @user == current_user %>
-            <%= form_tag "/users/#{@user.id}", method: "patch", :enctype =>"multipart/form-data" do %>
-                <h3>Change Avatar</h3>
-                <%= file_field_tag "user[profile_pic]", :class => "upload-btn" %>
-                <button class="submit-btn">Save my pic!</button>
-            <% end %>
-        <% end %>
+<header>
+    <h1><%= @user.first_name %>'s Profile</h1>
+</header>
+<nav class="horizontal-nav">
+    <ul>
+        <a href="<%= user_path(@user.id) %>">
+            <li class="active">Profile</li>
+        </a>
+        <a href="<%= user_path(@user.id) %>">
+            <li>Profile</li>
+        </a>
+        <a href="<%= user_path(@user.id) %>">
+            <li>Profile</li>
+        </a>
+    </ul>
+</nav>
+<main>
+    <%= render 'users/partials/image_form'%>
+    
+    <div>
+        <h3>Name</h3>
+        <p><%= @user.first_name %> <%= @user.last_name %></p>
+        <h3>Gender</h3>
+        <p><%= @user.gender %></p>
+        <h3>Birthday</h3>
+        <p><%= @user.dob %></p>
     </div>
-</div>
-<div>
-    <h3>First Name</h3>
-    <p><%= @user.first_name %></p>
-    <h3>Last Name</h3>
-    <p><%= @user.last_name %></p>
-    <h3>Email</h3>
-    <p><%= @user.email %></p>
-    <h3>Gender</h3>
-    <p><%= @user.gender %></p>
-    <h3>Birthday</h3>
-    <p><%= @user.dob %></p>
-</div>
 
-<div>
-    <h3>Relationship Status</h3>
-    <p><%= @user.mate_profile.marital_status %></p>
-    <h3>Occupation</h3>
-    <p><%= @user.mate_profile.job %></p>
-    <h3>Do I smoke?</h3>
-    <p><%= @user.mate_profile.is_smoker ? "yes" : "no" %></p>
-    <h3>Faith</h3>
-    <p><%= @user.mate_profile.faith %></p>
-    <h3>Personality</h3>
-    <p><%= @user.mate_profile.personality %></p>
+    <div>
+        <h3>Relationship Status</h3>
+        <p><%= @user.mate_profile.marital_status %></p>
+        <h3>Occupation</h3>
+        <p><%= @user.mate_profile.job %></p>
+        <h3>Do I smoke?</h3>
+        <p><%= @user.mate_profile.is_smoker ? "yes" : "no" %></p>
+        <h3>Faith</h3>
+        <p><%= @user.mate_profile.faith %></p>
+        <h3>Personality</h3>
+        <p><%= @user.mate_profile.personality %></p>
 
-</div>
+    </div>
 
-<div>
-    <% if shared_houses?(@user) && unreviewed?(@user) && @user != current_user %>
-        <h1>review me</h1>
-        <%= form_tag "/mate_reviews", method: "post", :authenticity_token => true do %>
-            <input type="hidden" name="mate_review[user_id]" value="<%= @user.id %>">
-            <input type="number" name="mate_review[rating]">
-            <textarea name="mate_review[comment]"></textarea>
-            <button>post</button>
-        <% end %>
-    <% end %>
-
-    <% @user.received_reviews.each do |review| %>
-        <%= review.rating %>
-        <%= review.comment %>
-        <%= review.author.first_name %>
-    <% end %>
-</div>
+</main>
 

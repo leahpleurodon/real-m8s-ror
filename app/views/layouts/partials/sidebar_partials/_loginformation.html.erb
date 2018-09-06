@@ -1,0 +1,17 @@
+<div class="loginformation">
+    Welcome <%= current_user.first_name %>!!
+    <section>
+        <ul>
+            <li>
+                <%= form_tag "/session", method: "delete", :authenticity_token => true do %>
+                    <button>logout</button>
+                <% end %>
+            </li>
+            <li>
+                <%= form_tag "/my_profile", method: "get", :authenticity_token => true do %>
+                    <button>my profile</button>
+                <% end %>
+            </li>
+        </ul>
+    </section>
+</div>

@@ -18,4 +18,14 @@ module ApplicationHelper
         reviews = MateReview.where(user: other_user, author: current_user)
         reviews.empty?
     end
+
+    def random_color
+        [
+            '#541388',
+            '#7CB518',
+            '#D90368',
+            '#08BDBD',
+            '#F6AE2D'
+        ].sample
+    end
 end

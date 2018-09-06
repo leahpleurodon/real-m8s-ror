@@ -1,0 +1,155 @@
+*{
+    outline: none;
+    overflow-x: hidden;
+}
+a, a:visited{
+    text-decoration: none;
+    color: #F3F7ED;
+}
+html{
+    font-family: 'Raleway', 'sans-serif';
+    height: 100%;
+}
+body{
+    margin: 0;
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#4464ad+0,4a90e2+40,4a90e2+60,4a90e2+72,4464ad+100 */
+    background: #4464ad;
+    background-image: linear-gradient(45deg, #4464ad 0%, #4a90e2 40%, #4a90e2 60%, #4a90e2 72%, #4464ad 100%);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+ul,li{
+    padding:0;
+    list-style: none;
+}
+aside{
+    width: 25vw;
+    height: 100vw;
+    background: #4A4A4A;
+    text-align: center;
+    display: inline-block;
+}
+.sidebar{
+    display: inline-block;
+    position: fixed;
+}
+.logo{
+    width: 70%;
+    margin: 0 auto;
+}
+.logo>img{
+    margin: 3vh 0;
+}
+.circle-image{
+    width: 9vw;
+    height: 9vw;
+    margin: 3vh auto;
+    border-radius: 50%;
+    background-position: 50% 50%;
+    background-size: cover;
+}
+.default-circle, .profile-default{
+    width: 8vw;
+    height: 8vw;
+    border-radius: 50%;
+    line-height: 8vw;
+    font-size: 6vw;
+    color: #F3F7ED;
+}
+.default-circle{
+    margin: 3vh auto;
+}
+.profile-default{
+    text-align: center;
+    margin-right: 3vw;
+}
+.loginformation{
+    color: #F3F7ED;
+    font-size: 1.3vw;
+}
+.loginformation ul{
+    display: flex;
+    width:50%;
+    margin: 2vh auto;
+    justify-content: space-between
+}
+ .loginformation button{
+    background: transparent;
+    border: none;
+    font-size: 1.2vw;
+    text-decoration: none;
+    color: #F3F7ED;
+    margin:auto;
+    flex:1;
+    padding:0;
+    cursor: pointer;
+}
+.loginformation button:hover{
+    color: #E56399;
+}
+.links li{
+    width: 20vw;
+    height: 5vh;
+    font-size: 1.2vw;
+    color: #88CCF1;
+    line-height: 5vh;
+    margin: 4vh auto;
+    border-radius: 30px;
+    background-color: rgba(243, 247, 237, 30%)
+}
+.links li:hover{
+    background-color: rgba(243, 247, 237, 60%)
+}
+header{
+    margin: 0;
+    height: 20vh;
+    color: #F3F7ED;
+}
+.horizontal-nav{
+    box-shadow: #4A4A4A;
+}
+.horizontal-nav ul{
+    display: flex;
+    text-align: center;
+    margin: 0;
+}
+.horizontal-nav li,a{
+    background-color: #4A4A4A;
+    height: 8vh;
+    line-height: 7vh;
+    font-size: 1.5vw;
+    flex: 1;
+}
+.horizontal-nav .active{
+    background-color: #9B9B9B;
+    height: 8vh;
+    line-height: 7vh;
+    font-size: 1.5vw;
+    flex: 1;
+}
+h1{
+    padding-left: 3vw;
+    font-size: 4vw;
+    font-weight: 400;
+}
+.yield{
+    width:75vw;
+    display: inline-block;
+    margin-left: 25vw;
+}
+main{
+    -webkit-box-shadow: inset 3px 20px 42px -6px rgba(82,82,82,0.61);
+    -moz-box-shadow: inset 3px 20px 42px -6px rgba(82,82,82,0.61);
+    box-shadow: inset 3px 20px 42px -6px rgba(82,82,82,0.61);
+    overflow-y: scroll;
+    background-color: #F3F7ED;
+    padding: 3vh;
+    width:100%;
+    height:72vh;
+    position: fixed;
+}
+.profile-image{
+    float:left;
+    margin-right: 5vw;
+}

@@ -1,0 +1,15 @@
+<div class="user-image">
+    <a href="/my_profile">
+        <% if current_user.profile_pic.present? %>
+            <div class="circle-image"
+                style="
+                background-image:url('<%= current_user.profile_pic.url(:thumb) %>');">
+            </div>
+        <% else %>
+            <div class="default-circle" 
+            style="background-color: <%= random_color %>">
+                <%= current_user.first_name.chars.first %>
+            </div>
+        <% end %>
+    </a>
+</div>
